@@ -1,0 +1,30 @@
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_BUSINESS.deps.json
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_BUSINESS.dll
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_BUSINESS.pdb
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_DataAccess.dll
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_DataAccess.pdb
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.csproj.AssemblyReference.cache
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.AssemblyInfoInputs.cache
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.AssemblyInfo.cs
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.csproj.CoreCompileInputs.cache
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUS.AA20AAAC.Up2Date
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.dll
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\refint\DVLD_BUSINESS.dll
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.pdb
+C:\Users\ouhsa\source\repos\DVLD_BUSINESS\obj\Debug\net10.0\ref\DVLD_BUSINESS.dll
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_BUSINESS.deps.json
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_BUSINESS.dll
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_BUSINESS.pdb
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_DataAccess.dll
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\bin\Debug\net10.0\DVLD_DataAccess.pdb
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.csproj.AssemblyReference.cache
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.AssemblyInfoInputs.cache
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.AssemblyInfo.cs
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.csproj.CoreCompileInputs.cache
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUS.AA20AAAC.Up2Date
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.dll
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\refint\DVLD_BUSINESS.dll
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\DVLD_BUSINESS.pdb
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_BUSINESS\obj\Debug\net10.0\ref\DVLD_BUSINESS.dll
