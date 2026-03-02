@@ -34,6 +34,7 @@
             btnClose = new Button();
             pbManagePeople = new PictureBox();
             plBody = new Panel();
+            button1 = new Button();
             tbFilterBy = new TextBox();
             lblRecordsCount = new Label();
             label3 = new Label();
@@ -103,6 +104,7 @@
             // 
             // plBody
             // 
+            plBody.Controls.Add(button1);
             plBody.Controls.Add(tbFilterBy);
             plBody.Controls.Add(lblRecordsCount);
             plBody.Controls.Add(label3);
@@ -115,6 +117,15 @@
             plBody.Name = "plBody";
             plBody.Size = new Size(1581, 756);
             plBody.TabIndex = 2;
+            // 
+            // button1
+            // 
+            button1.Image = Properties.Resources.add_user_64pxpng;
+            button1.Location = new Point(1469, 228);
+            button1.Name = "button1";
+            button1.Size = new Size(85, 82);
+            button1.TabIndex = 8;
+            button1.UseVisualStyleBackColor = true;
             // 
             // tbFilterBy
             // 
@@ -223,5 +234,6 @@
         private Label label3;
         private TextBox tbFilterBy;
         private BindingSource bsPeopleList;
+        private Button button1;
     }
 }

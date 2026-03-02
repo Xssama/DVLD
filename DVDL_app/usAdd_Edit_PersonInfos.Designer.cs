@@ -31,44 +31,47 @@
             pictureBox1 = new PictureBox();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            tbFirstName = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox2 = new TextBox();
+            tbSecondName = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            tbxThirdName = new TextBox();
             label7 = new Label();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            tbLastName = new TextBox();
+            tbNationalNo = new TextBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
             gbGendor = new GroupBox();
-            checkBox1 = new CheckBox();
-            pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
-            checkBox2 = new CheckBox();
-            textBox6 = new TextBox();
+            cbFemale = new CheckBox();
+            pictureBox3 = new PictureBox();
+            cbMale = new CheckBox();
+            tbEmail = new TextBox();
             pictureBox5 = new PictureBox();
             label8 = new Label();
-            textBox7 = new TextBox();
+            tbAddress = new TextBox();
             pictureBox6 = new PictureBox();
             label9 = new Label();
             pictureBox7 = new PictureBox();
             label10 = new Label();
-            textBox9 = new TextBox();
+            tbPhone = new TextBox();
             pictureBox8 = new PictureBox();
             label11 = new Label();
             pictureBox9 = new PictureBox();
             label12 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
+            dtpDateOfBirth = new DateTimePicker();
+            cbCountry = new ComboBox();
             pbPersonImage = new PictureBox();
             btnSetImage = new Button();
+            ofdPersonPic = new OpenFileDialog();
+            btnSave = new Button();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             gbGendor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -97,7 +100,6 @@
             label2.Size = new Size(120, 25);
             label2.TabIndex = 2;
             label2.Text = "National No :";
-           
             // 
             // label3
             // 
@@ -109,18 +111,18 @@
             label3.TabIndex = 3;
             label3.Text = "Name           :";
             // 
-            // textBox1
+            // tbFirstName
             // 
-            textBox1.Location = new Point(214, 50);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(193, 31);
-            textBox1.TabIndex = 4;
+            tbFirstName.Location = new Point(214, 50);
+            tbFirstName.Name = "tbFirstName";
+            tbFirstName.Size = new Size(193, 31);
+            tbFirstName.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(268, 19);
+            label4.Location = new Point(269, 9);
             label4.Name = "label4";
             label4.Size = new Size(49, 28);
             label4.TabIndex = 5;
@@ -130,59 +132,59 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(472, 19);
+            label5.Location = new Point(473, 9);
             label5.Name = "label5";
             label5.Size = new Size(77, 28);
             label5.TabIndex = 7;
             label5.Text = "Second";
             // 
-            // textBox2
+            // tbSecondName
             // 
-            textBox2.Location = new Point(423, 50);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(193, 31);
-            textBox2.TabIndex = 6;
+            tbSecondName.Location = new Point(423, 50);
+            tbSecondName.Name = "tbSecondName";
+            tbSecondName.Size = new Size(193, 31);
+            tbSecondName.TabIndex = 6;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(689, 19);
+            label6.Location = new Point(690, 9);
             label6.Name = "label6";
             label6.Size = new Size(57, 28);
             label6.TabIndex = 9;
             label6.Text = "Third";
             // 
-            // textBox3
+            // tbxThirdName
             // 
-            textBox3.Location = new Point(631, 50);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(193, 31);
-            textBox3.TabIndex = 8;
+            tbxThirdName.Location = new Point(631, 50);
+            tbxThirdName.Name = "tbxThirdName";
+            tbxThirdName.Size = new Size(193, 31);
+            tbxThirdName.TabIndex = 8;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(912, 19);
+            label7.Location = new Point(913, 9);
             label7.Name = "label7";
             label7.Size = new Size(46, 28);
             label7.TabIndex = 11;
             label7.Text = "Last";
             // 
-            // textBox4
+            // tbLastName
             // 
-            textBox4.Location = new Point(840, 50);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(193, 31);
-            textBox4.TabIndex = 10;
+            tbLastName.Location = new Point(840, 50);
+            tbLastName.Name = "tbLastName";
+            tbLastName.Size = new Size(193, 31);
+            tbLastName.TabIndex = 10;
             // 
-            // textBox5
+            // tbNationalNo
             // 
-            textBox5.Location = new Point(214, 113);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(193, 31);
-            textBox5.TabIndex = 13;
+            tbNationalNo.Location = new Point(214, 113);
+            tbNationalNo.Name = "tbNationalNo";
+            tbNationalNo.Size = new Size(193, 31);
+            tbNationalNo.TabIndex = 13;
             // 
             // pictureBox2
             // 
@@ -208,35 +210,15 @@
             // gbGendor
             // 
             gbGendor.Controls.Add(pictureBox4);
-            gbGendor.Controls.Add(checkBox2);
+            gbGendor.Controls.Add(cbFemale);
             gbGendor.Controls.Add(pictureBox3);
-            gbGendor.Controls.Add(checkBox1);
+            gbGendor.Controls.Add(cbMale);
+            gbGendor.FlatStyle = FlatStyle.Flat;
             gbGendor.Location = new Point(149, 159);
             gbGendor.Name = "gbGendor";
             gbGendor.Size = new Size(258, 50);
             gbGendor.TabIndex = 15;
             gbGendor.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(45, 17);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(72, 29);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "Male";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImage = Properties.Resources.boyIcon;
-            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(6, 14);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(33, 30);
-            pictureBox3.TabIndex = 16;
-            pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -249,22 +231,43 @@
             pictureBox4.TabIndex = 18;
             pictureBox4.TabStop = false;
             // 
-            // checkBox2
+            // cbFemale
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(162, 16);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(90, 29);
-            checkBox2.TabIndex = 17;
-            checkBox2.Text = "Female";
-            checkBox2.UseVisualStyleBackColor = true;
+            cbFemale.AutoSize = true;
+            cbFemale.Location = new Point(162, 16);
+            cbFemale.Name = "cbFemale";
+            cbFemale.Size = new Size(90, 29);
+            cbFemale.TabIndex = 17;
+            cbFemale.Text = "Female";
+            cbFemale.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // pictureBox3
             // 
-            textBox6.Location = new Point(204, 235);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(203, 31);
-            textBox6.TabIndex = 18;
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = Properties.Resources.boyIcon;
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Location = new Point(6, 14);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(33, 30);
+            pictureBox3.TabIndex = 16;
+            pictureBox3.TabStop = false;
+            // 
+            // cbMale
+            // 
+            cbMale.AutoSize = true;
+            cbMale.Location = new Point(45, 17);
+            cbMale.Name = "cbMale";
+            cbMale.Size = new Size(72, 29);
+            cbMale.TabIndex = 0;
+            cbMale.Text = "Male";
+            cbMale.UseVisualStyleBackColor = true;
+            // 
+            // tbEmail
+            // 
+            tbEmail.Location = new Point(204, 235);
+            tbEmail.Name = "tbEmail";
+            tbEmail.Size = new Size(203, 31);
+            tbEmail.TabIndex = 18;
             // 
             // pictureBox5
             // 
@@ -287,13 +290,13 @@
             label8.TabIndex = 16;
             label8.Text = "Email            :";
             // 
-            // textBox7
+            // tbAddress
             // 
-            textBox7.Location = new Point(204, 289);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(620, 124);
-            textBox7.TabIndex = 21;
+            tbAddress.Location = new Point(204, 289);
+            tbAddress.Multiline = true;
+            tbAddress.Name = "tbAddress";
+            tbAddress.Size = new Size(620, 124);
+            tbAddress.TabIndex = 21;
             // 
             // pictureBox6
             // 
@@ -337,12 +340,12 @@
             label10.TabIndex = 22;
             label10.Text = "Date Of Birth :";
             // 
-            // textBox9
+            // tbPhone
             // 
-            textBox9.Location = new Point(606, 174);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(203, 31);
-            textBox9.TabIndex = 27;
+            tbPhone.Location = new Point(606, 174);
+            tbPhone.Name = "tbPhone";
+            tbPhone.Size = new Size(203, 31);
+            tbPhone.TabIndex = 27;
             // 
             // pictureBox8
             // 
@@ -386,26 +389,27 @@
             label12.TabIndex = 28;
             label12.Text = "Country     :";
             // 
-            // dateTimePicker1
+            // dtpDateOfBirth
             // 
-            dateTimePicker1.Location = new Point(606, 114);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(203, 31);
-            dateTimePicker1.TabIndex = 30;
+            dtpDateOfBirth.Location = new Point(606, 114);
+            dtpDateOfBirth.Name = "dtpDateOfBirth";
+            dtpDateOfBirth.Size = new Size(203, 31);
+            dtpDateOfBirth.TabIndex = 30;
             // 
-            // comboBox1
+            // cbCountry
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(606, 230);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(203, 33);
-            comboBox1.TabIndex = 31;
+            cbCountry.FormattingEnabled = true;
+            cbCountry.Location = new Point(606, 230);
+            cbCountry.Name = "cbCountry";
+            cbCountry.Size = new Size(203, 33);
+            cbCountry.TabIndex = 31;
             // 
             // pbPersonImage
             // 
             pbPersonImage.Location = new Point(840, 113);
             pbPersonImage.Name = "pbPersonImage";
-            pbPersonImage.Size = new Size(193, 138);
+            pbPersonImage.Size = new Size(193, 150);
+            pbPersonImage.SizeMode = PictureBoxSizeMode.Zoom;
             pbPersonImage.TabIndex = 32;
             pbPersonImage.TabStop = false;
             // 
@@ -416,7 +420,7 @@
             btnSetImage.FlatStyle = FlatStyle.Flat;
             btnSetImage.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnSetImage.ForeColor = Color.Green;
-            btnSetImage.Location = new Point(883, 268);
+            btnSetImage.Location = new Point(877, 287);
             btnSetImage.Name = "btnSetImage";
             btnSetImage.Size = new Size(121, 39);
             btnSetImage.TabIndex = 33;
@@ -424,50 +428,85 @@
             btnSetImage.UseVisualStyleBackColor = true;
             btnSetImage.Click += btnSetImage_Click;
             // 
+            // ofdPersonPic
+            // 
+            ofdPersonPic.FileName = "Pic";
+            // 
+            // btnSave
+            // 
+            btnSave.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.SteelBlue;
+            btnSave.Image = Properties.Resources.save_32;
+            btnSave.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave.Location = new Point(376, 440);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(119, 43);
+            btnSave.TabIndex = 34;
+            btnSave.Text = " Save";
+            btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClose.ForeColor = Color.SteelBlue;
+            btnClose.Image = Properties.Resources.Close32px;
+            btnClose.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClose.Location = new Point(516, 440);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(131, 43);
+            btnClose.TabIndex = 35;
+            btnClose.Text = " Close";
+            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClose.UseVisualStyleBackColor = true;
+            // 
             // usAdd_Edit_PersonInfos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnClose);
+            Controls.Add(btnSave);
             Controls.Add(btnSetImage);
             Controls.Add(pbPersonImage);
-            Controls.Add(comboBox1);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(cbCountry);
+            Controls.Add(dtpDateOfBirth);
             Controls.Add(pictureBox9);
             Controls.Add(label12);
-            Controls.Add(textBox9);
+            Controls.Add(tbPhone);
             Controls.Add(pictureBox8);
             Controls.Add(label11);
             Controls.Add(pictureBox7);
             Controls.Add(label10);
-            Controls.Add(textBox7);
+            Controls.Add(tbAddress);
             Controls.Add(pictureBox6);
             Controls.Add(label9);
-            Controls.Add(textBox6);
+            Controls.Add(tbEmail);
             Controls.Add(pictureBox5);
             Controls.Add(label8);
             Controls.Add(gbGendor);
             Controls.Add(label1);
-            Controls.Add(textBox5);
+            Controls.Add(tbNationalNo);
             Controls.Add(pictureBox2);
             Controls.Add(label7);
-            Controls.Add(textBox4);
+            Controls.Add(tbLastName);
             Controls.Add(label6);
-            Controls.Add(textBox3);
+            Controls.Add(tbxThirdName);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(tbSecondName);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(tbFirstName);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Name = "usAdd_Edit_PersonInfos";
             Size = new Size(1059, 509);
+            Load += usAdd_Edit_PersonInfos_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             gbGendor.ResumeLayout(false);
             gbGendor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -482,38 +521,41 @@
         private PictureBox pictureBox1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox tbFirstName;
         private Label label4;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox tbSecondName;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox tbxThirdName;
         private Label label7;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox tbLastName;
+        private TextBox tbNationalNo;
         private PictureBox pictureBox2;
         private Label label1;
         private GroupBox gbGendor;
-        private CheckBox checkBox1;
+        private CheckBox cbMale;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
-        private CheckBox checkBox2;
-        private TextBox textBox6;
+        private CheckBox cbFemale;
+        private TextBox tbEmail;
         private PictureBox pictureBox5;
         private Label label8;
-        private TextBox textBox7;
+        private TextBox tbAddress;
         private PictureBox pictureBox6;
         private Label label9;
         private PictureBox pictureBox7;
         private Label label10;
-        private TextBox textBox9;
+        private TextBox tbPhone;
         private PictureBox pictureBox8;
         private Label label11;
         private PictureBox pictureBox9;
         private Label label12;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox1;
+        private DateTimePicker dtpDateOfBirth;
+        private ComboBox cbCountry;
         private PictureBox pbPersonImage;
         private Button btnSetImage;
+        private OpenFileDialog ofdPersonPic;
+        private Button btnSave;
+        private Button btnClose;
     }
 }

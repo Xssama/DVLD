@@ -10,8 +10,8 @@ namespace DVDL_app
         [STAThread]
         static void Main()
         {
-            
-            Application.Run(new FrmManagePeople());
+            Application.Run(new frmAddEditPerson(1));
+           
         }
     }
 }

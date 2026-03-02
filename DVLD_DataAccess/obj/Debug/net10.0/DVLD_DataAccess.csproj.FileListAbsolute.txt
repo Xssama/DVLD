@@ -22,3 +22,4 @@ C:\Users\ouhsa\source\repos\All about DVLD\DVLD_DataAccess\obj\Debug\net10.0\DVL
 C:\Users\ouhsa\source\repos\All about DVLD\DVLD_DataAccess\obj\Debug\net10.0\refint\DVLD_DataAccess.dll
 C:\Users\ouhsa\source\repos\All about DVLD\DVLD_DataAccess\obj\Debug\net10.0\DVLD_DataAccess.pdb
 C:\Users\ouhsa\source\repos\All about DVLD\DVLD_DataAccess\obj\Debug\net10.0\ref\DVLD_DataAccess.dll
+C:\Users\ouhsa\source\repos\All about DVLD\DVLD_DataAccess\obj\Debug\net10.0\DVLD_DataAccess.sourcelink.json

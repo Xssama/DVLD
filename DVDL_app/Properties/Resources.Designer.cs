@@ -63,6 +63,26 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_user_64pxpng {
+            get {
+                object obj = ResourceManager.GetObject("add-user_64pxpng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_user_Icon {
+            get {
+                object obj = ResourceManager.GetObject("add-user-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddressIcon {
             get {
                 object obj = ResourceManager.GetObject("AddressIcon", resourceCulture);
@@ -93,6 +113,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close32px {
+            get {
+                object obj = ResourceManager.GetObject("Close32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap COuntryIcon {
             get {
                 object obj = ResourceManager.GetObject("COuntryIcon", resourceCulture);
@@ -106,6 +136,26 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap DateOfBirthIcon {
             get {
                 object obj = ResourceManager.GetObject("DateOfBirthIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DefaultFemalePic {
+            get {
+                object obj = ResourceManager.GetObject("DefaultFemalePic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DefaultMalePic {
+            get {
+                object obj = ResourceManager.GetObject("DefaultMalePic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +193,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap personidIcon {
+            get {
+                object obj = ResourceManager.GetObject("personidIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PersonNameIcon {
             get {
                 object obj = ResourceManager.GetObject("PersonNameIcon", resourceCulture);
@@ -156,6 +216,36 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap PhoneIcon {
             get {
                 object obj = ResourceManager.GetObject("PhoneIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_32 {
+            get {
+                object obj = ResourceManager.GetObject("save_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveIcon {
+            get {
+                object obj = ResourceManager.GetObject("saveIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveIcon24px {
+            get {
+                object obj = ResourceManager.GetObject("saveIcon24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

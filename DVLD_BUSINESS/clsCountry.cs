@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DVLD_BUSINESS
 {
-    internal class clsCountry
+    public class clsCountry
     {
         public int CountryID { get; set; }
         public string CountryName { get; set; }
