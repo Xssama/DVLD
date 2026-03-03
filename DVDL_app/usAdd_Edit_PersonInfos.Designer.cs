@@ -429,7 +429,7 @@
             // 
             pbPersonImage.Location = new Point(840, 113);
             pbPersonImage.Name = "pbPersonImage";
-            pbPersonImage.Size = new Size(193, 150);
+            pbPersonImage.Size = new Size(193, 187);
             pbPersonImage.SizeMode = PictureBoxSizeMode.Zoom;
             pbPersonImage.TabIndex = 32;
             pbPersonImage.TabStop = false;
@@ -441,7 +441,7 @@
             btnSetImage.FlatStyle = FlatStyle.Flat;
             btnSetImage.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnSetImage.ForeColor = Color.Green;
-            btnSetImage.Location = new Point(877, 287);
+            btnSetImage.Location = new Point(872, 322);
             btnSetImage.Name = "btnSetImage";
             btnSetImage.Size = new Size(121, 39);
             btnSetImage.TabIndex = 33;
@@ -475,7 +475,7 @@
             btnRemove.FlatStyle = FlatStyle.Flat;
             btnRemove.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnRemove.ForeColor = Color.Green;
-            btnRemove.Location = new Point(877, 332);
+            btnRemove.Location = new Point(872, 367);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(121, 39);
             btnRemove.TabIndex = 36;

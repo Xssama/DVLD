@@ -34,7 +34,7 @@
             btnClose = new Button();
             pbManagePeople = new PictureBox();
             plBody = new Panel();
-            button1 = new Button();
+            btnAddPerson = new Button();
             tbFilterBy = new TextBox();
             lblRecordsCount = new Label();
             label3 = new Label();
@@ -43,6 +43,7 @@
             plDataGridtable = new Panel();
             dgvPeopleList = new DataGridView();
             bsPeopleList = new BindingSource(components);
+            contextMenuStrip1 = new ContextMenuStrip(components);
             plTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbManagePeople).BeginInit();
             plBody.SuspendLayout();
@@ -104,7 +105,7 @@
             // 
             // plBody
             // 
-            plBody.Controls.Add(button1);
+            plBody.Controls.Add(btnAddPerson);
             plBody.Controls.Add(tbFilterBy);
             plBody.Controls.Add(lblRecordsCount);
             plBody.Controls.Add(label3);
@@ -118,14 +119,18 @@
             plBody.Size = new Size(1581, 756);
             plBody.TabIndex = 2;
             // 
-            // button1
+            // btnAddPerson
             // 
-            button1.Image = Properties.Resources.add_user_64pxpng;
-            button1.Location = new Point(1469, 228);
-            button1.Name = "button1";
-            button1.Size = new Size(85, 82);
-            button1.TabIndex = 8;
-            button1.UseVisualStyleBackColor = true;
+            btnAddPerson.BackColor = Color.Transparent;
+            btnAddPerson.FlatAppearance.BorderSize = 0;
+            btnAddPerson.FlatStyle = FlatStyle.Flat;
+            btnAddPerson.Image = Properties.Resources.add_user_Icon;
+            btnAddPerson.Location = new Point(1433, 254);
+            btnAddPerson.Name = "btnAddPerson";
+            btnAddPerson.Size = new Size(59, 54);
+            btnAddPerson.TabIndex = 8;
+            btnAddPerson.UseVisualStyleBackColor = false;
+            btnAddPerson.Click += btnAddPerson_Click;
             // 
             // tbFilterBy
             // 
@@ -196,6 +201,12 @@
             dgvPeopleList.Size = new Size(1557, 335);
             dgvPeopleList.TabIndex = 2;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
             // FrmManagePeople
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -234,6 +245,7 @@
         private Label label3;
         private TextBox tbFilterBy;
         private BindingSource bsPeopleList;
-        private Button button1;
+        private ContextMenuStrip contextMenuStrip1;
+        private Button btnAddPerson;
     }
 }

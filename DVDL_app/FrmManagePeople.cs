@@ -26,7 +26,7 @@ namespace DVDL_app
         {
 
         }
-        
+
         private void RefreshPeopleList()
         {
             bsPeopleList.DataSource = clsPerson.GetListForShow();
@@ -52,6 +52,7 @@ namespace DVDL_app
 
             if (cbFilters.Text != "None")
             {
+                
                 tbFilterBy.Visible = true;
             }
             else
@@ -60,7 +61,7 @@ namespace DVDL_app
 
             }
         }
-       
+
         private void tbFilterBy_TextChanged(object sender, EventArgs e)
         {
             string FilterColumn = cbFilters.Text;
@@ -83,6 +84,13 @@ namespace DVDL_app
                 }
             }
             lblRecordsCount.Text = bsPeopleList.Count.ToString();
+        }
+
+        private void btnAddPerson_Click(object sender, EventArgs e)
+        {
+            frmAddEditPerson frm = new frmAddEditPerson(-1);
+            frm.ShowDialog();
+            RefreshPeopleList();
         }
     }
 }

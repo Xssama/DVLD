@@ -90,6 +90,7 @@ namespace DVDL_app
             {
                 pbPersonImage.ImageLocation = _Person.ImagePath;
                 pbPersonImage.Tag = "Costum";
+                btnRemove.Visible = true;
                 _CuurentImagePath = _Person.ImagePath;
                 
             }
