@@ -411,6 +411,7 @@
             // 
             // dtpDateOfBirth
             // 
+            dtpDateOfBirth.Format = DateTimePickerFormat.Custom;
             dtpDateOfBirth.Location = new Point(606, 114);
             dtpDateOfBirth.Name = "dtpDateOfBirth";
             dtpDateOfBirth.Size = new Size(203, 31);

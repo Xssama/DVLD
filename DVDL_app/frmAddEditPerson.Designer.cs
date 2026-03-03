@@ -33,6 +33,9 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             lblPersonID = new Label();
+            menuStrip1 = new MenuStrip();
+            button1 = new Button();
+            plAddEditUSContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,6 +52,7 @@
             // 
             // plAddEditUSContainer
             // 
+            plAddEditUSContainer.Controls.Add(menuStrip1);
             plAddEditUSContainer.Location = new Point(14, 155);
             plAddEditUSContainer.Name = "plAddEditUSContainer";
             plAddEditUSContainer.Size = new Size(1124, 530);
@@ -84,19 +88,41 @@
             lblPersonID.TabIndex = 4;
             lblPersonID.Text = "N/A";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1124, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(1020, 113);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 5;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // frmAddEditPerson
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1150, 697);
+            Controls.Add(button1);
             Controls.Add(lblPersonID);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(plAddEditUSContainer);
             Controls.Add(lblHeader);
+            MainMenuStrip = menuStrip1;
             Name = "frmAddEditPerson";
             Text = "Add/Edit Person";
             Load += frmAddEditPerson_Load;
+            plAddEditUSContainer.ResumeLayout(false);
+            plAddEditUSContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -109,5 +135,7 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Label lblPersonID;
+        private MenuStrip menuStrip1;
+        private Button button1;
     }
 }

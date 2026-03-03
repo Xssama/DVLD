@@ -1,5 +1,6 @@
 ﻿using DVLD_BUSINESS;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace DVDL_app
         public delegate void SendPersonIDBack(object sender, int PersonID);
         public event SendPersonIDBack sendpersonidback;
         clsPerson _Person;
+        private readonly string _PhotosStoragePath = @"C:\DVLD-People-Images\";
+        private string _CuurentImagePath = string.Empty;
         public usAdd_Edit_PersonInfos(clsPerson person)
         {
             _Person = person;
@@ -27,12 +30,34 @@ namespace DVDL_app
         private void btnSetImage_Click(object sender, EventArgs e)
         {
             ofdPersonPic.Filter = "Image files|*.bmp;*.jpg;*.gif;*.png;*.tif|All files|*.*";
+            ofdPersonPic.Title = "Select Profile Image";
+
             if (ofdPersonPic.ShowDialog() == DialogResult.OK)
             {
-                string PicLocation = ofdPersonPic.FileName;
-                pbPersonImage.ImageLocation = PicLocation;
-                pbPersonImage.Tag = "Custom";
-                btnRemove.Visible = true;
+                try
+                {
+                    if (!Directory.Exists(_PhotosStoragePath))
+                    {
+                        Directory.CreateDirectory(_PhotosStoragePath);
+                    }
+
+                    string SourceFilePath = ofdPersonPic.FileName;
+                    string SourceFileExtension = Path.GetExtension(SourceFilePath);
+
+                    string UniqueFileName = Guid.NewGuid().ToString() + SourceFileExtension;
+                    string DestinationFilePath = Path.Combine(_PhotosStoragePath, UniqueFileName);
+
+                    File.Copy(SourceFilePath, DestinationFilePath);
+                    pbPersonImage.ImageLocation = DestinationFilePath;
+                    pbPersonImage.Tag = "Costum";
+                    _CuurentImagePath = DestinationFilePath;
+                    btnRemove.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error setting image: {ex.Message}", "Error File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
             }
 
         }
@@ -60,10 +85,46 @@ namespace DVDL_app
                 cbMale.Checked = false;
                 cbFemale.Checked = true;
             }
-            sendpersonidback?.Invoke(this, _Person.PersonID);
 
+            if (!string.IsNullOrEmpty(_Person.ImagePath) && File.Exists(_Person.ImagePath))
+            {
+                pbPersonImage.ImageLocation = _Person.ImagePath;
+                pbPersonImage.Tag = "Costum";
+                _CuurentImagePath = _Person.ImagePath;
+                
+            }
         }
+        private void LoadPersonInfosFromControls()
+        {
+            _Person.FirstName = tbFirstName.Text;
+            _Person.LastName = tbLastName.Text;
+            _Person.SecondName = tbSecondName.Text;
+            _Person.ThirdName = tbxThirdName.Text;
+            _Person.NationalNo = tbNationalNo.Text;
+            _Person.Email = tbEmail.Text;
+            _Person.Phone = tbPhone.Text;
+            _Person.Address = tbAddress.Text;
+            _Person.NationalCountryID = (clsCountry.Find(cbCountry.Text)).CountryID;
+            _Person.DateOfBirth = dtpDateOfBirth.Value;
+            if (cbMale.Checked == true)
+            {
+                _Person.Gendor = 0;
+            }
+            else if (cbFemale.Checked == true)
+            {
+                _Person.Gendor = 1;
 
+            }
+
+            if ((string)pbPersonImage.Tag == "Costum" && !string.IsNullOrEmpty(_CuurentImagePath))
+            {
+                _Person.ImagePath = _CuurentImagePath;
+            }
+            else
+            {
+                _Person.ImagePath = string.Empty;
+            }
+        }
         private void usAdd_Edit_PersonInfos_Load(object sender, EventArgs e)
         {
             dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
@@ -117,6 +178,12 @@ namespace DVDL_app
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            if (File.Exists(_CuurentImagePath))
+            {
+                File.Delete(_CuurentImagePath);
+                _CuurentImagePath = string.Empty;
+
+            }
             if (cbMale.Checked == true)
             {
                 pbPersonImage.Tag = "Male";
@@ -131,6 +198,7 @@ namespace DVDL_app
             {
                 pbPersonImage.Image = null;
             }
+            btnRemove.Visible = false;
         }
         private void ValiditingControlsAtFocusChange(object sender, CancelEventArgs e)
         {
@@ -201,33 +269,7 @@ namespace DVDL_app
             }
             else
             {
-                _Person.FirstName = tbFirstName.Text;
-                _Person.LastName = tbLastName.Text;
-                _Person.SecondName= tbSecondName.Text;
-                _Person.ThirdName= tbxThirdName.Text;
-                _Person.NationalNo= tbNationalNo.Text;
-                _Person.Email = tbEmail.Text;
-                _Person.Phone = tbPhone.Text;
-                _Person.Address = tbAddress.Text;
-                _Person.NationalCountryID = (clsCountry.Find(cbCountry.Text)).CountryID;
-                if (cbMale.Checked == true)
-                {
-                    _Person.Gendor = 0;
-                }
-                else if (cbFemale.Checked == true)
-                {
-                    _Person.Gendor = 1;
-
-                }
-
-                if ((string)pbPersonImage.Tag == "Custom")
-                {
-                    //_Person.ImagePath = pbPersonImage.Location;
-                }
-                else
-                {
-                    _Person.ImagePath = string.Empty;
-                }
+                LoadPersonInfosFromControls();
                 if (_Person.Save())
                 {
                     MessageBox.Show("Person infos are saved successfully.", "Infromations saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -238,6 +280,8 @@ namespace DVDL_app
                     MessageBox.Show("Person infos arn't saved successfully.", "Infromations not saved", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
+                sendpersonidback?.Invoke(this, _Person.PersonID);
+                
             }
         }
     }
