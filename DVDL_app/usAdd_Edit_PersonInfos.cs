@@ -6,11 +6,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace DVDL_app
 {
+    
     public partial class usAdd_Edit_PersonInfos : UserControl
     {
+        public delegate void SendPersonIDBack(object sender, int PersonID);
+        public event SendPersonIDBack sendpersonidback;
         clsPerson _Person;
         public usAdd_Edit_PersonInfos(clsPerson person)
         {
@@ -27,14 +31,16 @@ namespace DVDL_app
             {
                 string PicLocation = ofdPersonPic.FileName;
                 pbPersonImage.ImageLocation = PicLocation;
-
+                pbPersonImage.Tag = "Custom";
+                btnRemove.Visible = true;
             }
+
         }
 
         private void LoadPersonInfosToControls()
         {
             tbFirstName.Text = _Person.FirstName;
-            tbLastName.Text = _Person.LastName;
+            tbSecondName.Text = _Person.SecondName;
             tbxThirdName.Text = _Person.ThirdName;
             tbLastName.Text = _Person.LastName;
             tbNationalNo.Text = _Person.NationalNo;
@@ -54,9 +60,7 @@ namespace DVDL_app
                 cbMale.Checked = false;
                 cbFemale.Checked = true;
             }
-            {
-
-            }
+            sendpersonidback?.Invoke(this, _Person.PersonID);
 
         }
 
@@ -64,8 +68,8 @@ namespace DVDL_app
         {
             dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
 
-            DataTable dt = clsCountry.GetList() ;
-            foreach(DataRow row in dt.Rows)
+            DataTable dt = clsCountry.GetList();
+            foreach (DataRow row in dt.Rows)
             {
                 cbCountry.Items.Add(row["CountryName"]);
             }
@@ -78,6 +82,162 @@ namespace DVDL_app
             {
                 cbMale.Checked = true;
                 cbCountry.SelectedIndex = 89;
+            }
+        }
+
+        private void cbMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbMale.Checked == true)
+            {
+                cbFemale.Checked = false;
+                if (pbPersonImage.Image == null || (string)pbPersonImage.Tag == "Female")
+                {
+                    pbPersonImage.Tag = "Male";
+
+                    pbPersonImage.Image = Properties.Resources.DefaultMalePic;
+                }
+
+            }
+        }
+        private void cbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbFemale.Checked == true)
+            {
+                cbMale.Checked = false;
+                if (pbPersonImage.Image == null || (string)pbPersonImage.Tag == "Male")
+                {
+                    pbPersonImage.Tag = "Female";
+                    pbPersonImage.Image = Properties.Resources.DefaultFemalePic;
+                }
+
+            }
+        }
+
+
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (cbMale.Checked == true)
+            {
+                pbPersonImage.Tag = "Male";
+                pbPersonImage.Image = Properties.Resources.DefaultMalePic;
+            }
+            else if (cbFemale.Checked == true)
+            {
+                pbPersonImage.Tag = "Female";
+                pbPersonImage.Image = Properties.Resources.DefaultFemalePic;
+            }
+            else
+            {
+                pbPersonImage.Image = null;
+            }
+        }
+        private void ValiditingControlsAtFocusChange(object sender, CancelEventArgs e)
+        {
+            TextBox textbox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textbox.Text))
+            {
+                e.Cancel = true;
+                textbox.Focus();
+                errorProvider1.SetError(textbox, textbox.Tag.ToString() + " cannot be blank!");
+            }
+            else
+            {
+                errorProvider1.SetError(textbox, "");
+
+            }
+        }
+
+        private void tbEmail_Validating(object sender, CancelEventArgs e)
+        {
+            string Email = tbEmail.Text.Trim();
+            if (string.IsNullOrEmpty(Email))
+            {
+                errorProvider1.SetError(tbEmail, "");
+                return;
+            }
+            string Pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (!Regex.IsMatch(Email, Pattern))
+            {
+                errorProvider1.SetError(tbEmail, "Email Format is incorrect");
+                e.Cancel = true;
+                tbEmail.Focus();
+            }
+            else
+            {
+                errorProvider1.SetError(tbEmail, "");
+            }
+        }
+
+        private void tbPhone_Validating(object sender, CancelEventArgs e)
+        {
+            string Phone = tbPhone.Text.Trim();
+            if (string.IsNullOrEmpty(Phone))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(tbPhone, "Phone can't be blank!!");
+                tbPhone.Focus();
+            }
+            string Pattern = @"^\+?[0-9]{8,15}$";
+            if (!Regex.IsMatch(Phone, Pattern))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(tbPhone, "Phone format is incorrect!");
+                tbPhone.Focus();
+            }
+            else
+            {
+                errorProvider1.SetError(tbPhone, "");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (errorProvider1.GetError(tbFirstName) != "" || errorProvider1.GetError(tbSecondName) != "" || errorProvider1.GetError(tbxThirdName) != ""
+                || errorProvider1.GetError(tbLastName) != "" || errorProvider1.GetError(tbNationalNo) != "" || errorProvider1.GetError(tbEmail) != ""
+                || errorProvider1.GetError(tbPhone) != "" || errorProvider1.GetError(tbAddress) != "" || (cbMale.Checked == false && cbFemale.Checked == false))
+            {
+                MessageBox.Show("Please fill in all required fields before saving.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                _Person.FirstName = tbFirstName.Text;
+                _Person.LastName = tbLastName.Text;
+                _Person.SecondName= tbSecondName.Text;
+                _Person.ThirdName= tbxThirdName.Text;
+                _Person.NationalNo= tbNationalNo.Text;
+                _Person.Email = tbEmail.Text;
+                _Person.Phone = tbPhone.Text;
+                _Person.Address = tbAddress.Text;
+                _Person.NationalCountryID = (clsCountry.Find(cbCountry.Text)).CountryID;
+                if (cbMale.Checked == true)
+                {
+                    _Person.Gendor = 0;
+                }
+                else if (cbFemale.Checked == true)
+                {
+                    _Person.Gendor = 1;
+
+                }
+
+                if ((string)pbPersonImage.Tag == "Custom")
+                {
+                    //_Person.ImagePath = pbPersonImage.Location;
+                }
+                else
+                {
+                    _Person.ImagePath = string.Empty;
+                }
+                if (_Person.Save())
+                {
+                    MessageBox.Show("Person infos are saved successfully.", "Infromations saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Person infos arn't saved successfully.", "Infromations not saved", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
             }
         }
     }

@@ -27,12 +27,14 @@ namespace DVDL_app
             }
             else
             {
+                lblPersonID.Text = _Person.PersonID.ToString();
                 lblHeader.Text = "Update Person Infos";
 
             }
 
             usAdd_Edit_PersonInfos addeditus = new usAdd_Edit_PersonInfos(_Person);
             addeditus.Dock = DockStyle.Fill;
+            addeditus.sendpersonidback += FillPersonIdLabel;
             plAddEditUSContainer.Controls.Add(addeditus);
         }
 

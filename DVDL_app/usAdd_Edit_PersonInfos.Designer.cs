@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             label2 = new Label();
             label3 = new Label();
@@ -66,7 +67,8 @@
             btnSetImage = new Button();
             ofdPersonPic = new OpenFileDialog();
             btnSave = new Button();
-            btnClose = new Button();
+            btnRemove = new Button();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             gbGendor.SuspendLayout();
@@ -78,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbPersonImage).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -117,6 +120,8 @@
             tbFirstName.Name = "tbFirstName";
             tbFirstName.Size = new Size(193, 31);
             tbFirstName.TabIndex = 4;
+            tbFirstName.Tag = "FirstName";
+            tbFirstName.Validating += ValiditingControlsAtFocusChange;
             // 
             // label4
             // 
@@ -144,6 +149,8 @@
             tbSecondName.Name = "tbSecondName";
             tbSecondName.Size = new Size(193, 31);
             tbSecondName.TabIndex = 6;
+            tbSecondName.Tag = "SecondName";
+            tbSecondName.Validating += ValiditingControlsAtFocusChange;
             // 
             // label6
             // 
@@ -161,6 +168,8 @@
             tbxThirdName.Name = "tbxThirdName";
             tbxThirdName.Size = new Size(193, 31);
             tbxThirdName.TabIndex = 8;
+            tbxThirdName.Tag = "ThirdName";
+            tbxThirdName.Validating += ValiditingControlsAtFocusChange;
             // 
             // label7
             // 
@@ -178,6 +187,8 @@
             tbLastName.Name = "tbLastName";
             tbLastName.Size = new Size(193, 31);
             tbLastName.TabIndex = 10;
+            tbLastName.Tag = "LastName";
+            tbLastName.Validating += ValiditingControlsAtFocusChange;
             // 
             // tbNationalNo
             // 
@@ -185,6 +196,8 @@
             tbNationalNo.Name = "tbNationalNo";
             tbNationalNo.Size = new Size(193, 31);
             tbNationalNo.TabIndex = 13;
+            tbNationalNo.Tag = "NationalNo";
+            tbNationalNo.Validating += ValiditingControlsAtFocusChange;
             // 
             // pictureBox2
             // 
@@ -240,6 +253,7 @@
             cbFemale.TabIndex = 17;
             cbFemale.Text = "Female";
             cbFemale.UseVisualStyleBackColor = true;
+            cbFemale.CheckedChanged += cbFemale_CheckedChanged;
             // 
             // pictureBox3
             // 
@@ -261,6 +275,7 @@
             cbMale.TabIndex = 0;
             cbMale.Text = "Male";
             cbMale.UseVisualStyleBackColor = true;
+            cbMale.CheckedChanged += cbMale_CheckedChanged;
             // 
             // tbEmail
             // 
@@ -268,6 +283,7 @@
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(203, 31);
             tbEmail.TabIndex = 18;
+            tbEmail.Validating += tbEmail_Validating;
             // 
             // pictureBox5
             // 
@@ -297,6 +313,8 @@
             tbAddress.Name = "tbAddress";
             tbAddress.Size = new Size(620, 124);
             tbAddress.TabIndex = 21;
+            tbAddress.Tag = "Address";
+            tbAddress.Validating += ValiditingControlsAtFocusChange;
             // 
             // pictureBox6
             // 
@@ -346,6 +364,8 @@
             tbPhone.Name = "tbPhone";
             tbPhone.Size = new Size(203, 31);
             tbPhone.TabIndex = 27;
+            tbPhone.Tag = "Phone";
+            tbPhone.Validating += tbPhone_Validating;
             // 
             // pictureBox8
             // 
@@ -438,33 +458,40 @@
             btnSave.ForeColor = Color.SteelBlue;
             btnSave.Image = Properties.Resources.save_32;
             btnSave.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSave.Location = new Point(376, 440);
+            btnSave.Location = new Point(448, 439);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(119, 43);
             btnSave.TabIndex = 34;
             btnSave.Text = " Save";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
-            // btnClose
+            // btnRemove
             // 
-            btnClose.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnClose.ForeColor = Color.SteelBlue;
-            btnClose.Image = Properties.Resources.Close32px;
-            btnClose.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClose.Location = new Point(516, 440);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(131, 43);
-            btnClose.TabIndex = 35;
-            btnClose.Text = " Close";
-            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnClose.UseVisualStyleBackColor = true;
+            btnRemove.BackgroundImageLayout = ImageLayout.None;
+            btnRemove.FlatAppearance.BorderSize = 0;
+            btnRemove.FlatStyle = FlatStyle.Flat;
+            btnRemove.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnRemove.ForeColor = Color.Green;
+            btnRemove.Location = new Point(877, 332);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(121, 39);
+            btnRemove.TabIndex = 36;
+            btnRemove.Text = "Remove";
+            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Visible = false;
+            btnRemove.Click += btnRemove_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // usAdd_Edit_PersonInfos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnClose);
+            Controls.Add(btnRemove);
             Controls.Add(btnSave);
             Controls.Add(btnSetImage);
             Controls.Add(pbPersonImage);
@@ -513,6 +540,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPersonImage).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -556,6 +584,7 @@
         private Button btnSetImage;
         private OpenFileDialog ofdPersonPic;
         private Button btnSave;
-        private Button btnClose;
+        private Button btnRemove;
+        private ErrorProvider errorProvider1;
     }
 }
