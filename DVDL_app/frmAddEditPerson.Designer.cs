@@ -94,7 +94,9 @@
             Controls.Add(label2);
             Controls.Add(plAddEditUSContainer);
             Controls.Add(lblHeader);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "frmAddEditPerson";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Add/Edit Person";
             Load += frmAddEditPerson_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -10,8 +10,9 @@ namespace DVDL_app
         [STAThread]
         static void Main()
         {
-            Application.Run(new FrmManagePeople());
-           
+            //Application.Run(new FrmManagePeople());
+            //Application.Run(new frmMainScreen());
+            Application.Run(new frmUserInfos(1));
         }
     }
 }

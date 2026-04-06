@@ -17,11 +17,6 @@ namespace DVDL_app
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -52,7 +47,7 @@ namespace DVDL_app
 
             if (cbFilters.Text != "None")
             {
-                
+
                 tbFilterBy.Visible = true;
             }
             else
@@ -90,6 +85,82 @@ namespace DVDL_app
         {
             frmAddEditPerson frm = new frmAddEditPerson(-1);
             frm.ShowDialog();
+            RefreshPeopleList();
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvPeopleList.CurrentCell != null)
+            {
+                int PersonSelectedID = (int)dgvPeopleList.CurrentRow.Cells[0].Value;
+                frmPersonInformations frmPersonInfosShow = new frmPersonInformations(PersonSelectedID);
+                frmPersonInfosShow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row first.");
+            }
+            RefreshPeopleList();
+        }
+
+        private void dgvPeopleList_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                dgvPeopleList.ClearSelection();
+                dgvPeopleList.Rows[e.RowIndex].Selected = true;
+                dgvPeopleList.CurrentCell = dgvPeopleList.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            }
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmAddEditPerson frm = new frmAddEditPerson(-1);
+            frm.ShowDialog();
+
+
+            RefreshPeopleList();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvPeopleList.CurrentCell == null)
+            {
+                int PersonSelectedID = (int)dgvPeopleList.CurrentRow.Cells[0].Value;
+                frmPersonInformations frmPersonInfosShow = new frmPersonInformations(PersonSelectedID);
+                frmPersonInfosShow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row first.");
+            }
+            RefreshPeopleList();
+        }
+
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvPeopleList.CurrentCell != null)
+            {
+                int PersonSelectedID = (int)dgvPeopleList.CurrentRow.Cells[0].Value;
+                if (MessageBox.Show($"Are you sure you want to delete the person with id : {PersonSelectedID}", "Delete Person", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+
+                    if (clsPerson.DeletePerson(PersonSelectedID))
+                    {
+                        MessageBox.Show("The Person is deleted successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The Person isn't deleted!.");
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row first.");
+            }
             RefreshPeopleList();
         }
     }

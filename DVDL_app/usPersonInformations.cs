@@ -22,14 +22,14 @@ namespace DVDL_app
         {
             string FullName = "";
             lblPersonid.Text = _person.PersonID.ToString();
-            FullName = _person.FirstName + " ";
-            FullName = _person.SecondName + " ";
+            FullName += _person.FirstName + " ";
+            FullName += _person.SecondName + " ";
             if (!string.IsNullOrEmpty(_person.ThirdName))
             {
-                FullName = _person.ThirdName + " ";
+                FullName += _person.ThirdName + " ";
 
             }
-            FullName = _person.LastName;
+            FullName += _person.LastName;
             lblFullName.Text = FullName;
             lblNationalNo.Text = _person.NationalNo;
             if (!string.IsNullOrEmpty(_person.Email))
@@ -63,9 +63,28 @@ namespace DVDL_app
             }
             if (_person.Gendor == 0)
             {
-                
+                pbGendorIcon.Image = Properties.Resources.boyIcon;
+                lblGendor.Text = "Male";
+            }
+            else
+            {
+                pbGendorIcon.Image = Properties.Resources.girlIcon;
+                lblGendor.Text = "Female";
 
             }
+        }
+
+        private void usPersonInformations_Load(object sender, EventArgs e)
+        {
+            LoadPersoninfosToControl();
+        }
+
+        private void llEditPersonInfos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAddEditPerson frm = new frmAddEditPerson(_person.PersonID);
+            frm.ShowDialog();
+            _person = clsPerson.Find(_person.PersonID);
+            LoadPersoninfosToControl();
         }
     }
 }

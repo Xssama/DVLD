@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ReaLTaiizor" Version="3.8.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DVLD_BUSINESS\DVLD_BUSINESS.csproj" />
   </ItemGroup>
 

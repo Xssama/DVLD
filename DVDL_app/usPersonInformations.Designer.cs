@@ -37,7 +37,7 @@
             pictureBox3 = new PictureBox();
             label5 = new Label();
             lblGendor = new Label();
-            pictureBox4 = new PictureBox();
+            pbGendorIcon = new PictureBox();
             label7 = new Label();
             lblDateOfBirth = new Label();
             pictureBox5 = new PictureBox();
@@ -58,7 +58,7 @@
             llEditPersonInfos = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbGendorIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -157,13 +157,14 @@
             lblGendor.TabIndex = 11;
             lblGendor.Text = "None";
             // 
-            // pictureBox4
+            // pbGendorIcon
             // 
-            pictureBox4.Location = new Point(168, 217);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(40, 28);
-            pictureBox4.TabIndex = 10;
-            pictureBox4.TabStop = false;
+            pbGendorIcon.Location = new Point(168, 217);
+            pbGendorIcon.Name = "pbGendorIcon";
+            pbGendorIcon.Size = new Size(40, 28);
+            pbGendorIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            pbGendorIcon.TabIndex = 10;
+            pbGendorIcon.TabStop = false;
             // 
             // label7
             // 
@@ -327,9 +328,10 @@
             // 
             // pbProfilePic
             // 
-            pbProfilePic.Location = new Point(773, 112);
+            pbProfilePic.BorderStyle = BorderStyle.FixedSingle;
+            pbProfilePic.Location = new Point(772, 112);
             pbProfilePic.Name = "pbProfilePic";
-            pbProfilePic.Size = new Size(212, 202);
+            pbProfilePic.Size = new Size(243, 224);
             pbProfilePic.SizeMode = PictureBoxSizeMode.Zoom;
             pbProfilePic.TabIndex = 27;
             pbProfilePic.TabStop = false;
@@ -338,12 +340,13 @@
             // 
             llEditPersonInfos.AutoSize = true;
             llEditPersonInfos.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            llEditPersonInfos.Location = new Point(806, 70);
+            llEditPersonInfos.Location = new Point(816, 67);
             llEditPersonInfos.Name = "llEditPersonInfos";
             llEditPersonInfos.Size = new Size(156, 28);
             llEditPersonInfos.TabIndex = 28;
             llEditPersonInfos.TabStop = true;
             llEditPersonInfos.Text = "Edit Person Infos";
+            llEditPersonInfos.LinkClicked += llEditPersonInfos_LinkClicked;
             // 
             // usPersonInformations
             // 
@@ -367,7 +370,7 @@
             Controls.Add(pictureBox5);
             Controls.Add(label9);
             Controls.Add(lblGendor);
-            Controls.Add(pictureBox4);
+            Controls.Add(pbGendorIcon);
             Controls.Add(label7);
             Controls.Add(lblFullName);
             Controls.Add(pictureBox3);
@@ -379,9 +382,10 @@
             Controls.Add(label1);
             Name = "usPersonInformations";
             Size = new Size(1054, 444);
+            Load += usPersonInformations_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbGendorIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -403,7 +407,7 @@
         private PictureBox pictureBox3;
         private Label label5;
         private Label lblGendor;
-        private PictureBox pictureBox4;
+        private PictureBox pbGendorIcon;
         private Label label7;
         private Label lblDateOfBirth;
         private PictureBox pictureBox5;

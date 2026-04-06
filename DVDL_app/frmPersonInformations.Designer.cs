@@ -28,61 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            plTop = new Panel();
             plBody = new Panel();
+            gbPersonInfos = new GroupBox();
             label1 = new Label();
-            panel1 = new Panel();
             plBody.SuspendLayout();
             SuspendLayout();
             // 
-            // plTop
-            // 
-            plTop.Dock = DockStyle.Top;
-            plTop.Location = new Point(0, 0);
-            plTop.Name = "plTop";
-            plTop.Size = new Size(1193, 56);
-            plTop.TabIndex = 0;
-            // 
             // plBody
             // 
-            plBody.Controls.Add(panel1);
+            plBody.Controls.Add(gbPersonInfos);
             plBody.Controls.Add(label1);
             plBody.Dock = DockStyle.Fill;
-            plBody.Location = new Point(0, 56);
+            plBody.Location = new Point(0, 0);
             plBody.Name = "plBody";
-            plBody.Size = new Size(1193, 571);
+            plBody.Size = new Size(1140, 592);
             plBody.TabIndex = 1;
+            // 
+            // gbPersonInfos
+            // 
+            gbPersonInfos.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbPersonInfos.Location = new Point(23, 121);
+            gbPersonInfos.Name = "gbPersonInfos";
+            gbPersonInfos.Size = new Size(1090, 413);
+            gbPersonInfos.TabIndex = 1;
+            gbPersonInfos.TabStop = false;
+            gbPersonInfos.Text = "Person Informations :";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Book Antiqua", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.OrangeRed;
-            label1.Location = new Point(512, 28);
+            label1.Location = new Point(474, 34);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.No;
             label1.Size = new Size(214, 35);
             label1.TabIndex = 0;
             label1.Text = "Person Details";
             // 
-            // panel1
-            // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Location = new Point(12, 177);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1169, 382);
-            panel1.TabIndex = 1;
-            // 
             // frmPersonInformations
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1193, 627);
+            ClientSize = new Size(1140, 592);
             Controls.Add(plBody);
-            Controls.Add(plTop);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "frmPersonInformations";
-            Text = "frmPersonInformations";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Person Details";
             Load += frmPersonInformations_Load;
             plBody.ResumeLayout(false);
             plBody.PerformLayout();
@@ -90,10 +83,8 @@
         }
 
         #endregion
-
-        private Panel plTop;
         private Panel plBody;
         private Label label1;
-        private Panel panel1;
+        private GroupBox gbPersonInfos;
     }
 }

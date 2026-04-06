@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            plTopPanel = new Panel();
-            label1 = new Label();
-            btnClose = new Button();
             pbManagePeople = new PictureBox();
             plBody = new Panel();
             btnAddPerson = new Button();
@@ -42,54 +39,23 @@
             cbFilters = new ComboBox();
             plDataGridtable = new Panel();
             dgvPeopleList = new DataGridView();
-            bsPeopleList = new BindingSource(components);
             contextMenuStrip1 = new ContextMenuStrip(components);
-            plTopPanel.SuspendLayout();
+            showDetailsToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            addToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            updateToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripSeparator();
+            sendEmailToolStripMenuItem = new ToolStripMenuItem();
+            phoneToolStripMenuItem = new ToolStripMenuItem();
+            bsPeopleList = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pbManagePeople).BeginInit();
             plBody.SuspendLayout();
             plDataGridtable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPeopleList).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bsPeopleList).BeginInit();
             SuspendLayout();
-            // 
-            // plTopPanel
-            // 
-            plTopPanel.BackgroundImageLayout = ImageLayout.Zoom;
-            plTopPanel.Controls.Add(label1);
-            plTopPanel.Controls.Add(btnClose);
-            plTopPanel.Dock = DockStyle.Top;
-            plTopPanel.Location = new Point(0, 0);
-            plTopPanel.Margin = new Padding(2);
-            plTopPanel.Name = "plTopPanel";
-            plTopPanel.Size = new Size(1581, 51);
-            plTopPanel.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 12);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(143, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Manage People";
-            // 
-            // btnClose
-            // 
-            btnClose.BackColor = Color.Transparent;
-            btnClose.BackgroundImage = Properties.Resources.close;
-            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
-            btnClose.Dock = DockStyle.Right;
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(1532, 0);
-            btnClose.Margin = new Padding(2);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(49, 51);
-            btnClose.TabIndex = 0;
-            btnClose.UseVisualStyleBackColor = false;
-            btnClose.Click += btnClose_Click;
             // 
             // pbManagePeople
             // 
@@ -114,9 +80,9 @@
             plBody.Controls.Add(plDataGridtable);
             plBody.Controls.Add(pbManagePeople);
             plBody.Dock = DockStyle.Fill;
-            plBody.Location = new Point(0, 51);
+            plBody.Location = new Point(0, 0);
             plBody.Name = "plBody";
-            plBody.Size = new Size(1581, 756);
+            plBody.Size = new Size(1576, 807);
             plBody.TabIndex = 2;
             // 
             // btnAddPerson
@@ -186,55 +152,114 @@
             plDataGridtable.Controls.Add(dgvPeopleList);
             plDataGridtable.Location = new Point(12, 325);
             plDataGridtable.Name = "plDataGridtable";
-            plDataGridtable.Size = new Size(1557, 335);
+            plDataGridtable.Size = new Size(1537, 335);
             plDataGridtable.TabIndex = 3;
             // 
             // dgvPeopleList
             // 
             dgvPeopleList.AutoGenerateColumns = false;
             dgvPeopleList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPeopleList.ContextMenuStrip = contextMenuStrip1;
             dgvPeopleList.DataSource = bsPeopleList;
             dgvPeopleList.Dock = DockStyle.Fill;
             dgvPeopleList.Location = new Point(0, 0);
             dgvPeopleList.Name = "dgvPeopleList";
             dgvPeopleList.RowHeadersWidth = 51;
-            dgvPeopleList.Size = new Size(1557, 335);
+            dgvPeopleList.Size = new Size(1537, 335);
             dgvPeopleList.TabIndex = 2;
+            dgvPeopleList.CellMouseDown += dgvPeopleList_CellMouseDown;
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.ImageScalingSize = new Size(32, 32);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, addToolStripMenuItem, editToolStripMenuItem, updateToolStripMenuItem, toolStripMenuItem2, sendEmailToolStripMenuItem, phoneToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            contextMenuStrip1.Size = new Size(254, 244);
+            // 
+            // showDetailsToolStripMenuItem
+            // 
+            showDetailsToolStripMenuItem.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            showDetailsToolStripMenuItem.Image = Properties.Resources.persondetailsicon;
+            showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            showDetailsToolStripMenuItem.Size = new Size(253, 38);
+            showDetailsToolStripMenuItem.Text = "Show Details";
+            showDetailsToolStripMenuItem.Click += showDetailsToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(250, 6);
+            // 
+            // addToolStripMenuItem
+            // 
+            addToolStripMenuItem.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addToolStripMenuItem.Image = Properties.Resources.newPersonIcon;
+            addToolStripMenuItem.Name = "addToolStripMenuItem";
+            addToolStripMenuItem.Size = new Size(253, 38);
+            addToolStripMenuItem.Text = "Add New Person";
+            addToolStripMenuItem.Click += addToolStripMenuItem_Click;
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editToolStripMenuItem.Image = Properties.Resources.EditPerson;
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(253, 38);
+            editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
+            // 
+            // updateToolStripMenuItem
+            // 
+            updateToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            updateToolStripMenuItem.Image = Properties.Resources.DeletePerson;
+            updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            updateToolStripMenuItem.Size = new Size(253, 38);
+            updateToolStripMenuItem.Text = "Delete";
+            updateToolStripMenuItem.Click += DeleteToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(250, 6);
+            // 
+            // sendEmailToolStripMenuItem
+            // 
+            sendEmailToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            sendEmailToolStripMenuItem.Image = Properties.Resources.mailsend;
+            sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
+            sendEmailToolStripMenuItem.Size = new Size(253, 38);
+            sendEmailToolStripMenuItem.Text = "Send Email";
+            // 
+            // phoneToolStripMenuItem
+            // 
+            phoneToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            phoneToolStripMenuItem.Image = Properties.Resources.phonecall;
+            phoneToolStripMenuItem.Name = "phoneToolStripMenuItem";
+            phoneToolStripMenuItem.Size = new Size(253, 38);
+            phoneToolStripMenuItem.Text = "Phone Call";
             // 
             // FrmManagePeople
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1581, 807);
+            ClientSize = new Size(1576, 807);
             Controls.Add(plBody);
-            Controls.Add(plTopPanel);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(2);
             Name = "FrmManagePeople";
             Text = "Manage People";
             Load += FrmManagePeople_Load;
-            plTopPanel.ResumeLayout(false);
-            plTopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbManagePeople).EndInit();
             plBody.ResumeLayout(false);
             plBody.PerformLayout();
             plDataGridtable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvPeopleList).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)bsPeopleList).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel plTopPanel;
-        private Button btnClose;
-        private Label label1;
         private PictureBox pbManagePeople;
         private Panel plBody;
         private DataGridView dgvPeopleList;
@@ -247,5 +272,13 @@
         private BindingSource bsPeopleList;
         private ContextMenuStrip contextMenuStrip1;
         private Button btnAddPerson;
+        private ToolStripMenuItem showDetailsToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem addToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem updateToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem sendEmailToolStripMenuItem;
+        private ToolStripMenuItem phoneToolStripMenuItem;
     }
 }

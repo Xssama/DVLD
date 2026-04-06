@@ -10,14 +10,23 @@ namespace DVDL_app
 {
     public partial class frmPersonInformations : Form
     {
-        public frmPersonInformations()
+        int _PersonID = -1;
+        public frmPersonInformations(int PersonID)
         {
+            _PersonID = PersonID;
             InitializeComponent();
         }
 
         private void frmPersonInformations_Load(object sender, EventArgs e)
         {
+            usPersonInformations usPersonDetails = new usPersonInformations(_PersonID);
+            usPersonDetails.Dock = DockStyle.Fill;
+            gbPersonInfos.Controls.Add(usPersonDetails);
+        }
 
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
