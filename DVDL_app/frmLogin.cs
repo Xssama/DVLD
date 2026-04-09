@@ -90,7 +90,8 @@ namespace DVDL_app
             if (VerifyInputs())
             {
                 RememberUserHndler();
-                MessageBox.Show("You are loged in :)");
+                frmMainScreen MainScreen = new frmMainScreen(_User);
+                MainScreen.ShowDialog();
             }
             else
             {

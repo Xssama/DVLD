@@ -34,6 +34,10 @@
             driversToolStripMenuItem = new ToolStripMenuItem();
             UsersToolStripMenuItem = new ToolStripMenuItem();
             AccountSettingsToolStripMenuItem = new ToolStripMenuItem();
+            loginUserInfosToolStripMenuItem = new ToolStripMenuItem();
+            changePasswordToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            signOutToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -85,12 +89,47 @@
             // 
             // AccountSettingsToolStripMenuItem
             // 
+            AccountSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginUserInfosToolStripMenuItem, changePasswordToolStripMenuItem, toolStripMenuItem1, signOutToolStripMenuItem });
             AccountSettingsToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AccountSettingsToolStripMenuItem.Image = Properties.Resources.Accountsettingsicon;
             AccountSettingsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             AccountSettingsToolStripMenuItem.Name = "AccountSettingsToolStripMenuItem";
             AccountSettingsToolStripMenuItem.Size = new Size(212, 36);
             AccountSettingsToolStripMenuItem.Text = "Account Settings";
+            // 
+            // loginUserInfosToolStripMenuItem
+            // 
+            loginUserInfosToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginUserInfosToolStripMenuItem.Image = Properties.Resources.userresume;
+            loginUserInfosToolStripMenuItem.Name = "loginUserInfosToolStripMenuItem";
+            loginUserInfosToolStripMenuItem.Size = new Size(267, 38);
+            loginUserInfosToolStripMenuItem.Text = "Current User Infos";
+            loginUserInfosToolStripMenuItem.Click += loginUserInfosToolStripMenuItem_Click;
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            changePasswordToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            changePasswordToolStripMenuItem.Image = Properties.Resources.change_password;
+            changePasswordToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            changePasswordToolStripMenuItem.Size = new Size(267, 38);
+            changePasswordToolStripMenuItem.Text = "Change Password";
+            changePasswordToolStripMenuItem.Click += changePasswordToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(264, 6);
+            // 
+            // signOutToolStripMenuItem
+            // 
+            signOutToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            signOutToolStripMenuItem.Image = Properties.Resources.log_out_7269889;
+            signOutToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
+            signOutToolStripMenuItem.Size = new Size(267, 38);
+            signOutToolStripMenuItem.Text = "Sign Out";
+            signOutToolStripMenuItem.Click += signOutToolStripMenuItem_Click;
             // 
             // frmMainScreen
             // 
@@ -101,6 +140,7 @@
             MainMenuStrip = menuStrip1;
             Name = "frmMainScreen";
             Text = "Driving Licenses Management";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -115,5 +155,9 @@
         private ToolStripMenuItem driversToolStripMenuItem;
         private ToolStripMenuItem UsersToolStripMenuItem;
         private ToolStripMenuItem AccountSettingsToolStripMenuItem;
+        private ToolStripMenuItem loginUserInfosToolStripMenuItem;
+        private ToolStripMenuItem changePasswordToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem signOutToolStripMenuItem;
     }
 }

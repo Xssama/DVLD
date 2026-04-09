@@ -98,6 +98,7 @@
             Name = "frmAddEditPerson";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add/Edit Person";
+            FormClosed += frmAddEditPerson_FormClosed;
             Load += frmAddEditPerson_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

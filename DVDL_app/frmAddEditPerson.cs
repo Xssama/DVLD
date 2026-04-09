@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Windows.Forms;
 
@@ -11,9 +12,10 @@ namespace DVDL_app
 {
     public partial class frmAddEditPerson : Form
     {
- 
+        public delegate void ReturnTheAddedPersonIdHandler(object sender, int PersonId);
+        public event ReturnTheAddedPersonIdHandler SendPersonIdBack;
         clsPerson _Person;
-        public frmAddEditPerson(int PersonID)
+        public frmAddEditPerson(int PersonID = -1)
         {
             _Person = clsPerson.Find(PersonID);
             InitializeComponent();
@@ -41,6 +43,11 @@ namespace DVDL_app
         private void FillPersonIdLabel(object sender, int PersonID)
         {
             lblPersonID.Text = PersonID.ToString();
+        }
+
+        private void frmAddEditPerson_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SendPersonIdBack?.Invoke(this, _Person.PersonID);
         }
     }
 }

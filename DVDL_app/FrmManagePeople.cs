@@ -125,7 +125,7 @@ namespace DVDL_app
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dgvPeopleList.CurrentCell == null)
+            if (dgvPeopleList.CurrentCell != null)
             {
                 int PersonSelectedID = (int)dgvPeopleList.CurrentRow.Cells[0].Value;
                 frmPersonInformations frmPersonInfosShow = new frmPersonInformations(PersonSelectedID);
