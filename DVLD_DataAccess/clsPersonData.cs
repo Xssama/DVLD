@@ -196,7 +196,7 @@ namespace DVLD_DataAccess
 
         }
         static public int UpdatePerson(int PersonID, string NationalNo, string FirstName, string SecondName, string ThirdName,
-                            string LastName, DateTime DateOfBirth, short Gendor, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
+                            string LastName, DateTime DateOfBirth, short Gendor, string Address, string Email, string Phone,  int NationalityCountryID, string ImagePath)
         {
             int RowsEffected= -1;
 
@@ -259,7 +259,7 @@ namespace DVLD_DataAccess
             int RowsEffected = -1;
 
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"Delete * from [dbo].[People]
+            string Query = @"Delete from [dbo].[People]
                          WHERE PersonID = @PersonID";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@PersonID", PersonID);

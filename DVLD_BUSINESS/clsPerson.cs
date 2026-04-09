@@ -170,6 +170,12 @@ namespace DVLD_BUSINESS
             }
             return false;
         }
+
+        static public bool DeletePerson(int PersonID)
+        {
+            return (clsPersonData.DeletePerson(PersonID) != -1);
+        }
+
         static public DataTable GetList()
         {
             return clsPersonData.GetList();

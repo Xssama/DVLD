@@ -121,11 +121,11 @@
   <data name="passwordicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\passwordicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="saveIcon24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saveIcon24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="persondetailsicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\persondetailsicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mailsend" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mailsend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="worldwideIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\worldwideIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,17 +172,17 @@
   <data name="add-user-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-user-Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="office-man_15735374 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\office-man_15735374 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="COuntryIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\COuntryIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="emailIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emailIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="manageapptypes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manageapptypes1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AddressIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddressIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save-icon-32png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save-icon-32png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add-user_64pxpng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-user_64pxpng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -198,6 +198,12 @@
   </data>
   <data name="nextarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nextarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mail_7286139" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mail_7286139.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,11 +238,11 @@
   <data name="loginperson" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginperson.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="saveIcon24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\saveIcon24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="manageapptypes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manageapptypes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="save-icon-32png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save-icon-32png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="manageusers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manageusers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,11 +253,14 @@
   <data name="user_16382065" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_16382065.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="newPersonIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newPersonIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NationalNoIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NationalNoIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="newPersonIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\newPersonIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="office-man_15735374 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\office-man_15735374 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchuser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchuser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,8 +277,8 @@
   <data name="Close32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="COuntryIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\COuntryIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mailsend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mailsend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="userresume" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\userresume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,7 +286,7 @@
   <data name="people" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\people.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mail_7286139" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mail_7286139.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="device_7492113" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\device_7492113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -40,5 +40,11 @@ namespace DVDL_app
             manageusers.StartPosition = FormStartPosition.CenterScreen;
             manageusers.ShowDialog();
         }
+
+        private void applicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageAppTypes apptypes = new frmManageAppTypes();
+            apptypes.ShowDialog();
+        }
     }
 }

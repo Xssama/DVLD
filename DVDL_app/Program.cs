@@ -12,7 +12,7 @@ namespace DVDL_app
         {
             //Application.Run(new FrmManagePeople());
             //Application.Run(new frmMainScreen());
-            Application.Run(new frmLogin());
+            Application.Run(new frmManageAppTypes());
         }
     }
 }

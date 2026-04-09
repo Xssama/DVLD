@@ -73,7 +73,33 @@ namespace DVLD_DataAccess
             }
             return isFound;
         }
+        public static bool isPersonLinkedTouser(int Personid)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = "select * from Users where PersonID = @Personid";
+            SqlCommand command = new SqlCommand(query, connection);
 
+            command.Parameters.AddWithValue("@Personid", Personid);
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    isFound = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
         static public bool IsExist(int UserID)
         {
             bool IsFound = false;
@@ -216,11 +242,21 @@ namespace DVLD_DataAccess
             }
             return RowsEffected;
         }
-        static public DataTable GetList()
+        static public DataTable GetList(bool forShow = false)
         {
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "Select * from Users";
+            string query = "";
+            if (forShow)
+            {
+                 query = @"select UserID, Users.PersonID,(FirstName + ' ' + SecondName + ' '+ ThirdName + ' ' + LastName) as FullName , UserName, IsActive from users
+                                inner join People on People.PersonID = Users.PersonID";
+
+            }
+            else
+            {
+                query = "Select * from Users";
+            }
             SqlCommand command = new SqlCommand(query, connection);
             try
             {

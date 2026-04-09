@@ -30,6 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             applicationsToolStripMenuItem = new ToolStripMenuItem();
+            applicationTypesToolStripMenuItem = new ToolStripMenuItem();
             peopleToolStripMenuItem = new ToolStripMenuItem();
             driversToolStripMenuItem = new ToolStripMenuItem();
             UsersToolStripMenuItem = new ToolStripMenuItem();
@@ -53,12 +54,23 @@
             // 
             // applicationsToolStripMenuItem
             // 
+            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { applicationTypesToolStripMenuItem });
             applicationsToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             applicationsToolStripMenuItem.Image = Properties.Resources.Applications;
             applicationsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             applicationsToolStripMenuItem.Size = new Size(173, 36);
             applicationsToolStripMenuItem.Text = "Applications";
+            // 
+            // applicationTypesToolStripMenuItem
+            // 
+            applicationTypesToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            applicationTypesToolStripMenuItem.Image = Properties.Resources.manageapptypes;
+            applicationTypesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            applicationTypesToolStripMenuItem.Name = "applicationTypesToolStripMenuItem";
+            applicationTypesToolStripMenuItem.Size = new Size(330, 38);
+            applicationTypesToolStripMenuItem.Text = "Manage Application Types";
+            applicationTypesToolStripMenuItem.Click += applicationTypesToolStripMenuItem_Click;
             // 
             // peopleToolStripMenuItem
             // 
@@ -102,6 +114,7 @@
             // 
             loginUserInfosToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             loginUserInfosToolStripMenuItem.Image = Properties.Resources.userresume;
+            loginUserInfosToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             loginUserInfosToolStripMenuItem.Name = "loginUserInfosToolStripMenuItem";
             loginUserInfosToolStripMenuItem.Size = new Size(267, 38);
             loginUserInfosToolStripMenuItem.Text = "Current User Infos";
@@ -160,5 +173,6 @@
         private ToolStripMenuItem changePasswordToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem signOutToolStripMenuItem;
+        private ToolStripMenuItem applicationTypesToolStripMenuItem;
     }
 }

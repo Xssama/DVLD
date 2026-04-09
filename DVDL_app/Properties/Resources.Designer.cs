@@ -223,6 +223,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap device_7492113 {
+            get {
+                object obj = ResourceManager.GetObject("device_7492113", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap drivers {
             get {
                 object obj = ResourceManager.GetObject("drivers", resourceCulture);
@@ -336,6 +346,26 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap male_9717972 {
             get {
                 object obj = ResourceManager.GetObject("male_9717972", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manageapptypes {
+            get {
+                object obj = ResourceManager.GetObject("manageapptypes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manageapptypes1 {
+            get {
+                object obj = ResourceManager.GetObject("manageapptypes1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

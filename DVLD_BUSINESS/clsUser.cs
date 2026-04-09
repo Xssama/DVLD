@@ -45,7 +45,10 @@ namespace DVLD_BUSINESS
         {
             return clsUsersData.IsExist(UserName);
         }
-
+        public static bool isPersonLinkedToUser(int PersonId)
+        {
+            return clsUsersData.isPersonLinkedTouser(PersonId);
+        }
 
         public static clsUser Find(int UserID)
         {
@@ -131,9 +134,9 @@ namespace DVLD_BUSINESS
         {
             return (clsUsersData.DeleteUser(userid) != -1);
         }
-        static public DataTable GetList()
+        static public DataTable GetList(bool forShow = false)
         {
-            return clsUsersData.GetList();
+            return clsUsersData.GetList(forShow);
         }
 
     }
