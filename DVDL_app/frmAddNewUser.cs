@@ -15,8 +15,21 @@ namespace DVDL_app
     {
         clsPerson _person = new clsPerson();
         clsUser _User = new clsUser();
-        public frmAddNewUser()
+        bool _update = false;
+        public frmAddNewUser(bool update = false, int UserID = -1)
         {
+            if (update)
+            {
+                _update = update;
+                _User = clsUser.Find(UserID);
+                _person = clsPerson.Find(_User.PersonID);
+                if (_User.UserID == -1 || _person.PersonID == -1)
+                {
+                    _User = new clsUser();
+                    _person = new clsPerson();
+                    _update = false;
+                }
+            }
             InitializeComponent();
         }
 
@@ -29,6 +42,19 @@ namespace DVDL_app
             addpersonHoverTip.SetToolTip(btnAddPerson, "Click here to add new person");
 
             cbFilterBy.SelectedIndex = 0;
+
+            if (_update)
+            {
+                tbxfilterby.Text = _person.PersonID.ToString();
+                cbFilterBy.SelectedIndex = 0;
+                gbFilter.Enabled = false;
+
+                lblUserid.Text = _User.UserID.ToString();
+                tbxUserName.Text = _User.UserName;
+                tbxPassword.Text = _User.Password;
+                tbxConfirmPass.Text = _User.Password;
+                htActive.Checked = (_User.isActive);
+            }
 
             refereshPersonInfos();
 
@@ -166,7 +192,7 @@ namespace DVDL_app
             if ((errorProvider1.GetError(tbxUserName) != "" || tbxUserName.Text.IsNullOrEmpty())
                 || (errorProvider1.GetError(tbxPassword) != "" || tbxPassword.Text.IsNullOrEmpty())
                     || (errorProvider1.GetError(tbxConfirmPass) != "" || tbxConfirmPass.Text.IsNullOrEmpty())
-                    || (_person.PersonID == -1 || clsUser.isPersonLinkedToUser(_person.PersonID)))
+                    || (_person.PersonID == -1 || (_update ? false: checkifPersonLinked())))
             {
                 MessageBox.Show("User can't be Added!!", "error appeared", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -195,22 +221,31 @@ namespace DVDL_app
             }
         }
 
-        private void checkifPersonLinked()
+        private bool checkifPersonLinked()
         {
             if (clsUser.isPersonLinkedToUser(_person.PersonID))
             {
                 MessageBox.Show("The Person is already linked to User!", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
             }
             else
             {
                 _User.PersonID = _person.PersonID;
+                return false;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            checkifPersonLinked();
-            tabControl1.SelectedTab = tpLoginPage;
+            if(_update ? false : checkifPersonLinked())
+            {
+                tabControl1.SelectedTab = tpPersonalInfo;
+            }
+            else
+            {
+                tabControl1.SelectedTab = tpLoginPage;
+
+            }
         }
     }
 }

@@ -83,6 +83,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_user_9506027 {
+            get {
+                object obj = ResourceManager.GetObject("add-user_9506027", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_user_Icon {
             get {
                 object obj = ResourceManager.GetObject("add-user-Icon", resourceCulture);
@@ -296,6 +306,16 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap loginscreenicon {
             get {
                 object obj = ResourceManager.GetObject("loginscreenicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mail_7286139 {
+            get {
+                object obj = ResourceManager.GetObject("mail_7286139", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

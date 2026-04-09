@@ -37,17 +37,28 @@
             label1 = new Label();
             lblRecords = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            showDetailsToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
+            editUserToolStripMenuItem = new ToolStripMenuItem();
+            addUserToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripSeparator();
+            sendEmailToolStripMenuItem = new ToolStripMenuItem();
+            phoneCallToolStripMenuItem = new ToolStripMenuItem();
             cbFilters = new ComboBox();
             tbxFilter = new TextBox();
             label2 = new Label();
+            pbAddNewUser = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).BeginInit();
+            contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAddNewUser).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.team_6036017;
-            pictureBox1.Location = new Point(482, 25);
+            pictureBox1.Location = new Point(586, 26);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(238, 205);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -56,6 +67,8 @@
             // 
             // poisonDataGridView1
             // 
+            poisonDataGridView1.AllowUserToAddRows = false;
+            poisonDataGridView1.AllowUserToDeleteRows = false;
             poisonDataGridView1.AllowUserToResizeRows = false;
             poisonDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             poisonDataGridView1.BackgroundColor = Color.FromArgb(255, 255, 255);
@@ -76,7 +89,7 @@
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe Fluent Icons", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle2.Padding = new Padding(20, 0, 20, 0);
+            dataGridViewCellStyle2.Padding = new Padding(5, 0, 5, 0);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
@@ -101,8 +114,9 @@
             poisonDataGridView1.RowTemplate.Height = 50;
             poisonDataGridView1.RowTemplate.Resizable = DataGridViewTriState.True;
             poisonDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            poisonDataGridView1.Size = new Size(1129, 337);
+            poisonDataGridView1.Size = new Size(1310, 337);
             poisonDataGridView1.TabIndex = 1;
+            poisonDataGridView1.CellMouseDown += poisonDataGridView1_CellMouseClick;
             // 
             // label1
             // 
@@ -127,14 +141,82 @@
             // contextMenuStrip1
             // 
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, deleteToolStripMenuItem, editUserToolStripMenuItem, addUserToolStripMenuItem, toolStripMenuItem2, sendEmailToolStripMenuItem, phoneCallToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            contextMenuStrip1.Size = new Size(226, 244);
+            // 
+            // showDetailsToolStripMenuItem
+            // 
+            showDetailsToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            showDetailsToolStripMenuItem.Image = Properties.Resources.persondetailsicon;
+            showDetailsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            showDetailsToolStripMenuItem.Size = new Size(225, 38);
+            showDetailsToolStripMenuItem.Text = "Show Details";
+            showDetailsToolStripMenuItem.Click += showDetailsToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(222, 6);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deleteToolStripMenuItem.Image = Properties.Resources.add_user_Icon;
+            deleteToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(225, 38);
+            deleteToolStripMenuItem.Text = "Add New User";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
+            // 
+            // editUserToolStripMenuItem
+            // 
+            editUserToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editUserToolStripMenuItem.Image = Properties.Resources.EditPerson;
+            editUserToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
+            editUserToolStripMenuItem.Size = new Size(225, 38);
+            editUserToolStripMenuItem.Text = "Edit";
+            editUserToolStripMenuItem.Click += editUserToolStripMenuItem_Click;
+            // 
+            // addUserToolStripMenuItem
+            // 
+            addUserToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addUserToolStripMenuItem.Image = Properties.Resources.DeletePerson;
+            addUserToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            addUserToolStripMenuItem.Size = new Size(225, 38);
+            addUserToolStripMenuItem.Text = "Delete";
+            addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(222, 6);
+            // 
+            // sendEmailToolStripMenuItem
+            // 
+            sendEmailToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            sendEmailToolStripMenuItem.Image = Properties.Resources.mail_7286139;
+            sendEmailToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
+            sendEmailToolStripMenuItem.Size = new Size(225, 38);
+            sendEmailToolStripMenuItem.Text = "Send Email";
+            // 
+            // phoneCallToolStripMenuItem
+            // 
+            phoneCallToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            phoneCallToolStripMenuItem.Image = Properties.Resources.phonecall;
+            phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
+            phoneCallToolStripMenuItem.Size = new Size(225, 38);
+            phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // cbFilters
             // 
             cbFilters.FormattingEnabled = true;
-            cbFilters.Items.AddRange(new object[] { "None", "UserID", "PersonID", "UserName" });
-            cbFilters.Location = new Point(171, 335);
+            cbFilters.Items.AddRange(new object[] { "None", "UserID", "PersonID", "FullName", "UserName" });
+            cbFilters.Location = new Point(218, 332);
             cbFilters.Name = "cbFilters";
             cbFilters.Size = new Size(226, 33);
             cbFilters.TabIndex = 5;
@@ -142,7 +224,7 @@
             // 
             // tbxFilter
             // 
-            tbxFilter.Location = new Point(419, 335);
+            tbxFilter.Location = new Point(466, 332);
             tbxFilter.Name = "tbxFilter";
             tbxFilter.Size = new Size(228, 31);
             tbxFilter.TabIndex = 6;
@@ -152,17 +234,33 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Bahnschrift SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(33, 335);
+            label2.Location = new Point(80, 332);
             label2.Name = "label2";
             label2.Size = new Size(117, 28);
             label2.TabIndex = 7;
             label2.Text = "Filter By : ";
             // 
+            // pbAddNewUser
+            // 
+            pbAddNewUser.BackColor = Color.Transparent;
+            pbAddNewUser.BackgroundImageLayout = ImageLayout.None;
+            pbAddNewUser.BorderStyle = BorderStyle.FixedSingle;
+            pbAddNewUser.Cursor = Cursors.Hand;
+            pbAddNewUser.Image = Properties.Resources.add_user_9506027;
+            pbAddNewUser.Location = new Point(1263, 323);
+            pbAddNewUser.Name = "pbAddNewUser";
+            pbAddNewUser.Size = new Size(56, 53);
+            pbAddNewUser.SizeMode = PictureBoxSizeMode.Zoom;
+            pbAddNewUser.TabIndex = 9;
+            pbAddNewUser.TabStop = false;
+            pbAddNewUser.Click += pbAddNewUser_Click;
+            // 
             // FrmUsersList
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 806);
+            ClientSize = new Size(1372, 806);
+            Controls.Add(pbAddNewUser);
             Controls.Add(label2);
             Controls.Add(tbxFilter);
             Controls.Add(cbFilters);
@@ -176,6 +274,8 @@
             Load += FrmUsersList_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbAddNewUser).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -190,5 +290,14 @@
         private ComboBox cbFilters;
         private TextBox tbxFilter;
         private Label label2;
+        private ToolStripMenuItem showDetailsToolStripMenuItem;
+        private ToolStripMenuItem addUserToolStripMenuItem;
+        private PictureBox pbAddNewUser;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem deleteToolStripMenuItem;
+        private ToolStripMenuItem editUserToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem sendEmailToolStripMenuItem;
+        private ToolStripMenuItem phoneCallToolStripMenuItem;
     }
 }

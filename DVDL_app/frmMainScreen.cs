@@ -33,5 +33,12 @@ namespace DVDL_app
         {
             this.Close();
         }
+
+        private void UsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsersList manageusers = new FrmUsersList();
+            manageusers.StartPosition = FormStartPosition.CenterScreen;
+            manageusers.ShowDialog();
+        }
     }
 }
