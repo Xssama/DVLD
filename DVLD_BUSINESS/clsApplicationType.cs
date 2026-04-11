@@ -6,22 +6,36 @@ using DVLD_DataAccess;
 
 namespace DVLD_BUSINESS
 {
-    internal class ApplicationType
+    public class clsApplicationType
     {
         public int ID { get; set; }
         public string Title{ get; set; }
         public float Fees { get; set; }
-        public ApplicationType()
+        public clsApplicationType()
         {
             ID = -1;
             Title = "";
             Fees = 0;
         }
-        private ApplicationType(int id, string title, float fees)
+        private clsApplicationType(int id, string title, float fees)
         {
             ID = id;
             Title = title;
             Fees = fees;
+        }
+
+        static public clsApplicationType Find(int ID)
+        {
+            string Title = "";
+            float fees = 0;
+            if (clsApplicationTypes.Find(ID, ref Title, ref fees))
+            {
+                return new clsApplicationType(ID, Title, fees);
+            }
+            else
+            {
+                return new clsApplicationType();
+            }
         }
 
         public bool Update()
@@ -29,7 +43,7 @@ namespace DVLD_BUSINESS
             return ( clsApplicationTypes.Update(ID, Title, Fees) == -1 ? false : true);
         }
 
-        public DataTable GetList()
+        static public DataTable GetList()
         {
             return clsApplicationTypes.GetList();
         }
