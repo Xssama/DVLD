@@ -31,6 +31,7 @@
             biglblAppID = new ReaLTaiizor.Controls.BigLabel();
             tabControl1 = new TabControl();
             tpPersonInfos = new TabPage();
+            button1 = new Button();
             usFindPerson1 = new usFindPerson();
             tpAppInfos = new TabPage();
             lblCreatedBy = new Label();
@@ -48,7 +49,6 @@
             lblAppID = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            button1 = new Button();
             btnSave = new Button();
             tabControl1.SuspendLayout();
             tpPersonInfos.SuspendLayout();
@@ -80,7 +80,7 @@
             tabControl1.Location = new Point(12, 90);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1135, 723);
+            tabControl1.Size = new Size(1135, 700);
             tabControl1.TabIndex = 1;
             // 
             // tpPersonInfos
@@ -90,16 +90,31 @@
             tpPersonInfos.Location = new Point(4, 37);
             tpPersonInfos.Name = "tpPersonInfos";
             tpPersonInfos.Padding = new Padding(3);
-            tpPersonInfos.Size = new Size(1127, 682);
+            tpPersonInfos.Size = new Size(1127, 659);
             tpPersonInfos.TabIndex = 0;
             tpPersonInfos.Text = "Person Infos";
             tpPersonInfos.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Image = Properties.Resources.nextarrow;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(956, 603);
+            button1.Name = "button1";
+            button1.Size = new Size(110, 50);
+            button1.TabIndex = 3;
+            button1.Text = "Next";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // usFindPerson1
             // 
             usFindPerson1.Location = new Point(3, 3);
             usFindPerson1.Name = "usFindPerson1";
-            usFindPerson1.Size = new Size(1121, 627);
+            usFindPerson1.Size = new Size(1121, 594);
             usFindPerson1.TabIndex = 0;
             usFindPerson1.Load += usFindPerson1_Load;
             // 
@@ -123,7 +138,7 @@
             tpAppInfos.Location = new Point(4, 37);
             tpAppInfos.Name = "tpAppInfos";
             tpAppInfos.Padding = new Padding(3);
-            tpAppInfos.Size = new Size(192, 59);
+            tpAppInfos.Size = new Size(1127, 659);
             tpAppInfos.TabIndex = 1;
             tpAppInfos.Text = "Application Infos";
             tpAppInfos.UseVisualStyleBackColor = true;
@@ -132,7 +147,7 @@
             // 
             lblCreatedBy.AutoSize = true;
             lblCreatedBy.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCreatedBy.Location = new Point(439, 392);
+            lblCreatedBy.Location = new Point(572, 437);
             lblCreatedBy.Name = "lblCreatedBy";
             lblCreatedBy.Size = new Size(58, 28);
             lblCreatedBy.TabIndex = 36;
@@ -142,7 +157,7 @@
             // 
             cbLicenseClasse.Font = new Font("Sitka Banner", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbLicenseClasse.FormattingEnabled = true;
-            cbLicenseClasse.Location = new Point(439, 257);
+            cbLicenseClasse.Location = new Point(572, 302);
             cbLicenseClasse.Name = "cbLicenseClasse";
             cbLicenseClasse.Size = new Size(290, 41);
             cbLicenseClasse.TabIndex = 35;
@@ -152,7 +167,7 @@
             // 
             lblFees.AutoSize = true;
             lblFees.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFees.Location = new Point(439, 323);
+            lblFees.Location = new Point(572, 368);
             lblFees.Name = "lblFees";
             lblFees.Size = new Size(58, 28);
             lblFees.TabIndex = 34;
@@ -161,7 +176,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.fees;
-            pictureBox5.Location = new Point(351, 323);
+            pictureBox5.Location = new Point(484, 368);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(29, 31);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -172,7 +187,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(146, 323);
+            label3.Location = new Point(279, 368);
             label3.Name = "label3";
             label3.Size = new Size(182, 28);
             label3.TabIndex = 31;
@@ -182,7 +197,7 @@
             // 
             lblAppDate.AutoSize = true;
             lblAppDate.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAppDate.Location = new Point(439, 187);
+            lblAppDate.Location = new Point(572, 232);
             lblAppDate.Name = "lblAppDate";
             lblAppDate.Size = new Size(58, 28);
             lblAppDate.TabIndex = 30;
@@ -191,7 +206,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.admin;
-            pictureBox4.Location = new Point(351, 392);
+            pictureBox4.Location = new Point(484, 437);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(29, 31);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -202,7 +217,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Century", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(164, 395);
+            label9.Location = new Point(297, 440);
             label9.Name = "label9";
             label9.Size = new Size(164, 28);
             label9.TabIndex = 23;
@@ -211,7 +226,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.personidIcon;
-            pictureBox3.Location = new Point(351, 257);
+            pictureBox3.Location = new Point(484, 302);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(29, 31);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -222,7 +237,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Century", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(123, 257);
+            label7.Location = new Point(256, 302);
             label7.Name = "label7";
             label7.Size = new Size(205, 28);
             label7.TabIndex = 21;
@@ -231,7 +246,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.appdate;
-            pictureBox2.Location = new Point(351, 187);
+            pictureBox2.Location = new Point(484, 232);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(29, 31);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -242,7 +257,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 187);
+            label5.Location = new Point(232, 232);
             label5.Name = "label5";
             label5.Size = new Size(229, 28);
             label5.TabIndex = 19;
@@ -252,7 +267,7 @@
             // 
             lblAppID.AutoSize = true;
             lblAppID.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAppID.Location = new Point(439, 127);
+            lblAppID.Location = new Point(572, 172);
             lblAppID.Name = "lblAppID";
             lblAppID.Size = new Size(58, 28);
             lblAppID.TabIndex = 33;
@@ -261,7 +276,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.DLApp;
-            pictureBox1.Location = new Point(351, 127);
+            pictureBox1.Location = new Point(484, 172);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(29, 31);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -272,26 +287,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(113, 127);
+            label2.Location = new Point(223, 172);
             label2.Name = "label2";
-            label2.Size = new Size(215, 28);
+            label2.Size = new Size(238, 28);
             label2.TabIndex = 16;
-            label2.Text = "D.L Application : ";
-            // 
-            // button1
-            // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Image = Properties.Resources.nextarrow;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(962, 629);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 50);
-            button1.TabIndex = 3;
-            button1.Text = "Next";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label2.Text = "L.D.L Application : ";
             // 
             // btnSave
             // 
@@ -299,13 +299,14 @@
             btnSave.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.Image = Properties.Resources.save_icon_32png;
             btnSave.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSave.Location = new Point(507, 815);
+            btnSave.Location = new Point(495, 796);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(110, 50);
             btnSave.TabIndex = 4;
             btnSave.Text = "Save";
             btnSave.TextAlign = ContentAlignment.MiddleRight;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // frmAddLocalDrivingLicenseApp
             // 
@@ -338,7 +339,6 @@
         private TabPage tpPersonInfos;
         private usFindPerson usFindPerson1;
         private TabPage tpAppInfos;
-        private ReaLTaiizor.Controls.AloneTextBox tbxUserName;
         private Label label9;
         private PictureBox pictureBox3;
         private Label label7;

@@ -13,6 +13,9 @@ namespace DVDL_app
     {
         clsPerson _person = new clsPerson();
         clsUser _user = new clsUser();
+        clsApplication _app = new clsApplication();
+        clsLocalDrivingLicenseApplication _LDLapp = new clsLocalDrivingLicenseApplication();
+        DateTime _nowdate = DateTime.Now;
         public frmAddLocalDrivingLicenseApp(clsUser user)
         {
             _user = user;
@@ -40,7 +43,7 @@ namespace DVDL_app
             }
             cbLicenseClasse.SelectedIndex = 0;
 
-            lblAppDate.Text = DateTime.Now.ToShortDateString();
+            lblAppDate.Text = _nowdate.ToShortDateString();
             lblCreatedBy.Text = _user.UserName;
         }
 
@@ -52,6 +55,49 @@ namespace DVDL_app
         private void button1_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tpAppInfos;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (_person.PersonID == -1 )
+            {
+                MessageBox.Show("You didn't provide the person concerned", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (clsLocalDrivingLicenseApplication.IsPersonAlreadyAppliedToLicenseClass(_person.PersonID, cbLicenseClasse.SelectedIndex + 1))
+            {
+                MessageBox.Show("You Already applied to the license class, choose another driving class!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                _app.ApplicantPersonID = _person.PersonID;
+                _app.ApplicationDate = _nowdate;
+                _app.LastStatusDate = _nowdate;
+                _app.CreatedByUserID = _user.UserID;
+                _app.ApplicationTypeID = 1;
+                _app.ApplicationStatus = 0;
+                _app.PaidFees = Convert.ToDecimal(lblFees.Text);
+                if (_app.Save())
+                {
+                    _LDLapp.ApplicationID = _app.ApplicationID;
+                    _LDLapp.LicenseClassID = cbLicenseClasse.SelectedIndex + 1;
+                    if (_LDLapp.Save())
+                    {
+                        lblAppID.Text = _LDLapp.LocalDrivingLicenseApplicationID.ToString();
+                        MessageBox.Show("The application is under review", "Application is successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("The application failed, please try again", "Application failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The application failed, please try again", "Application failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
         }
     }
 }
