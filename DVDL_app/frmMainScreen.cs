@@ -46,5 +46,11 @@ namespace DVDL_app
             frmManageAppTypes apptypes = new frmManageAppTypes();
             apptypes.ShowDialog();
         }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageTestTypes managetesttype = new frmManageTestTypes();
+            managetesttype.ShowDialog();
+        }
     }
 }

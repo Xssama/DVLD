@@ -1,6 +1,6 @@
 ﻿namespace DVDL_app
 {
-    partial class frmManageAppTypes
+    partial class frmManageTestTypes
     {
         /// <summary>
         /// Required designer variable.
@@ -34,10 +34,11 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
-            label1 = new Label();
-            lblRecords = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             editApplicationTypeToolStripMenuItem = new ToolStripMenuItem();
+            label1 = new Label();
+            lblRecords = new Label();
+            bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).BeginInit();
             contextMenuStrip1.SuspendLayout();
@@ -45,8 +46,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.device_7492113;
-            pictureBox1.Location = new Point(470, 35);
+            pictureBox1.Image = Properties.Resources.EditTestType;
+            pictureBox1.Location = new Point(473, 35);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(202, 182);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -73,6 +74,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             poisonDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            poisonDataGridView1.ContextMenuStrip = contextMenuStrip1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle2.Font = new Font("Sitka Banner", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -109,6 +111,23 @@
             poisonDataGridView1.TabIndex = 1;
             poisonDataGridView1.CellMouseDown += poisonDataGridView1_CellMouseDown;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { editApplicationTypeToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(219, 42);
+            // 
+            // editApplicationTypeToolStripMenuItem
+            // 
+            editApplicationTypeToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editApplicationTypeToolStripMenuItem.Image = Properties.Resources.editapptype;
+            editApplicationTypeToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            editApplicationTypeToolStripMenuItem.Name = "editApplicationTypeToolStripMenuItem";
+            editApplicationTypeToolStripMenuItem.Size = new Size(218, 38);
+            editApplicationTypeToolStripMenuItem.Text = "Edit Test Type";
+            editApplicationTypeToolStripMenuItem.Click += editApplicationTypeToolStripMenuItem_Click;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -129,35 +148,33 @@
             lblRecords.TabIndex = 3;
             lblRecords.Text = "[???]";
             // 
-            // contextMenuStrip1
+            // bigLabel1
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { editApplicationTypeToolStripMenuItem });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(287, 70);
+            bigLabel1.AutoSize = true;
+            bigLabel1.BackColor = Color.Transparent;
+            bigLabel1.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel1.ForeColor = Color.FromArgb(64, 64, 64);
+            bigLabel1.Location = new Point(401, 220);
+            bigLabel1.Name = "bigLabel1";
+            bigLabel1.Size = new Size(338, 50);
+            bigLabel1.TabIndex = 4;
+            bigLabel1.Text = "Manage Test Types";
             // 
-            // editApplicationTypeToolStripMenuItem
-            // 
-            editApplicationTypeToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            editApplicationTypeToolStripMenuItem.Image = Properties.Resources.editapptype;
-            editApplicationTypeToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            editApplicationTypeToolStripMenuItem.Name = "editApplicationTypeToolStripMenuItem";
-            editApplicationTypeToolStripMenuItem.Size = new Size(286, 38);
-            editApplicationTypeToolStripMenuItem.Text = "Edit Application Type";
-            editApplicationTypeToolStripMenuItem.Click += editApplicationTypeToolStripMenuItem_Click;
-            // 
-            // frmManageAppTypes
+            // frmManageTestTypes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1150, 733);
+            Controls.Add(bigLabel1);
             Controls.Add(lblRecords);
             Controls.Add(label1);
             Controls.Add(poisonDataGridView1);
             Controls.Add(pictureBox1);
-            Name = "frmManageAppTypes";
-            Text = "frmManageAppTypes";
-            Load += frmManageAppTypes_Load;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "frmManageTestTypes";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Manage Test Types";
+            Load += frmManageTestTypes_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).EndInit();
             contextMenuStrip1.ResumeLayout(false);
@@ -173,5 +190,8 @@
         private Label lblRecords;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem editApplicationTypeToolStripMenuItem;
+        private ReaLTaiizor.Controls.BigLabel bigLabel1;
     }
+
+     
 }

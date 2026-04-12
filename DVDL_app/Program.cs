@@ -12,7 +12,7 @@ namespace DVDL_app
         {
             //Application.Run(new FrmManagePeople());
             //Application.Run(new frmMainScreen());
-            Application.Run(new frmManageAppTypes());
+            Application.Run(new frmAddLocalDrivingLicenseApp(clsUser.Find(1)));
         }
     }
 }

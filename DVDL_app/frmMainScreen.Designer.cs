@@ -39,6 +39,7 @@
             changePasswordToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             signOutToolStripMenuItem = new ToolStripMenuItem();
+            manageTestTypesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // applicationsToolStripMenuItem
             // 
-            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { applicationTypesToolStripMenuItem });
+            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { applicationTypesToolStripMenuItem, manageTestTypesToolStripMenuItem });
             applicationsToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             applicationsToolStripMenuItem.Image = Properties.Resources.Applications;
             applicationsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
@@ -145,6 +146,16 @@
             signOutToolStripMenuItem.Text = "Sign Out";
             signOutToolStripMenuItem.Click += signOutToolStripMenuItem_Click;
             // 
+            // manageTestTypesToolStripMenuItem
+            // 
+            manageTestTypesToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            manageTestTypesToolStripMenuItem.Image = Properties.Resources.edittype;
+            manageTestTypesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
+            manageTestTypesToolStripMenuItem.Size = new Size(330, 38);
+            manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
+            manageTestTypesToolStripMenuItem.Click += manageTestTypesToolStripMenuItem_Click;
+            // 
             // frmMainScreen
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -174,5 +185,6 @@
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem signOutToolStripMenuItem;
         private ToolStripMenuItem applicationTypesToolStripMenuItem;
+        private ToolStripMenuItem manageTestTypesToolStripMenuItem;
     }
 }
