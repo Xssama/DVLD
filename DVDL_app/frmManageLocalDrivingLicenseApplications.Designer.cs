@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -40,6 +41,7 @@
             label2 = new Label();
             tbxFilter = new TextBox();
             cbFilters = new ComboBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAddNewUser).BeginInit();
@@ -119,13 +121,14 @@
             poisonDataGridView1.RowTemplate.Resizable = DataGridViewTriState.False;
             poisonDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             poisonDataGridView1.ShowRowErrors = false;
-            poisonDataGridView1.Size = new Size(1539, 423);
+            poisonDataGridView1.Size = new Size(1499, 423);
             poisonDataGridView1.TabIndex = 5;
+            poisonDataGridView1.CellMouseDown += poisonDataGridView1_CellMouseDown;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.device_7492113;
-            pictureBox1.Location = new Point(697, 12);
+            pictureBox1.Location = new Point(733, 14);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(191, 135);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -138,7 +141,7 @@
             bigLabel1.BackColor = Color.Transparent;
             bigLabel1.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bigLabel1.ForeColor = Color.FromArgb(64, 64, 64);
-            bigLabel1.Location = new Point(486, 164);
+            bigLabel1.Location = new Point(522, 166);
             bigLabel1.Name = "bigLabel1";
             bigLabel1.Size = new Size(575, 50);
             bigLabel1.TabIndex = 8;
@@ -151,12 +154,15 @@
             pbAddNewUser.BorderStyle = BorderStyle.FixedSingle;
             pbAddNewUser.Cursor = Cursors.Hand;
             pbAddNewUser.Image = Properties.Resources.add_user_9506027;
-            pbAddNewUser.Location = new Point(1457, 221);
+            pbAddNewUser.Location = new Point(1425, 221);
             pbAddNewUser.Name = "pbAddNewUser";
             pbAddNewUser.Size = new Size(56, 53);
             pbAddNewUser.SizeMode = PictureBoxSizeMode.Zoom;
             pbAddNewUser.TabIndex = 13;
             pbAddNewUser.TabStop = false;
+            pbAddNewUser.Click += pbAddNewUser_Click;
+            pbAddNewUser.MouseDown += pbAddNewUser_MouseDown;
+            pbAddNewUser.MouseUp += pbAddNewUser_MouseUp;
             // 
             // label2
             // 
@@ -186,11 +192,17 @@
             cbFilters.TabIndex = 10;
             cbFilters.SelectedIndexChanged += cbFilters_SelectedIndexChanged;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
             // frmManageLocalDrivingLicenseApplications
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1563, 775);
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(1553, 775);
             Controls.Add(pbAddNewUser);
             Controls.Add(label2);
             Controls.Add(tbxFilter);
@@ -200,6 +212,7 @@
             Controls.Add(label1);
             Controls.Add(poisonDataGridView1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmManageLocalDrivingLicenseApplications";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmManageLocalDrivingLicenseApplications";
@@ -222,5 +235,6 @@
         private Label label2;
         private TextBox tbxFilter;
         private ComboBox cbFilters;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }

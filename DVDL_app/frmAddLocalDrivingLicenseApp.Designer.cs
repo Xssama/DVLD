@@ -138,7 +138,7 @@
             tpAppInfos.Location = new Point(4, 37);
             tpAppInfos.Name = "tpAppInfos";
             tpAppInfos.Padding = new Padding(3);
-            tpAppInfos.Size = new Size(1127, 659);
+            tpAppInfos.Size = new Size(192, 59);
             tpAppInfos.TabIndex = 1;
             tpAppInfos.Text = "Application Infos";
             tpAppInfos.UseVisualStyleBackColor = true;
@@ -316,6 +316,7 @@
             Controls.Add(btnSave);
             Controls.Add(tabControl1);
             Controls.Add(biglblAppID);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmAddLocalDrivingLicenseApp";
             Text = "Local Driving License Application";
             Load += frmAddLocalDrivingLicenseApp_Load;

@@ -8,8 +8,8 @@ namespace DVLD_DataAccess
 {
     public class clsUsersData
     {
-        static public bool Find(int UserID, ref string UserName, ref int PersonID, ref string Password, ref bool isActive)
-        {
+       static public bool Find(int UserID, ref string UserName, ref int PersonID, ref string Password, ref bool isActive)
+        { 
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string Query = "select * from Users where UserID = @UserID";

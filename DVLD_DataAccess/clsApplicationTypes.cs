@@ -8,6 +8,33 @@ namespace DVLD_DataAccess
 {
     public class clsApplicationTypes
     {
+        public static bool Find(int ID, ref string Title, ref float Fees)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = "select * from ApplicationTypes where ApplicationTypeID = @ID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    isFound = true;
+                    Title = (string)reader["ApplicationTypeTitle"];
+                    Fees = Convert.ToSingle(reader["ApplicationFees"]);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
         public static DataTable GetList()
         {
             DataTable dt = new DataTable();
@@ -45,7 +72,7 @@ namespace DVLD_DataAccess
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@title", Title);
             command.Parameters.AddWithValue("@fees", fees);
-
+            command.Parameters.AddWithValue("@id", id);
             try
             {
                 connection.Open();

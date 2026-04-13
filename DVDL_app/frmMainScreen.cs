@@ -52,5 +52,17 @@ namespace DVDL_app
             frmManageTestTypes managetesttype = new frmManageTestTypes();
             managetesttype.ShowDialog();
         }
+
+        private void localToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddLocalDrivingLicenseApp addLDLapp = new frmAddLocalDrivingLicenseApp(_User);
+            addLDLapp.ShowDialog();
+        }
+
+        private void localDriingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageLocalDrivingLicenseApplications frm = new frmManageLocalDrivingLicenseApplications(_User);
+            frm.ShowDialog();
+        }
     }
 }

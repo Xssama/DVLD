@@ -97,6 +97,7 @@ namespace DVDL_app
                     }
                     else
                     {
+                        SendIDBack?.Invoke(this, _person.PersonID);
                         refereshPersonInfos();
                     }
                 }
