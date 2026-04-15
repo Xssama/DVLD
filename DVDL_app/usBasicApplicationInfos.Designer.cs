@@ -93,7 +93,7 @@
             groupBox1.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(4, 18);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1015, 187);
+            groupBox1.Size = new Size(1015, 151);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Driving License Application Infos";
@@ -102,7 +102,7 @@
             // 
             lblShowLicenseInfos.AutoSize = true;
             lblShowLicenseInfos.Font = new Font("Sitka Display", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblShowLicenseInfos.Location = new Point(77, 123);
+            lblShowLicenseInfos.Location = new Point(69, 108);
             lblShowLicenseInfos.Name = "lblShowLicenseInfos";
             lblShowLicenseInfos.Size = new Size(168, 29);
             lblShowLicenseInfos.TabIndex = 43;
@@ -113,7 +113,7 @@
             // 
             lblPassedTests.AutoSize = true;
             lblPassedTests.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPassedTests.Location = new Point(625, 123);
+            lblPassedTests.Location = new Point(636, 108);
             lblPassedTests.Name = "lblPassedTests";
             lblPassedTests.Size = new Size(58, 28);
             lblPassedTests.TabIndex = 42;
@@ -122,7 +122,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.passedTests1;
-            pictureBox3.Location = new Point(571, 123);
+            pictureBox3.Location = new Point(582, 108);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(29, 26);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -133,7 +133,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(407, 123);
+            label4.Location = new Point(418, 108);
             label4.Name = "label4";
             label4.Size = new Size(158, 29);
             label4.TabIndex = 40;
@@ -143,7 +143,7 @@
             // 
             lblLicenseClass.AutoSize = true;
             lblLicenseClass.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLicenseClass.Location = new Point(625, 60);
+            lblLicenseClass.Location = new Point(636, 60);
             lblLicenseClass.Name = "lblLicenseClass";
             lblLicenseClass.Size = new Size(58, 28);
             lblLicenseClass.TabIndex = 39;
@@ -152,7 +152,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.appliedlicenseclass;
-            pictureBox2.Location = new Point(571, 60);
+            pictureBox2.Location = new Point(582, 60);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(29, 26);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -163,7 +163,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(335, 60);
+            label3.Location = new Point(346, 60);
             label3.Name = "label3";
             label3.Size = new Size(230, 29);
             label3.TabIndex = 37;
@@ -226,9 +226,9 @@
             groupBox2.Controls.Add(lblID);
             groupBox2.Controls.Add(label5);
             groupBox2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(4, 211);
+            groupBox2.Location = new Point(4, 175);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1015, 365);
+            groupBox2.Size = new Size(1015, 279);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Application Basic Infos";
@@ -237,18 +237,19 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Sitka Display", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.Location = new Point(702, 301);
+            linkLabel1.Location = new Point(694, 230);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(168, 29);
+            linkLabel1.Size = new Size(164, 29);
             linkLabel1.TabIndex = 66;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "Show License Infos";
+            linkLabel1.Text = "Show Person Infos";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // lblCreatedBy
             // 
             lblCreatedBy.AutoSize = true;
             lblCreatedBy.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCreatedBy.Location = new Point(844, 190);
+            lblCreatedBy.Location = new Point(844, 163);
             lblCreatedBy.Name = "lblCreatedBy";
             lblCreatedBy.Size = new Size(58, 28);
             lblCreatedBy.TabIndex = 62;
@@ -257,7 +258,7 @@
             // pictureBox9
             // 
             pictureBox9.Image = Properties.Resources.admin;
-            pictureBox9.Location = new Point(799, 190);
+            pictureBox9.Location = new Point(799, 163);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(29, 26);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -268,7 +269,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.Location = new Point(630, 190);
+            label17.Location = new Point(630, 163);
             label17.Name = "label17";
             label17.Size = new Size(143, 29);
             label17.TabIndex = 60;
@@ -278,7 +279,7 @@
             // 
             lblDateStatus.AutoSize = true;
             lblDateStatus.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDateStatus.Location = new Point(844, 132);
+            lblDateStatus.Location = new Point(844, 118);
             lblDateStatus.Name = "lblDateStatus";
             lblDateStatus.Size = new Size(58, 28);
             lblDateStatus.TabIndex = 59;
@@ -287,7 +288,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.appdate;
-            pictureBox10.Location = new Point(799, 132);
+            pictureBox10.Location = new Point(799, 118);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(29, 26);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -298,7 +299,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label19.Location = new Point(625, 132);
+            label19.Location = new Point(625, 118);
             label19.Name = "label19";
             label19.Size = new Size(148, 29);
             label19.TabIndex = 57;
@@ -338,7 +339,7 @@
             // 
             lblApplicant.AutoSize = true;
             lblApplicant.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblApplicant.Location = new Point(211, 284);
+            lblApplicant.Location = new Point(211, 220);
             lblApplicant.Name = "lblApplicant";
             lblApplicant.Size = new Size(58, 28);
             lblApplicant.TabIndex = 51;
@@ -347,7 +348,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.office_man_15735374__1_;
-            pictureBox7.Location = new Point(166, 284);
+            pictureBox7.Location = new Point(166, 220);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(29, 26);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -358,7 +359,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(15, 281);
+            label13.Location = new Point(15, 217);
             label13.Name = "label13";
             label13.Size = new Size(130, 29);
             label13.TabIndex = 49;
@@ -368,7 +369,7 @@
             // 
             lbltype.AutoSize = true;
             lbltype.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbltype.Location = new Point(211, 226);
+            lbltype.Location = new Point(211, 173);
             lbltype.Name = "lbltype";
             lbltype.Size = new Size(58, 28);
             lbltype.TabIndex = 48;
@@ -377,7 +378,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.AppTypes;
-            pictureBox6.Location = new Point(166, 226);
+            pictureBox6.Location = new Point(166, 173);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(29, 26);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -388,7 +389,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(63, 226);
+            label11.Location = new Point(63, 173);
             label11.Name = "label11";
             label11.Size = new Size(82, 29);
             label11.TabIndex = 46;
@@ -398,7 +399,7 @@
             // 
             lblFees.AutoSize = true;
             lblFees.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFees.Location = new Point(211, 168);
+            lblFees.Location = new Point(211, 133);
             lblFees.Name = "lblFees";
             lblFees.Size = new Size(58, 28);
             lblFees.TabIndex = 45;
@@ -407,7 +408,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.fees;
-            pictureBox5.Location = new Point(166, 168);
+            pictureBox5.Location = new Point(166, 133);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(29, 26);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -418,7 +419,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(69, 165);
+            label9.Location = new Point(69, 130);
             label9.Name = "label9";
             label9.Size = new Size(76, 29);
             label9.TabIndex = 43;
@@ -428,7 +429,7 @@
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Century", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(211, 110);
+            lblStatus.Location = new Point(211, 91);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(58, 28);
             lblStatus.TabIndex = 42;
@@ -437,7 +438,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.status;
-            pictureBox4.Location = new Point(166, 110);
+            pictureBox4.Location = new Point(166, 91);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(29, 26);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -448,7 +449,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(49, 107);
+            label7.Location = new Point(49, 88);
             label7.Name = "label7";
             label7.Size = new Size(96, 29);
             label7.TabIndex = 40;
@@ -481,7 +482,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "usBasicApplicationInfos";
-            Size = new Size(1029, 586);
+            Size = new Size(1029, 472);
             Load += usBasicApplicationInfos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

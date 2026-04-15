@@ -11,7 +11,7 @@ namespace DVDL_app
         static void Main()
         {
             //Application.Run(new FrmManagePeople());
-            Application.Run(new frmVisionTest());
+            Application.Run(new frmManageAppointments(32, 1));
             //Application.Run(new frmManageLocalDrivingLicenseApplications(clsUser.Find(1)));
             
         }
