@@ -90,8 +90,11 @@ namespace DVDL_app
             if (VerifyInputs())
             {
                 RememberUserHndler();
-                frmMainScreen MainScreen = new frmMainScreen(_User);
+                clsGlobal.CurrentUser = _User;
+                frmMainScreen MainScreen = new frmMainScreen();
+                this.Hide();
                 MainScreen.ShowDialog();
+                this.Visible = true;
             }
             else
             {

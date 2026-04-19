@@ -164,6 +164,7 @@
             dgvPeopleList.Dock = DockStyle.Fill;
             dgvPeopleList.Location = new Point(0, 0);
             dgvPeopleList.Name = "dgvPeopleList";
+            dgvPeopleList.RowHeadersVisible = false;
             dgvPeopleList.RowHeadersWidth = 51;
             dgvPeopleList.Size = new Size(1537, 335);
             dgvPeopleList.TabIndex = 2;

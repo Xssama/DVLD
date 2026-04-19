@@ -36,7 +36,7 @@ namespace DVLD_BUSINESS
         }
         public  int PassedTests()
         {
-            return clsLocalDrivingLicenseApplicationsData.PassedTests(ApplicationID);
+            return clsLocalDrivingLicenseApplicationsData.PassedTests(LocalDrivingLicenseApplicationID);
         }
         public static bool IsExist(int LocalDrivingLicenseApplicationID)
         {
@@ -112,6 +112,10 @@ namespace DVLD_BUSINESS
         public static DataTable GetList(bool forShow = false)
         {
             return clsLocalDrivingLicenseApplicationsData.GetList(forShow);
+        }
+        public static DataRow ReturnDataRowFromLDLAppView(int LDLAppID)
+        {
+            return clsLocalDrivingLicenseApplicationsData.ReturnDataRowFromLDLAppView(LDLAppID);
         }
     }
 }

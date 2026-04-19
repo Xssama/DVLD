@@ -48,7 +48,7 @@ namespace DVLD_DataAccess
                                 FROM Tests
                                 INNER JOIN TestAppointments 
                                     ON Tests.TestAppointmentID = TestAppointments.TestAppointmentID
-                                WHERE TestAppointments.LocalDrivingLicenseApplicationID = 30
+                                WHERE TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
                                   AND Tests.TestResult = 1;";
             SqlCommand command = new SqlCommand(Query, connection);
             command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LDLAppID);
@@ -249,6 +249,37 @@ namespace DVLD_DataAccess
                 connection.Close();
             }
             return dt;
+        }
+        public static DataRow ReturnDataRowFromLDLAppView(int LDLAppID)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"select * from LocalDrivingLicenseApplications_View 
+                        where LocalDrivingLicenseApplicationID = @LDLAppID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LDLAppID", LDLAppID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader != null)
+                {
+                    dt.Load(reader);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+                return null;
         }
     }
 }

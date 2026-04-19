@@ -35,14 +35,20 @@
             lblRecords = new Label();
             label1 = new Label();
             poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            sechudleToolStripMenuItem = new ToolStripMenuItem();
+            visionTestToolStripMenuItem = new ToolStripMenuItem();
+            writtenTestToolStripMenuItem = new ToolStripMenuItem();
+            practiceTestToolStripMenuItem = new ToolStripMenuItem();
+            issueLicenseFirstNameToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             pbAddNewUser = new PictureBox();
             label2 = new Label();
             tbxFilter = new TextBox();
             cbFilters = new ComboBox();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAddNewUser).BeginInit();
             SuspendLayout();
@@ -88,6 +94,7 @@
             poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             poisonDataGridView1.ColumnHeadersHeight = 29;
             poisonDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            poisonDataGridView1.ContextMenuStrip = contextMenuStrip1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle2.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -124,6 +131,61 @@
             poisonDataGridView1.Size = new Size(1499, 423);
             poisonDataGridView1.TabIndex = 5;
             poisonDataGridView1.CellMouseDown += poisonDataGridView1_CellMouseDown;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sechudleToolStripMenuItem, issueLicenseFirstNameToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(342, 108);
+            contextMenuStrip1.Opening += contextMenuStrip1_Opening;
+            // 
+            // sechudleToolStripMenuItem
+            // 
+            sechudleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visionTestToolStripMenuItem, writtenTestToolStripMenuItem, practiceTestToolStripMenuItem });
+            sechudleToolStripMenuItem.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            sechudleToolStripMenuItem.Image = Properties.Resources.SechudleTests;
+            sechudleToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            sechudleToolStripMenuItem.Name = "sechudleToolStripMenuItem";
+            sechudleToolStripMenuItem.Size = new Size(341, 38);
+            sechudleToolStripMenuItem.Text = "Sechdule Tests";
+            // 
+            // visionTestToolStripMenuItem
+            // 
+            visionTestToolStripMenuItem.Image = Properties.Resources.vision_18224853;
+            visionTestToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            visionTestToolStripMenuItem.Name = "visionTestToolStripMenuItem";
+            visionTestToolStripMenuItem.Size = new Size(308, 38);
+            visionTestToolStripMenuItem.Text = "Sechdule Vision Test";
+            visionTestToolStripMenuItem.Click += visionTestToolStripMenuItem_Click;
+            // 
+            // writtenTestToolStripMenuItem
+            // 
+            writtenTestToolStripMenuItem.Image = Properties.Resources.Writtenpng;
+            writtenTestToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            writtenTestToolStripMenuItem.Name = "writtenTestToolStripMenuItem";
+            writtenTestToolStripMenuItem.Size = new Size(308, 38);
+            writtenTestToolStripMenuItem.Text = "Sechdule Written Test";
+            writtenTestToolStripMenuItem.Click += writtenTestToolStripMenuItem_Click;
+            // 
+            // practiceTestToolStripMenuItem
+            // 
+            practiceTestToolStripMenuItem.Image = Properties.Resources.street;
+            practiceTestToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            practiceTestToolStripMenuItem.Name = "practiceTestToolStripMenuItem";
+            practiceTestToolStripMenuItem.Size = new Size(308, 38);
+            practiceTestToolStripMenuItem.Text = "Sechdule Street Test";
+            practiceTestToolStripMenuItem.Click += practiceTestToolStripMenuItem_Click;
+            // 
+            // issueLicenseFirstNameToolStripMenuItem
+            // 
+            issueLicenseFirstNameToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            issueLicenseFirstNameToolStripMenuItem.Image = Properties.Resources.IssueDrivingLicense1;
+            issueLicenseFirstNameToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            issueLicenseFirstNameToolStripMenuItem.Name = "issueLicenseFirstNameToolStripMenuItem";
+            issueLicenseFirstNameToolStripMenuItem.Size = new Size(341, 38);
+            issueLicenseFirstNameToolStripMenuItem.Text = "Issue License (First Name)";
+            issueLicenseFirstNameToolStripMenuItem.Click += issueLicenseFirstNameToolStripMenuItem_Click;
             // 
             // pictureBox1
             // 
@@ -192,12 +254,6 @@
             cbFilters.TabIndex = 10;
             cbFilters.SelectedIndexChanged += cbFilters_SelectedIndexChanged;
             // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
-            // 
             // frmManageLocalDrivingLicenseApplications
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
@@ -218,6 +274,7 @@
             Text = "frmManageLocalDrivingLicenseApplications";
             Load += frmManageLocalDrivingLicenseApplications_Load;
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAddNewUser).EndInit();
             ResumeLayout(false);
@@ -236,5 +293,10 @@
         private TextBox tbxFilter;
         private ComboBox cbFilters;
         private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem sechudleToolStripMenuItem;
+        private ToolStripMenuItem visionTestToolStripMenuItem;
+        private ToolStripMenuItem writtenTestToolStripMenuItem;
+        private ToolStripMenuItem practiceTestToolStripMenuItem;
+        private ToolStripMenuItem issueLicenseFirstNameToolStripMenuItem;
     }
 }

@@ -122,7 +122,7 @@ namespace DVLD_DataAccess
         {
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM TestAppointments";
+            string query = "SELECT * FROM TestAppointments_View";
 
             SqlCommand command = new SqlCommand(query, connection);
             try
@@ -142,6 +142,122 @@ namespace DVLD_DataAccess
                 connection.Close();
             }
             return dt;
+        }
+        public static DataTable GetDVLDAppAppointments(int DVLDAppID, string TestTypeTitle)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"select * from TestAppointments_View
+                    where LocalDrivingLicenseApplicationID = @DVLDAppID and TestTypeTitle = @TestTypeTitle";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@DVLDAppID", DVLDAppID);
+            command.Parameters.AddWithValue("@TestTypeTitle", TestTypeTitle);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                dt.Load(reader);
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public static bool LDLAppHasUnlockedAppointment(int LDLAppID, string TestTypeTitle)
+        {
+            bool isTrue = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"select * from TestAppointments_View
+                    where LocalDrivingLicenseApplicationID = @DVLDAppID and TestTypeTitle = @TestTypeTitle and IsLocked = 0";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@DVLDAppID", LDLAppID);
+            command.Parameters.AddWithValue("@TestTypeTitle", TestTypeTitle);
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null )
+                {
+                    isTrue = true;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isTrue;
+        }
+
+        public static bool LDLAppHasPassedTest(int LDLAppID, string TestTypeTitle)
+        {
+            bool isTrue = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"select * from TestAppointments_View
+                        inner join Tests on Tests.TestAppointmentID = TestAppointments_View.TestAppointmentID
+                        where LocalDrivingLicenseApplicationID = @LDLAppID and TestTypeTitle = @TestTypeTitle and TestResult = 1";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LDLAppID", LDLAppID);
+            command.Parameters.AddWithValue("@TestTypeTitle", TestTypeTitle);
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    isTrue = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isTrue;
+        }
+        public static int Trials(int LDLAppID, string TestTypeTitle)
+        {
+            int trials = 0;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"select count(*) from TestAppointments_View
+                        inner join Tests on Tests.TestAppointmentID = TestAppointments_View.TestAppointmentID
+                        where LocalDrivingLicenseApplicationID = @LDLAppID and TestTypeTitle = @TestTypeTitle and IsLocked = 1";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LDLAppID", LDLAppID);
+            command.Parameters.AddWithValue("@TestTypeTitle", TestTypeTitle);
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int ReturnedValue))
+                {
+                    trials = ReturnedValue;
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return trials;
         }
     }
 }

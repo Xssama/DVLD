@@ -98,5 +98,23 @@ namespace DVLD_BUSINESS
         {
             return clsTestAppointments.GetAllTestAppointments();
         }
+        public static DataTable GetDVLDAppAppointments(int DVLDAppID, string TestTypeTitle)
+        {
+            return clsTestAppointments.GetDVLDAppAppointments(DVLDAppID ,TestTypeTitle);
+        }
+
+        public static bool LDLAppHasUnlockedAppointment(int LDLAppID, string TestTypeTitle)
+            {
+            return clsTestAppointments.LDLAppHasUnlockedAppointment(LDLAppID, TestTypeTitle);
+        }
+
+        public static bool LDLAppHasPassedTest(int LDLAppID, string TestTypeTitle)
+        {
+            return clsTestAppointments.LDLAppHasPassedTest(LDLAppID, TestTypeTitle);
+        }
+        public static int Trials(int LDLAppID, string TestTypeTitle)
+        {
+            return clsTestAppointments.Trials(LDLAppID, TestTypeTitle);
+        }
     }
 }

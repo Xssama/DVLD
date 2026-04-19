@@ -14,17 +14,48 @@ namespace DVDL_app
     public partial class frmManageLocalDrivingLicenseApplications : Form
     {
         BindingSource bsApplications = new BindingSource();
-        clsUser _User = new clsUser();
-        public frmManageLocalDrivingLicenseApplications(clsUser user)
+        public frmManageLocalDrivingLicenseApplications()
         {
-            _User = user;
             InitializeComponent();
         }
-        public void RefreshDataInTable()
+        void RefreshDataInTable()
         {
             DataTable dt = clsLocalDrivingLicenseApplication.GetList(true);
             bsApplications.DataSource = dt;
             lblRecords.Text = bsApplications.Count.ToString();
+        }
+
+        void RefeshAvailableTestToSechdule()
+        {
+            int PassedTests = clsLocalDrivingLicenseApplication.PassedTests((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+            if (PassedTests == 3)
+            {
+                sechudleToolStripMenuItem.Enabled = false;
+                return;
+            }
+            else
+            {
+                sechudleToolStripMenuItem.Enabled = true;
+
+            }
+            visionTestToolStripMenuItem.Enabled = false;
+            writtenTestToolStripMenuItem.Enabled = false;
+            practiceTestToolStripMenuItem.Enabled = false;
+
+            switch (PassedTests)
+            {
+                case 0:
+                    visionTestToolStripMenuItem.Enabled = true;
+                    break;
+                case 1:
+                    writtenTestToolStripMenuItem.Enabled = true;
+                    break;
+                case 2:
+                    practiceTestToolStripMenuItem.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
         }
         private void frmManageLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
         {
@@ -103,7 +134,7 @@ namespace DVDL_app
 
         private void pbAddNewUser_Click(object sender, EventArgs e)
         {
-            frmAddLocalDrivingLicenseApp frm = new frmAddLocalDrivingLicenseApp(_User);
+            frmAddLocalDrivingLicenseApp frm = new frmAddLocalDrivingLicenseApp();
             frm.ShowDialog();
         }
 
@@ -114,6 +145,60 @@ namespace DVDL_app
                 poisonDataGridView1.ClearSelection();
                 poisonDataGridView1.Rows[e.RowIndex].Selected = true;
                 poisonDataGridView1.CurrentCell = poisonDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            }
+        }
+
+        private void visionTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                frmManageAppointments appointment = new frmManageAppointments((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value, 1);
+                appointment.ShowDialog();
+                RefreshDataInTable();
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            RefeshAvailableTestToSechdule();
+            if (clsLocalDrivingLicenseApplication.PassedTests((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value) == 3 && 
+                (string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value != "Completed")
+            {
+                issueLicenseFirstNameToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                issueLicenseFirstNameToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void writtenTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                frmManageAppointments appointment = new frmManageAppointments((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value, 2);
+                appointment.ShowDialog();
+                RefreshDataInTable();
+            }
+        }
+
+        private void practiceTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                frmManageAppointments appointment = new frmManageAppointments((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value, 3);
+                appointment.ShowDialog();
+                RefreshDataInTable();
+            }
+        }
+
+        private void issueLicenseFirstNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                frmIssueDriverLicense DrivingLicense= new frmIssueDriverLicense((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+                DrivingLicense.ShowDialog();
+                RefreshDataInTable();
             }
         }
     }

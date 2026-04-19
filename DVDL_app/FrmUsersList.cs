@@ -72,7 +72,7 @@ namespace DVDL_app
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (poisonDataGridView1.CurrentRow != null)
+            if (poisonDataGridView1.CurrentRow != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
             {
                 int SelectedUserId = (int)poisonDataGridView1.CurrentRow.Cells[0].Value;
                 frmUserInfos userifos = new frmUserInfos(SelectedUserId);
@@ -150,6 +150,17 @@ namespace DVDL_app
 
             }
             RefreshDataInTable();
+        }
+
+        private void pbAddNewUser_MouseDown(object sender, MouseEventArgs e)
+        {
+            pbAddNewUser.BackColor = Color.AliceBlue;
+        }
+
+        private void pbAddNewUser_MouseUp(object sender, MouseEventArgs e)
+        {
+            pbAddNewUser.BackColor = Color.Transparent;
+
         }
     }
 }

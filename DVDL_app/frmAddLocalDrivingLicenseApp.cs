@@ -12,15 +12,12 @@ namespace DVDL_app
     public partial class frmAddLocalDrivingLicenseApp : Form
     {
         clsPerson _person = new clsPerson();
-        clsUser _user = new clsUser();
         clsApplication _app = new clsApplication();
         clsLocalDrivingLicenseApplication _LDLapp = new clsLocalDrivingLicenseApplication();
         DateTime _nowdate = DateTime.Now;
-        public frmAddLocalDrivingLicenseApp(clsUser user)
+        public frmAddLocalDrivingLicenseApp()
         {
-            _user = user;
             InitializeComponent();
-
         }
 
         private void usFindPerson1_Load(object sender, EventArgs e)
@@ -44,7 +41,7 @@ namespace DVDL_app
             cbLicenseClasse.SelectedIndex = 0;
 
             lblAppDate.Text = _nowdate.ToShortDateString();
-            lblCreatedBy.Text = _user.UserName;
+            lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
         }
 
         private void cbLicenseClasse_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,9 +71,9 @@ namespace DVDL_app
                 _app.ApplicantPersonID = _person.PersonID;
                 _app.ApplicationDate = _nowdate;
                 _app.LastStatusDate = _nowdate;
-                _app.CreatedByUserID = _user.UserID;
+                _app.CreatedByUserID = clsGlobal.CurrentUser.UserID;
                 _app.ApplicationTypeID = 1;
-                _app.ApplicationStatus = 0;
+                _app.ApplicationStatus = 1;
                 _app.PaidFees = Convert.ToDecimal(lblFees.Text);
                 if (_app.Save())
                 {
@@ -90,6 +87,7 @@ namespace DVDL_app
                     else
                     {
                         MessageBox.Show("The application failed, please try again", "Application failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clsApplication.DeleteApplication(_app.ApplicationID);
                     }
                 }
                 else

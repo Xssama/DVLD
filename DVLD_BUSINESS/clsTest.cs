@@ -86,7 +86,10 @@ namespace DVLD_BUSINESS
                     return false;
             }
         }
-
+        public static bool Delete(int TestID)
+        {
+            return (clsTestData.Delete(TestID) != -1);
+        }
         public static DataTable GetAllTests()
         {
             return clsTestData.GetAllTests();

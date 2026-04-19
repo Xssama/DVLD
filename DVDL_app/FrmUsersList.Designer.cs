@@ -49,6 +49,7 @@
             tbxFilter = new TextBox();
             label2 = new Label();
             pbAddNewUser = new PictureBox();
+            bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).BeginInit();
             contextMenuStrip1.SuspendLayout();
@@ -58,9 +59,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.team_6036017;
-            pictureBox1.Location = new Point(586, 26);
+            pictureBox1.Location = new Point(602, 26);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(238, 205);
+            pictureBox1.Size = new Size(222, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -254,12 +255,27 @@
             pbAddNewUser.TabIndex = 9;
             pbAddNewUser.TabStop = false;
             pbAddNewUser.Click += pbAddNewUser_Click;
+            pbAddNewUser.MouseDown += pbAddNewUser_MouseDown;
+            pbAddNewUser.MouseUp += pbAddNewUser_MouseUp;
+            // 
+            // bigLabel1
+            // 
+            bigLabel1.AutoSize = true;
+            bigLabel1.BackColor = Color.Transparent;
+            bigLabel1.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bigLabel1.ForeColor = Color.FromArgb(64, 64, 64);
+            bigLabel1.Location = new Point(582, 238);
+            bigLabel1.Name = "bigLabel1";
+            bigLabel1.Size = new Size(254, 50);
+            bigLabel1.TabIndex = 10;
+            bigLabel1.Text = "Manage Users";
             // 
             // FrmUsersList
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1372, 806);
+            Controls.Add(bigLabel1);
             Controls.Add(pbAddNewUser);
             Controls.Add(label2);
             Controls.Add(tbxFilter);
@@ -270,7 +286,7 @@
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "FrmUsersList";
-            Text = "FrmUsersList";
+            Text = "Users";
             Load += FrmUsersList_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).EndInit();
@@ -299,5 +315,6 @@
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem sendEmailToolStripMenuItem;
         private ToolStripMenuItem phoneCallToolStripMenuItem;
+        private ReaLTaiizor.Controls.BigLabel bigLabel1;
     }
 }

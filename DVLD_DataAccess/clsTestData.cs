@@ -62,7 +62,6 @@ namespace DVLD_DataAccess
             Command.Parameters.AddWithValue("@TestResult", TestResult);
             Command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
-            // Handle possible null value for Notes
             if (string.IsNullOrEmpty(Notes))
                 Command.Parameters.AddWithValue("@Notes", System.DBNull.Value);
             else
@@ -87,6 +86,34 @@ namespace DVLD_DataAccess
             return TestID;
         }
 
+        public static int Delete(int TestID)
+        {
+            int EffectedRows = -1;
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"DELETE FROM Tests
+                        WHERE TestID = @TestID";
+
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@TestID", TestID);
+
+            try
+            {
+                Connection.Open();
+                int Result = Command.ExecuteNonQuery();
+                if (Result > 0)
+                {
+                    EffectedRows = Result;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return EffectedRows;
+        }
         public static bool UpdateTest(int TestID, int TestAppointmentID, bool TestResult, string Notes, int CreatedByUserID)
         {
             int RowsEffected = -1;
