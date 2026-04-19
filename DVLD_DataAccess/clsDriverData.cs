@@ -71,6 +71,66 @@ namespace DVLD_DataAccess
             }
             return isFound;
         }
+        public static bool IsPerson_A_Driver(int PersonID)
+        {
+            bool isDriver = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = "SELECT * FROM Drivers WHERE PersonID = @PersonID";
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    isDriver = true;
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log exception here
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isDriver;
+        }
+        public static bool IsPerson_A_Driver(string NationalNo)
+        {
+            bool isDriver = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"select * from Drivers
+                            inner join People on Drivers.PersonID = People.PersonID
+                            where People.NationalNo = @NationalNo";
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    isDriver = true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log exception here
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isDriver;
+        }
 
         public static int AddNewDriver(int PersonID, int CreatedByUserID, DateTime CreatedDate)
         {

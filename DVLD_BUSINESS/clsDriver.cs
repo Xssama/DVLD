@@ -61,6 +61,16 @@ namespace DVLD_BUSINESS
                 return null;
             }
         }
+        public static bool isPerson_A_Driver(int PersonID)
+        {
+            return clsDriverData.IsPerson_A_Driver(PersonID);
+        }
+
+        public static bool isPerson_A_Driver(string NationalNo)
+        {
+            return clsDriverData.IsPerson_A_Driver(NationalNo);
+        }
+
 
         public static clsDriver FindByPersonID(int PersonID)
         {

@@ -15,6 +15,30 @@ namespace DVDL_app
         public delegate void SendThePersonBackHandler(object sender, int ID);
         public SendThePersonBackHandler SendIDBack;
         clsPerson _person = new clsPerson();
+        public usFindPerson(int PersonID = -1)
+        {
+            InitializeComponent();
+            if (PersonID >= 0 && clsPerson.IsExist(PersonID))
+            {
+                _person = clsPerson.Find(PersonID);
+                refereshPersonInfos();
+                gbFilter.Enabled = false;
+            }
+        }
+
+        public usFindPerson(string NationalNo = "")
+        {
+            InitializeComponent();
+            if (NationalNo != "" && clsPerson.IsExist(NationalNo))
+            {
+                _person = clsPerson.Find(NationalNo);
+                refereshPersonInfos();
+                gbFilter.Enabled = false;
+            }
+        }
+
+        // Add an explicit parameterless constructor so Designer code (new usFindPerson())
+        // resolves unambiguously even if other overloads exist.
         public usFindPerson()
         {
             InitializeComponent();

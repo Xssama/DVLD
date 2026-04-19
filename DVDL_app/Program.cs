@@ -12,13 +12,15 @@ namespace DVDL_app
         {
             //Application.Run(new FrmManagePeople());
             //Application.Run(new frmManageAppointments(32, 1));
-            //clsGlobal.CurrentUser = clsUser.Find("F48");
-            Application.Run(new frmLogin());
+            clsGlobal.CurrentUser = clsUser.Find("Xussama");
+            Application.Run(new frmManageLocalDrivingLicenseApplications());
+            //Application.Run(new frmLogin());
+
             //Application.Run(new frmManageDrivers());
             //Application.Run(new frmIssueDriverLicense(36));
             //Application.Run(new frmLogin());
 
-            //Application.Run(new frmManageLocalDrivingLicenseApplications(clsGlobal.CurrentUser));
+            //Application.Run(new frmPersonLicenseHistory(2041));
             //Application.Run(new frmScheduleTest(30, 1));
         }
     }

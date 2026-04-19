@@ -28,7 +28,7 @@ namespace DVDL_app
         void RefeshAvailableTestToSechdule()
         {
             int PassedTests = clsLocalDrivingLicenseApplication.PassedTests((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
-            if (PassedTests == 3)
+            if (PassedTests == 3 ||(string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value != "Completed")
             {
                 sechudleToolStripMenuItem.Enabled = false;
                 return;
@@ -136,6 +136,7 @@ namespace DVDL_app
         {
             frmAddLocalDrivingLicenseApp frm = new frmAddLocalDrivingLicenseApp();
             frm.ShowDialog();
+            RefreshDataInTable();
         }
 
         private void poisonDataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -161,7 +162,7 @@ namespace DVDL_app
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             RefeshAvailableTestToSechdule();
-            if (clsLocalDrivingLicenseApplication.PassedTests((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value) == 3 && 
+            if (clsLocalDrivingLicenseApplication.PassedTests((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value) == 3 &&
                 (string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value != "Completed")
             {
                 issueLicenseFirstNameToolStripMenuItem.Enabled = true;
@@ -169,6 +170,46 @@ namespace DVDL_app
             else
             {
                 issueLicenseFirstNameToolStripMenuItem.Enabled = false;
+            }
+
+            if (clsDriver.isPerson_A_Driver((string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[2].Value))
+            {
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+
+            }
+            else
+            {
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = false;
+            }
+
+            if ((string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value == "Completed")
+            {
+                showLicenseToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                showLicenseToolStripMenuItem.Enabled = false;
+            }
+
+            if ((string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value == "New"
+                || (string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value == "Cancelled")
+            {
+                deleteApplicationToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                deleteApplicationToolStripMenuItem.Enabled = false;
+
+            }
+
+            if ((string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value == "New")
+            {
+                cancellApplicationToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                cancellApplicationToolStripMenuItem.Enabled = false;
+
             }
         }
 
@@ -196,8 +237,63 @@ namespace DVDL_app
         {
             if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
             {
-                frmIssueDriverLicense DrivingLicense= new frmIssueDriverLicense((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+                frmIssueDriverLicense DrivingLicense = new frmIssueDriverLicense((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
                 DrivingLicense.ShowDialog();
+                RefreshDataInTable();
+            }
+        }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                frmPersonLicenseHistory licensesHistory = new frmPersonLicenseHistory((string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[2].Value);
+                licensesHistory.Show();
+            }
+        }
+
+        private void deleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                string Status = (string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value;
+                int PassedTests = (int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[5].Value;
+
+                if (Status == "New" && PassedTests == 0)
+                {
+                    int LDLAppID = (int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value;
+                    clsLocalDrivingLicenseApplication LDL = clsLocalDrivingLicenseApplication.Find(LDLAppID);
+                    int AppID = LDL.ApplicationID;
+                    if (clsLocalDrivingLicenseApplication.DeleteApplication(LDL.LocalDrivingLicenseApplicationID))
+                    {
+                        if (clsApplication.DeleteApplication(AppID))
+                        {
+                            MessageBox.Show("The application is deleted Successfully", "Completed", MessageBoxButtons.OK);
+                            RefreshDataInTable();
+                            return;
+                        }
+                    }
+                }
+
+                MessageBox.Show("  This application can't be deleted, It's linked to data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void cancellApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0 
+                &&  (string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value == "New")
+            {
+                clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.Find((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+                clsApplication App = clsApplication.Find(LDLApp.ApplicationID);
+                App.ApplicationStatus = 2;
+                App.LastStatusDate = DateTime.Now;
+                if (!App.Save())
+                {
+                    MessageBox.Show("Application Failed to cancel!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 RefreshDataInTable();
             }
         }

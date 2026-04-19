@@ -43,9 +43,9 @@
             // 
             // gpPersonalInfos
             // 
-            gpPersonalInfos.Location = new Point(11, 154);
+            gpPersonalInfos.Location = new Point(11, 140);
             gpPersonalInfos.Name = "gpPersonalInfos";
-            gpPersonalInfos.Size = new Size(1084, 468);
+            gpPersonalInfos.Size = new Size(1084, 467);
             gpPersonalInfos.TabIndex = 4;
             gpPersonalInfos.TabStop = false;
             gpPersonalInfos.Text = "Personal Infos";
@@ -59,7 +59,7 @@
             gbFilter.Controls.Add(cbFilterBy);
             gbFilter.Location = new Point(11, 22);
             gbFilter.Name = "gbFilter";
-            gbFilter.Size = new Size(1076, 104);
+            gbFilter.Size = new Size(1076, 102);
             gbFilter.TabIndex = 3;
             gbFilter.TabStop = false;
             gbFilter.Text = "Filter";
@@ -143,7 +143,7 @@
             Controls.Add(gpPersonalInfos);
             Controls.Add(gbFilter);
             Name = "usFindPerson";
-            Size = new Size(1109, 657);
+            Size = new Size(1109, 627);
             Load += usFindPerson_Load;
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();

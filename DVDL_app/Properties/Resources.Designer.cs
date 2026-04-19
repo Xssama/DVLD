@@ -203,6 +203,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CancelApp {
+            get {
+                object obj = ResourceManager.GetObject("CancelApp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap change_password {
             get {
                 object obj = ResourceManager.GetObject("change-password", resourceCulture);
@@ -276,6 +286,16 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap DefaultMalePic {
             get {
                 object obj = ResourceManager.GetObject("DefaultMalePic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete {
+            get {
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,6 +483,26 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_international_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-international-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_local_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-local-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap international_2936692 {
             get {
                 object obj = ResourceManager.GetObject("international_2936692", resourceCulture);
@@ -486,6 +526,16 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap IssueDrivingLicense1 {
             get {
                 object obj = ResourceManager.GetObject("IssueDrivingLicense1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap License_History {
+            get {
+                object obj = ResourceManager.GetObject("License History", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -773,6 +823,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PersonLicenseHistory {
+            get {
+                object obj = ResourceManager.GetObject("PersonLicenseHistory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PersonNameIcon {
             get {
                 object obj = ResourceManager.GetObject("PersonNameIcon", resourceCulture);
@@ -866,6 +926,16 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap SechudleTests {
             get {
                 object obj = ResourceManager.GetObject("SechudleTests", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap showlicense {
+            get {
+                object obj = ResourceManager.GetObject("showlicense", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

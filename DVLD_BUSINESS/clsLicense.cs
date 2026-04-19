@@ -121,6 +121,11 @@ namespace DVLD_BUSINESS
         {
             return clsLicenseData.GetAllLicenses();
         }
+        public static DataTable GetAllPersonLicenses(int PersonID)
+        {
+            return clsLicenseData.GetAllPersonLicenses(PersonID);
+        }
+
         public static bool DeleteLicense(int LicenseID)
         {
             return clsLicenseData.DeleteLicense(LicenseID);

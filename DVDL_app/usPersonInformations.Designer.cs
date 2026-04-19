@@ -381,7 +381,7 @@
             Controls.Add(lblPersonid);
             Controls.Add(label1);
             Name = "usPersonInformations";
-            Size = new Size(1054, 444);
+            Size = new Size(1054, 410);
             Load += usPersonInformations_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

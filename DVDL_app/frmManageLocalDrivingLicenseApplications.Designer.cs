@@ -36,11 +36,18 @@
             label1 = new Label();
             poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            deleteApplicationToolStripMenuItem = new ToolStripMenuItem();
+            cancellApplicationToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripSeparator();
             sechudleToolStripMenuItem = new ToolStripMenuItem();
             visionTestToolStripMenuItem = new ToolStripMenuItem();
             writtenTestToolStripMenuItem = new ToolStripMenuItem();
             practiceTestToolStripMenuItem = new ToolStripMenuItem();
             issueLicenseFirstNameToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            showLicenseToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripSeparator();
+            showPersonLicenseHistoryToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             pbAddNewUser = new PictureBox();
@@ -135,10 +142,34 @@
             // contextMenuStrip1
             // 
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sechudleToolStripMenuItem, issueLicenseFirstNameToolStripMenuItem });
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { deleteApplicationToolStripMenuItem, cancellApplicationToolStripMenuItem, toolStripMenuItem2, sechudleToolStripMenuItem, issueLicenseFirstNameToolStripMenuItem, toolStripMenuItem1, showLicenseToolStripMenuItem, toolStripMenuItem3, showPersonLicenseHistoryToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(342, 108);
+            contextMenuStrip1.Size = new Size(361, 278);
             contextMenuStrip1.Opening += contextMenuStrip1_Opening;
+            // 
+            // deleteApplicationToolStripMenuItem
+            // 
+            deleteApplicationToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            deleteApplicationToolStripMenuItem.Image = Properties.Resources.delete;
+            deleteApplicationToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            deleteApplicationToolStripMenuItem.Name = "deleteApplicationToolStripMenuItem";
+            deleteApplicationToolStripMenuItem.Size = new Size(360, 38);
+            deleteApplicationToolStripMenuItem.Text = "Delete Application";
+            deleteApplicationToolStripMenuItem.Click += deleteApplicationToolStripMenuItem_Click;
+            // 
+            // cancellApplicationToolStripMenuItem
+            // 
+            cancellApplicationToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            cancellApplicationToolStripMenuItem.Image = Properties.Resources.CancelApp;
+            cancellApplicationToolStripMenuItem.Name = "cancellApplicationToolStripMenuItem";
+            cancellApplicationToolStripMenuItem.Size = new Size(360, 38);
+            cancellApplicationToolStripMenuItem.Text = "Cancel Application";
+            cancellApplicationToolStripMenuItem.Click += cancellApplicationToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(357, 6);
             // 
             // sechudleToolStripMenuItem
             // 
@@ -147,7 +178,7 @@
             sechudleToolStripMenuItem.Image = Properties.Resources.SechudleTests;
             sechudleToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             sechudleToolStripMenuItem.Name = "sechudleToolStripMenuItem";
-            sechudleToolStripMenuItem.Size = new Size(341, 38);
+            sechudleToolStripMenuItem.Size = new Size(360, 38);
             sechudleToolStripMenuItem.Text = "Sechdule Tests";
             // 
             // visionTestToolStripMenuItem
@@ -183,9 +214,38 @@
             issueLicenseFirstNameToolStripMenuItem.Image = Properties.Resources.IssueDrivingLicense1;
             issueLicenseFirstNameToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             issueLicenseFirstNameToolStripMenuItem.Name = "issueLicenseFirstNameToolStripMenuItem";
-            issueLicenseFirstNameToolStripMenuItem.Size = new Size(341, 38);
+            issueLicenseFirstNameToolStripMenuItem.Size = new Size(360, 38);
             issueLicenseFirstNameToolStripMenuItem.Text = "Issue License (First Name)";
             issueLicenseFirstNameToolStripMenuItem.Click += issueLicenseFirstNameToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(357, 6);
+            // 
+            // showLicenseToolStripMenuItem
+            // 
+            showLicenseToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            showLicenseToolStripMenuItem.Image = Properties.Resources.showlicense;
+            showLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
+            showLicenseToolStripMenuItem.Size = new Size(360, 38);
+            showLicenseToolStripMenuItem.Text = "Show License";
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(357, 6);
+            // 
+            // showPersonLicenseHistoryToolStripMenuItem
+            // 
+            showPersonLicenseHistoryToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            showPersonLicenseHistoryToolStripMenuItem.Image = Properties.Resources.License_History;
+            showPersonLicenseHistoryToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
+            showPersonLicenseHistoryToolStripMenuItem.Size = new Size(360, 38);
+            showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
+            showPersonLicenseHistoryToolStripMenuItem.Click += showPersonLicenseHistoryToolStripMenuItem_Click;
             // 
             // pictureBox1
             // 
@@ -298,5 +358,12 @@
         private ToolStripMenuItem writtenTestToolStripMenuItem;
         private ToolStripMenuItem practiceTestToolStripMenuItem;
         private ToolStripMenuItem issueLicenseFirstNameToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
+        private ToolStripMenuItem deleteApplicationToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem showLicenseToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem3;
+        private ToolStripMenuItem cancellApplicationToolStripMenuItem;
     }
 }

@@ -140,7 +140,7 @@ namespace DVDL_app
         {
             if (poisonDataGridView1.CurrentCell != null || poisonDataGridView1.CurrentCell.RowIndex >= 0)
             {
-                frmAddNewUser edituser = new frmAddNewUser(true, (int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+                frmAddNewUser edituser = new frmAddNewUser((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value, true);
                 edituser.StartPosition = FormStartPosition.CenterScreen;
                 edituser.ShowDialog();
             }

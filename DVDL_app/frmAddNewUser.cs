@@ -16,7 +16,7 @@ namespace DVDL_app
         clsPerson _person = new clsPerson();
         clsUser _User = new clsUser();
         bool _update = false;
-        public frmAddNewUser(bool update = false, int UserID = -1)
+        public frmAddNewUser(int UserID = -1,bool update = false )
         {
             if (update)
             {

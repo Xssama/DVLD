@@ -204,5 +204,37 @@ namespace DVLD_DataAccess
             }
             return (RowsEffected > 0);
         }
+
+        public static DataTable GetAllPersonLicenses(int PersonID)
+        {
+            DataTable dt = new DataTable();
+
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"select Licenses.LicenseID, licenses.ApplicationID, LicenseClasses.ClassName, Licenses.IssueDate, Licenses.ExpirationDate, Licenses.IsActive from Licenses
+                                inner join Drivers on Drivers.DriverID = Licenses.DriverID
+                                inner join LicenseClasses on LicenseClasses.LicenseClassID = Licenses.LicenseClass
+                                inner join People on People.PersonID = Drivers.PersonID
+                                where People.PersonID = @PersonID;
+                                ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                Connection.Open();
+                IDataReader reader = Command.ExecuteReader();
+                    dt.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                // Log Exception
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return dt;
+        }
+
     }
 }
