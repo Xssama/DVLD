@@ -228,6 +228,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             MinimumSize = new Size(1431, 1138);
             Name = "frmPersonLicenseHistory";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Licenses History";
             Load += frmPersonLicenseHistory_Load;
             groupBox1.ResumeLayout(false);

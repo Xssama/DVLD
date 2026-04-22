@@ -37,7 +37,19 @@ namespace DVLD_BUSINESS
                 return new clsApplicationType();
             }
         }
-
+        static public clsApplicationType Find(string Title)
+        {
+            int ID = -1;
+            float fees = 0;
+            if (clsApplicationTypes.Find(ref ID, Title, ref fees))
+            {
+                return new clsApplicationType(ID, Title, fees);
+            }
+            else
+            {
+                return new clsApplicationType();
+            }
+        }
         public bool Update()
         {
             return ( clsApplicationTypes.Update(ID, Title, Fees) == -1 ? false : true);

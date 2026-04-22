@@ -28,7 +28,7 @@ namespace DVDL_app
         void RefeshAvailableTestToSechdule()
         {
             int PassedTests = clsLocalDrivingLicenseApplication.PassedTests((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
-            if (PassedTests == 3 ||(string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value != "Completed")
+            if (PassedTests == 3 || (string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value != "New")
             {
                 sechudleToolStripMenuItem.Enabled = false;
                 return;
@@ -282,8 +282,8 @@ namespace DVDL_app
 
         private void cancellApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0 
-                &&  (string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value == "New")
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0
+                && (string)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[6].Value == "New")
             {
                 clsLocalDrivingLicenseApplication LDLApp = clsLocalDrivingLicenseApplication.Find((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
                 clsApplication App = clsApplication.Find(LDLApp.ApplicationID);
@@ -295,6 +295,15 @@ namespace DVDL_app
                     return;
                 }
                 RefreshDataInTable();
+            }
+        }
+
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (poisonDataGridView1.CurrentCell != null && poisonDataGridView1.CurrentCell.RowIndex >= 0)
+            {
+                frmShowLicenseInfos frm = frmShowLicenseInfos.LoadFormByLDLAppID((int)poisonDataGridView1.Rows[poisonDataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+                frm.ShowDialog();
             }
         }
     }

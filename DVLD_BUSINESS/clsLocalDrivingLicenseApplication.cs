@@ -117,5 +117,15 @@ namespace DVLD_BUSINESS
         {
             return clsLocalDrivingLicenseApplicationsData.ReturnDataRowFromLDLAppView(LDLAppID);
         }
+
+        public static DataRow GetLicenseInfosByLDLAppID(int LDLAppID)
+        {
+            return clsLocalDrivingLicenseApplicationsData.GetLicenseInfosByLDLAppID(LDLAppID);
+        }
+
+        public static DataRow GetLicenseInfosByLicenseID(int LDLAppID)
+        {
+            return clsLocalDrivingLicenseApplicationsData.GetLicenseInfosByLicenseID(LDLAppID);
+        }
     }
 }

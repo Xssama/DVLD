@@ -226,11 +226,12 @@
             // showLicenseToolStripMenuItem
             // 
             showLicenseToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
-            showLicenseToolStripMenuItem.Image = Properties.Resources.showlicense;
+            showLicenseToolStripMenuItem.Image = Properties.Resources.LicenseInfos32px;
             showLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
             showLicenseToolStripMenuItem.Size = new Size(360, 38);
             showLicenseToolStripMenuItem.Text = "Show License";
+            showLicenseToolStripMenuItem.Click += showLicenseToolStripMenuItem_Click;
             // 
             // toolStripMenuItem3
             // 

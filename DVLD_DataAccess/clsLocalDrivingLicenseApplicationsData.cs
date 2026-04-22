@@ -281,5 +281,82 @@ namespace DVLD_DataAccess
             else
                 return null;
         }
+
+        public static DataRow GetLicenseInfosByLDLAppID(int LDLAppID)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"select LicenseClasses.ClassName, (FirstName + ' ' + SecondName + ' ' + isnull(ThirdName, '') + ' ' + LastName) as FullName
+                , LicenseID, NationalNo, case Gendor when 0 then 'Male' when 1 then 'Female' end as GendorName , IssueDate, case IssueReason
+        WHEN 1 THEN 'First Time' 
+        WHEN 2 THEN 'Renew'
+        WHEN 3 THEN 'Replacement for Damaged'
+        WHEN 4 THEN 'Replacement for Lost' end as IssueReasonDes,
+                Licenses.Notes, case Licenses.IsActive when 1 then 'Yes' when 0 then 'No' end as IsActiveText, DateOfBirth, 
+                Drivers.DriverID, Licenses.ExpirationDate , ImagePath  from LocalDrivingLicenseApplications
+			        inner join Applications on Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
+			        inner join Licenses on Licenses.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
+			        inner join LicenseClasses on LicenseClasses.LicenseClassID = LocalDrivingLicenseApplications.LicenseClassID
+			        inner join People on People.PersonID = Applications.ApplicantPersonID
+			        inner join Drivers on Drivers.PersonID = People.PersonID
+                        where LocalDrivingLicenseApplicationID = @LDLAppID
+                        ";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LDLAppID", LDLAppID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader != null)
+                {
+                    dt.Load(reader);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+                return null;
+        }
+
+        public static DataRow GetLicenseInfosByLicenseID(int LicenseID)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"select * from Licenses_view
+                    where LicenseID == @LicenseID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader != null)
+                {
+                    dt.Load(reader);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+                return null;
+        }
     }
 }
