@@ -59,7 +59,7 @@ namespace DVLD_DataAccess
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string Query = @"select * from InternationalLicenses
-                    where IssuedUsingLocalLicenseID = @LicenseID";
+                    where IssuedUsingLocalLicenseID = @LicenseID and IsActive = 1";
             SqlCommand command = new SqlCommand(Query, connection);
             command.Parameters.AddWithValue("@LicenseID", LicenseID);
 

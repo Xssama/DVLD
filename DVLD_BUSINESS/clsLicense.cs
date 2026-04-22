@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using DVLD_DataAccess;
+using Microsoft.Identity.Client;
 namespace DVLD_BUSINESS
 {
     public class clsLicense
@@ -71,7 +72,10 @@ namespace DVLD_BUSINESS
                 this.IssueDate, this.ExpirationDate, this.Notes, this.PaidFees,
                 this.IsActive, this.IssueReason, this.CreatedByUserID);
         }
-
+        public static bool isLicenseLinkedToInternationalLicense(int LicenseID)
+        {
+            return clsLicenseData.isLicenseLinkedToInternationalLicense(LicenseID);
+        }
         public static clsLicense Find(int LicenseID)
         {
             int ApplicationID = -1, DriverID = -1, LicenseClass = -1, CreatedByUserID = -1;

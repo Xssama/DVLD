@@ -123,9 +123,9 @@ namespace DVLD_BUSINESS
             return clsLocalDrivingLicenseApplicationsData.GetLicenseInfosByLDLAppID(LDLAppID);
         }
 
-        public static DataRow GetLicenseInfosByLicenseID(int LDLAppID)
+        public static DataRow GetLicenseInfosByLicenseID(int LicenseID)
         {
-            return clsLocalDrivingLicenseApplicationsData.GetLicenseInfosByLicenseID(LDLAppID);
+            return clsLocalDrivingLicenseApplicationsData.GetLicenseInfosByLicenseID(LicenseID);
         }
     }
 }

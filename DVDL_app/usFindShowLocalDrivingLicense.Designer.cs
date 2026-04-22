@@ -140,7 +140,7 @@
         #endregion
 
         private GroupBox gpLicenseInfos;
-        private GroupBox gpFilter;
+        public GroupBox gpFilter;
         private PictureBox pictureBox9;
         private Label label4;
         private ErrorProvider errorProvider1;

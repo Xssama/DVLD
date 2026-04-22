@@ -332,7 +332,7 @@ namespace DVLD_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string query = @"select * from Licenses_view
-                    where LicenseID == @LicenseID";
+                    where LicenseID = @LicenseID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LicenseID", LicenseID);
             try
