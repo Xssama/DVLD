@@ -46,7 +46,7 @@
             gpLicenseInfos.Font = new Font("Sitka Banner", 13.7999992F);
             gpLicenseInfos.Location = new Point(3, 99);
             gpLicenseInfos.Name = "gpLicenseInfos";
-            gpLicenseInfos.Size = new Size(1087, 434);
+            gpLicenseInfos.Size = new Size(1087, 371);
             gpLicenseInfos.TabIndex = 0;
             gpLicenseInfos.TabStop = false;
             gpLicenseInfos.Text = "License Infos";
@@ -128,7 +128,7 @@
             Controls.Add(gpFilter);
             Controls.Add(gpLicenseInfos);
             Name = "usFindShowLocalDrivingLicense";
-            Size = new Size(1103, 557);
+            Size = new Size(1103, 473);
             Load += usFindShowLocalDrivingLicense_Load;
             gpFilter.ResumeLayout(false);
             gpFilter.PerformLayout();

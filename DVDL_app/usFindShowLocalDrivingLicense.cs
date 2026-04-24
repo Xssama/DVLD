@@ -51,6 +51,10 @@ namespace DVDL_app
                     LicenseIDBack?.Invoke(this, LicenseID);
 
                 }
+                else
+                {
+                    LicenseIDBack?.Invoke(this, -1);
+                }
             }
 
         }

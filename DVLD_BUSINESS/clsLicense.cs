@@ -94,7 +94,7 @@ namespace DVLD_BUSINESS
             }
             else
             {
-                return null;
+                return new clsLicense();
             }
         }
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DVLD_BUSINESS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1b3a1d2d9a6c0c0aca84cf432cec7c335300148")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5ea9e3b66438b4870e4742d6195ed96e56f2de9")]
 [assembly: System.Reflection.AssemblyProductAttribute("DVLD_BUSINESS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DVLD_BUSINESS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
