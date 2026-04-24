@@ -123,6 +123,36 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddNewInterLicenseApp {
+            get {
+                object obj = ResourceManager.GetObject("AddNewInterLicenseApp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddNewInterLicenseApp64px {
+            get {
+                object obj = ResourceManager.GetObject("AddNewInterLicenseApp64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddNewInterLicenseApplication {
+            get {
+                object obj = ResourceManager.GetObject("AddNewInterLicenseApplication", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddressIcon {
             get {
                 object obj = ResourceManager.GetObject("AddressIcon", resourceCulture);
@@ -756,6 +786,46 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap ManageDrivers {
             get {
                 object obj = ResourceManager.GetObject("ManageDrivers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ManageInterLicensesApp {
+            get {
+                object obj = ResourceManager.GetObject("ManageInterLicensesApp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ManageInterLicensesApp1 {
+            get {
+                object obj = ResourceManager.GetObject("ManageInterLicensesApp1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ManageInterLicensesApp2 {
+            get {
+                object obj = ResourceManager.GetObject("ManageInterLicensesApp2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ManageInterLicensesApp3 {
+            get {
+                object obj = ResourceManager.GetObject("ManageInterLicensesApp3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

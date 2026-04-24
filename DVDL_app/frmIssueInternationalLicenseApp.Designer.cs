@@ -414,7 +414,7 @@
             MinimumSize = new Size(1152, 1108);
             Name = "frmIssueInternationalLicenseApp";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmIssueInternationalLicenseApp";
+            Text = "Issue International License Application";
             Load += frmIssueInternationalLicenseApp_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

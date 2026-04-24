@@ -75,5 +75,17 @@ namespace DVDL_app
             frmManageDrivers frmManage = new frmManageDrivers();
             frmManage.ShowDialog();
         }
+
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIssueInternationalLicenseApp IssueInterLicense = new frmIssueInternationalLicenseApp();
+            IssueInterLicense.ShowDialog();
+        }
+
+        private void internationalDrivingLicenseApplicatonsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageInternationalLicensesApplications manageIntLicenses = new frmManageInternationalLicensesApplications();
+            manageIntLicenses.ShowDialog();
+        }
     }
 }

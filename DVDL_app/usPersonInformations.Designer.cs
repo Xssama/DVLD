@@ -71,31 +71,31 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(30, 35);
+            label1.Location = new Point(50, 35);
             label1.Name = "label1";
-            label1.Size = new Size(108, 28);
+            label1.Size = new Size(111, 28);
             label1.TabIndex = 0;
-            label1.Text = "Person id :";
+            label1.Text = "Person ID :";
             // 
             // lblPersonid
             // 
             lblPersonid.AutoSize = true;
-            lblPersonid.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPersonid.Location = new Point(190, 35);
+            lblPersonid.Font = new Font("Sitka Text", 12F);
+            lblPersonid.Location = new Point(214, 35);
             lblPersonid.Name = "lblPersonid";
-            lblPersonid.Size = new Size(60, 28);
+            lblPersonid.Size = new Size(59, 29);
             lblPersonid.TabIndex = 2;
-            lblPersonid.Text = "None";
+            lblPersonid.Text = "[???]";
             // 
             // lblNationalNo
             // 
             lblNationalNo.AutoSize = true;
-            lblNationalNo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNationalNo.Font = new Font("Sitka Text", 12F);
             lblNationalNo.Location = new Point(214, 156);
             lblNationalNo.Name = "lblNationalNo";
-            lblNationalNo.Size = new Size(60, 28);
+            lblNationalNo.Size = new Size(59, 29);
             lblNationalNo.TabIndex = 5;
-            lblNationalNo.Text = "None";
+            lblNationalNo.Text = "[???]";
             // 
             // pictureBox2
             // 
@@ -111,7 +111,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(30, 156);
+            label3.Location = new Point(29, 156);
             label3.Name = "label3";
             label3.Size = new Size(132, 28);
             label3.TabIndex = 3;
@@ -120,12 +120,12 @@
             // lblFullName
             // 
             lblFullName.AutoSize = true;
-            lblFullName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFullName.Font = new Font("Sitka Text", 12F);
             lblFullName.Location = new Point(214, 101);
             lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(60, 28);
+            lblFullName.Size = new Size(59, 29);
             lblFullName.TabIndex = 8;
-            lblFullName.Text = "None";
+            lblFullName.Text = "[???]";
             // 
             // pictureBox3
             // 
@@ -141,7 +141,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(30, 101);
+            label5.Location = new Point(28, 101);
             label5.Name = "label5";
             label5.Size = new Size(133, 28);
             label5.TabIndex = 6;
@@ -150,12 +150,12 @@
             // lblGendor
             // 
             lblGendor.AutoSize = true;
-            lblGendor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGendor.Font = new Font("Sitka Text", 12F);
             lblGendor.Location = new Point(214, 217);
             lblGendor.Name = "lblGendor";
-            lblGendor.Size = new Size(60, 28);
+            lblGendor.Size = new Size(59, 29);
             lblGendor.TabIndex = 11;
-            lblGendor.Text = "None";
+            lblGendor.Text = "[???]";
             // 
             // pbGendorIcon
             // 
@@ -170,7 +170,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(30, 217);
+            label7.Location = new Point(34, 217);
             label7.Name = "label7";
             label7.Size = new Size(127, 28);
             label7.TabIndex = 9;
@@ -179,12 +179,12 @@
             // lblDateOfBirth
             // 
             lblDateOfBirth.AutoSize = true;
-            lblDateOfBirth.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDateOfBirth.Font = new Font("Sitka Text", 12F);
             lblDateOfBirth.Location = new Point(602, 156);
             lblDateOfBirth.Name = "lblDateOfBirth";
-            lblDateOfBirth.Size = new Size(60, 28);
+            lblDateOfBirth.Size = new Size(59, 29);
             lblDateOfBirth.TabIndex = 14;
-            lblDateOfBirth.Text = "None";
+            lblDateOfBirth.Text = "[???]";
             // 
             // pictureBox5
             // 
@@ -209,12 +209,12 @@
             // lblAddress
             // 
             lblAddress.AutoSize = true;
-            lblAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAddress.Font = new Font("Sitka Text", 12F);
             lblAddress.Location = new Point(214, 326);
             lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(60, 28);
+            lblAddress.Size = new Size(59, 29);
             lblAddress.TabIndex = 17;
-            lblAddress.Text = "None";
+            lblAddress.Text = "[???]";
             // 
             // pictureBox1
             // 
@@ -230,7 +230,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(30, 326);
+            label11.Location = new Point(29, 326);
             label11.Name = "label11";
             label11.Size = new Size(132, 28);
             label11.TabIndex = 15;
@@ -239,12 +239,12 @@
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPhone.Font = new Font("Sitka Text", 12F);
             lblPhone.Location = new Point(602, 211);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(60, 28);
+            lblPhone.Size = new Size(59, 29);
             lblPhone.TabIndex = 20;
-            lblPhone.Text = "None";
+            lblPhone.Text = "[???]";
             // 
             // pictureBox6
             // 
@@ -269,12 +269,12 @@
             // lblCountry
             // 
             lblCountry.AutoSize = true;
-            lblCountry.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCountry.Font = new Font("Sitka Text", 12F);
             lblCountry.Location = new Point(602, 257);
             lblCountry.Name = "lblCountry";
-            lblCountry.Size = new Size(60, 28);
+            lblCountry.Size = new Size(59, 29);
             lblCountry.TabIndex = 23;
-            lblCountry.Text = "None";
+            lblCountry.Text = "[???]";
             // 
             // pictureBox7
             // 
@@ -299,12 +299,12 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEmail.Font = new Font("Sitka Text", 12F);
             lblEmail.Location = new Point(214, 273);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(60, 28);
+            lblEmail.Size = new Size(59, 29);
             lblEmail.TabIndex = 26;
-            lblEmail.Text = "None";
+            lblEmail.Text = "[???]";
             // 
             // pictureBox8
             // 
