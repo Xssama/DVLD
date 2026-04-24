@@ -31,6 +31,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             plFindPerson = new Panel();
             groupBox1 = new GroupBox();
             tabControl1 = new TabControl();
@@ -40,6 +43,10 @@
             label1 = new Label();
             dgvLocalLicensesHistory = new ReaLTaiizor.Controls.PoisonDataGridView();
             tpInternational = new TabPage();
+            lblIntRecords = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            dgvInternationalLicensesHistory = new ReaLTaiizor.Controls.PoisonDataGridView();
             plBody = new Panel();
             pictureBox1 = new PictureBox();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
@@ -47,6 +54,8 @@
             tabControl1.SuspendLayout();
             tpLocal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLocalLicensesHistory).BeginInit();
+            tpInternational.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvInternationalLicensesHistory).BeginInit();
             plBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -76,6 +85,7 @@
             tabControl1.Controls.Add(tpLocal);
             tabControl1.Controls.Add(tpInternational);
             tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Font = new Font("Times New Roman", 13.8F);
             tabControl1.Location = new Point(3, 28);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -88,10 +98,10 @@
             tpLocal.Controls.Add(label2);
             tpLocal.Controls.Add(label1);
             tpLocal.Controls.Add(dgvLocalLicensesHistory);
-            tpLocal.Location = new Point(4, 33);
+            tpLocal.Location = new Point(4, 35);
             tpLocal.Name = "tpLocal";
             tpLocal.Padding = new Padding(3);
-            tpLocal.Size = new Size(1399, 320);
+            tpLocal.Size = new Size(1399, 318);
             tpLocal.TabIndex = 0;
             tpLocal.Text = "Local";
             tpLocal.UseVisualStyleBackColor = true;
@@ -101,7 +111,7 @@
             lblRecords.AutoSize = true;
             lblRecords.Location = new Point(151, 281);
             lblRecords.Name = "lblRecords";
-            lblRecords.Size = new Size(53, 24);
+            lblRecords.Size = new Size(58, 26);
             lblRecords.TabIndex = 3;
             lblRecords.Text = "[???]";
             // 
@@ -110,7 +120,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(31, 281);
             label2.Name = "label2";
-            label2.Size = new Size(114, 24);
+            label2.Size = new Size(118, 26);
             label2.TabIndex = 2;
             label2.Text = "#Records : ";
             // 
@@ -177,13 +187,96 @@
             // 
             // tpInternational
             // 
-            tpInternational.Location = new Point(4, 33);
+            tpInternational.Controls.Add(lblIntRecords);
+            tpInternational.Controls.Add(label4);
+            tpInternational.Controls.Add(label5);
+            tpInternational.Controls.Add(dgvInternationalLicensesHistory);
+            tpInternational.Location = new Point(4, 35);
             tpInternational.Name = "tpInternational";
             tpInternational.Padding = new Padding(3);
-            tpInternational.Size = new Size(1399, 320);
+            tpInternational.Size = new Size(1399, 318);
             tpInternational.TabIndex = 1;
             tpInternational.Text = "International";
             tpInternational.UseVisualStyleBackColor = true;
+            // 
+            // lblIntRecords
+            // 
+            lblIntRecords.AutoSize = true;
+            lblIntRecords.Location = new Point(151, 275);
+            lblIntRecords.Name = "lblIntRecords";
+            lblIntRecords.Size = new Size(58, 26);
+            lblIntRecords.TabIndex = 7;
+            lblIntRecords.Text = "[???]";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(31, 275);
+            label4.Name = "label4";
+            label4.Size = new Size(118, 26);
+            label4.TabIndex = 6;
+            label4.Text = "#Records : ";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(50, 22);
+            label5.Name = "label5";
+            label5.Size = new Size(301, 26);
+            label5.TabIndex = 5;
+            label5.Text = "International Licenses History :";
+            // 
+            // dgvInternationalLicensesHistory
+            // 
+            dgvInternationalLicensesHistory.AllowUserToAddRows = false;
+            dgvInternationalLicensesHistory.AllowUserToDeleteRows = false;
+            dgvInternationalLicensesHistory.AllowUserToResizeRows = false;
+            dgvInternationalLicensesHistory.BackgroundColor = Color.FromArgb(255, 255, 255);
+            dgvInternationalLicensesHistory.BorderStyle = BorderStyle.None;
+            dgvInternationalLicensesHistory.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvInternationalLicensesHistory.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle4.Font = new Font("Sitka Heading", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvInternationalLicensesHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvInternationalLicensesHistory.ColumnHeadersHeight = 29;
+            dgvInternationalLicensesHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle5.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvInternationalLicensesHistory.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvInternationalLicensesHistory.EnableHeadersVisualStyles = false;
+            dgvInternationalLicensesHistory.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dgvInternationalLicensesHistory.GridColor = Color.FromArgb(255, 255, 255);
+            dgvInternationalLicensesHistory.Location = new Point(31, 60);
+            dgvInternationalLicensesHistory.Name = "dgvInternationalLicensesHistory";
+            dgvInternationalLicensesHistory.ReadOnly = true;
+            dgvInternationalLicensesHistory.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle6.Font = new Font("Sitka Text", 13.7999992F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvInternationalLicensesHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dgvInternationalLicensesHistory.RowHeadersVisible = false;
+            dgvInternationalLicensesHistory.RowHeadersWidth = 51;
+            dgvInternationalLicensesHistory.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvInternationalLicensesHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvInternationalLicensesHistory.ShowCellToolTips = false;
+            dgvInternationalLicensesHistory.ShowRowErrors = false;
+            dgvInternationalLicensesHistory.Size = new Size(1336, 212);
+            dgvInternationalLicensesHistory.TabIndex = 4;
             // 
             // plBody
             // 
@@ -236,6 +329,9 @@
             tpLocal.ResumeLayout(false);
             tpLocal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLocalLicensesHistory).EndInit();
+            tpInternational.ResumeLayout(false);
+            tpInternational.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvInternationalLicensesHistory).EndInit();
             plBody.ResumeLayout(false);
             plBody.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -256,5 +352,9 @@
         private ReaLTaiizor.Controls.PoisonDataGridView dgvLocalLicensesHistory;
         private Label lblRecords;
         private Label label2;
+        private Label lblIntRecords;
+        private Label label4;
+        private Label label5;
+        private ReaLTaiizor.Controls.PoisonDataGridView dgvInternationalLicensesHistory;
     }
 }

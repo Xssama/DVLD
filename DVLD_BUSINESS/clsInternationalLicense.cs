@@ -117,5 +117,14 @@ namespace DVLD_BUSINESS
         {
             return clsInternationalLicenseData.GetAllInternationalLicenses();
         }
+
+        public static DataTable GetAllPersonInternationalLicenses(int PersonID)
+        {
+            return clsInternationalLicenseData.GetAllPersonInternationalLicenses(PersonID);
+        }
+        public static DataRow GetInternationalLicenseDetailed(int InterLicenseID)
+        {
+            return clsInternationalLicenseData.GetInternationalLicenseDetailed(InterLicenseID);
+        }
     }
 }

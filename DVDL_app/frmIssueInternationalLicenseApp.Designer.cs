@@ -56,6 +56,7 @@
             label5 = new Label();
             llblShowLicensesHistory = new LinkLabel();
             panel1 = new Panel();
+            llblShowLicensesInfos = new LinkLabel();
             btnIssue = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -365,6 +366,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(llblShowLicensesInfos);
             panel1.Controls.Add(btnIssue);
             panel1.Controls.Add(llblShowLicensesHistory);
             panel1.Dock = DockStyle.Bottom;
@@ -372,6 +374,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1134, 70);
             panel1.TabIndex = 4;
+            // 
+            // llblShowLicensesInfos
+            // 
+            llblShowLicensesInfos.AutoSize = true;
+            llblShowLicensesInfos.Enabled = false;
+            llblShowLicensesInfos.Font = new Font("Sitka Small", 12F);
+            llblShowLicensesInfos.Location = new Point(301, 19);
+            llblShowLicensesInfos.Name = "llblShowLicensesInfos";
+            llblShowLicensesInfos.Size = new Size(215, 29);
+            llblShowLicensesInfos.TabIndex = 5;
+            llblShowLicensesInfos.TabStop = true;
+            llblShowLicensesInfos.Text = "Show Licenses Infos";
+            llblShowLicensesInfos.LinkClicked += linkLabel1_LinkClicked;
             // 
             // btnIssue
             // 
@@ -447,5 +462,6 @@
         private LinkLabel llblShowLicensesHistory;
         private Panel panel1;
         private Button btnIssue;
+        private LinkLabel llblShowLicensesInfos;
     }
 }

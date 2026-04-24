@@ -66,9 +66,9 @@ namespace DVDL_app
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            if (_LocalLicense == null || _LocalLicense.LicenseID == -1 || _LocalLicense.IsActive == false || 
+            if (_LocalLicense == null || _LocalLicense.LicenseID == -1 || _LocalLicense.IsActive == false ||
                 _LocalLicense.ExpirationDate.CompareTo(DateTime.Now) < 0)
-            { 
+            {
                 MessageBox.Show("You Need to provide a valid/active local License First", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -100,6 +100,7 @@ namespace DVDL_app
                     MessageBox.Show("The International License is issued successfully!");
                     btnIssue.Enabled = false;
                     usFindShowLocalDrivingLicense1.gpFilter.Enabled = false;
+                    llblShowLicensesInfos.Enabled = true;
                 }
                 else
                 {
@@ -111,6 +112,12 @@ namespace DVDL_app
             {
                 MessageBox.Show("The application Failled to save!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmInternationalLicenseInfos frmLicenseInfos = new FrmInternationalLicenseInfos(_InterLicense.InternationalLicenseID);
+            frmLicenseInfos.ShowDialog();
         }
     }
 }
