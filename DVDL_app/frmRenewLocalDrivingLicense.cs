@@ -84,12 +84,13 @@ namespace DVDL_app
 
         private void btnRenew_Click(object sender, EventArgs e)
         {
-           
+
+            clsDrivingLicenseClasse LicenseClass = clsDrivingLicenseClasse.Find(_LocalLicense.LicenseClass);
 
             _Application.ApplicantPersonID = clsDriver.Find(_LocalLicense.DriverID).PersonID;
             _Application.ApplicationTypeID = _ApplicationType.ID;
             _Application.ApplicationStatus = 3;
-            _Application.PaidFees = Convert.ToDecimal((_ApplicationType.Fees + clsDrivingLicenseClasse.Find(_LocalLicense.LicenseClass).ClassFees));
+            _Application.PaidFees = Convert.ToDecimal(_ApplicationType.Fees + LicenseClass.ClassFees);
             _Application.CreatedByUserID = clsGlobal.CurrentUser.UserID;
             if (_Application.Save())
             {
@@ -97,7 +98,7 @@ namespace DVDL_app
                 _RenewedLicense.DriverID = _LocalLicense.DriverID;
                 _RenewedLicense.LicenseClass = _LocalLicense.LicenseClass;
                 _RenewedLicense.IssueDate = DateTime.Now;
-                _RenewedLicense.ExpirationDate = DateTime.Now.AddYears(clsDrivingLicenseClasse.Find(_LocalLicense.LicenseClass).DefaultValidityLength);
+                _RenewedLicense.ExpirationDate = DateTime.Now.AddYears(LicenseClass.DefaultValidityLength);
                 _RenewedLicense.IsActive = true;
                 _RenewedLicense.CreatedByUserID = clsGlobal.CurrentUser.UserID;
                 if (!tbxNotes.Text.Trim().IsNullOrEmpty())
@@ -108,13 +109,15 @@ namespace DVDL_app
                 {
                     _RenewedLicense.Notes = "";
                 }
-                _RenewedLicense.IssueReason = 2;
+                _RenewedLicense.IssueReason = 2; //RENEW
+                _RenewedLicense.PaidFees = LicenseClass.ClassFees;
 
-                if (_RenewedLicense.Save())
+                _LocalLicense.IsActive = false; //Desctivate the old license
+                if (_RenewedLicense.Save() && _LocalLicense.Save())
                 {
                     lblRenewedLicenseID.Text = _RenewedLicense.LicenseID.ToString();
                     lblRenewAppID.Text = _Application.ApplicationID.ToString();
-                    MessageBox.Show("The International License is issued successfully!");
+                    MessageBox.Show("The License is Renewed successfully!");
                     btnRenew.Enabled = false;
                     usFindShowLocalDrivingLicense1.gpFilter.Enabled = false;
                     llblShowLicensesInfos.Enabled = true;

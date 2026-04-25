@@ -49,6 +49,8 @@
             changePasswordToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             signOutToolStripMenuItem = new ToolStripMenuItem();
+            renewDrivingLicenseToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripSeparator();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             // 
             // drivingLicensesToolStripMenuItem
             // 
-            drivingLicensesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newDrivingLicenseToolStripMenuItem });
+            drivingLicensesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newDrivingLicenseToolStripMenuItem, renewDrivingLicenseToolStripMenuItem, toolStripMenuItem4 });
             drivingLicensesToolStripMenuItem.Font = new Font("Andalus", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             drivingLicensesToolStripMenuItem.Image = Properties.Resources.licenseServices;
             drivingLicensesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
@@ -88,7 +90,7 @@
             newDrivingLicenseToolStripMenuItem.Image = Properties.Resources.addNew;
             newDrivingLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             newDrivingLicenseToolStripMenuItem.Name = "newDrivingLicenseToolStripMenuItem";
-            newDrivingLicenseToolStripMenuItem.Size = new Size(284, 38);
+            newDrivingLicenseToolStripMenuItem.Size = new Size(297, 38);
             newDrivingLicenseToolStripMenuItem.Text = "New Driving License";
             // 
             // localToolStripMenuItem
@@ -241,6 +243,20 @@
             signOutToolStripMenuItem.Text = "Sign Out";
             signOutToolStripMenuItem.Click += signOutToolStripMenuItem_Click;
             // 
+            // renewDrivingLicenseToolStripMenuItem
+            // 
+            renewDrivingLicenseToolStripMenuItem.Image = Properties.Resources.Renew;
+            renewDrivingLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            renewDrivingLicenseToolStripMenuItem.Name = "renewDrivingLicenseToolStripMenuItem";
+            renewDrivingLicenseToolStripMenuItem.Size = new Size(297, 38);
+            renewDrivingLicenseToolStripMenuItem.Text = "Renew Driving license";
+            renewDrivingLicenseToolStripMenuItem.Click += renewDrivingLicenseToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(294, 6);
+            // 
             // frmMainScreen
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -280,5 +296,7 @@
         private ToolStripMenuItem localDriingToolStripMenuItem;
         private ToolStripMenuItem internationalDrivingLicenseApplicatonsToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem3;
+        private ToolStripMenuItem renewDrivingLicenseToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem4;
     }
 }

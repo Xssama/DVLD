@@ -455,11 +455,11 @@
             biglblAppDate.BackColor = Color.Transparent;
             biglblAppDate.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             biglblAppDate.ForeColor = Color.FromArgb(64, 64, 64);
-            biglblAppDate.Location = new Point(276, 18);
+            biglblAppDate.Location = new Point(344, 9);
             biglblAppDate.Name = "biglblAppDate";
-            biglblAppDate.Size = new Size(574, 50);
+            biglblAppDate.Size = new Size(469, 50);
             biglblAppDate.TabIndex = 4;
-            biglblAppDate.Text = "International License Application";
+            biglblAppDate.Text = "Renew License Application";
             // 
             // usFindShowLocalDrivingLicense1
             // 
@@ -534,7 +534,7 @@
             MinimumSize = new Size(1146, 1073);
             Name = "frmRenewLocalDrivingLicense";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmRenewLocalDrivingLicense";
+            Text = "Renew License";
             Load += frmRenewLocalDrivingLicense_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

@@ -87,5 +87,11 @@ namespace DVDL_app
             frmManageInternationalLicensesApplications manageIntLicenses = new frmManageInternationalLicensesApplications();
             manageIntLicenses.ShowDialog();
         }
+
+        private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRenewLocalDrivingLicense frm = new frmRenewLocalDrivingLicense();
+            frm.ShowDialog();
+        }
     }
 }
