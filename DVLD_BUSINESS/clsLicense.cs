@@ -18,7 +18,7 @@ namespace DVLD_BUSINESS
         public string Notes { get; set; }
         public float PaidFees { get; set; }
         public bool IsActive { get; set; }
-        public byte IssueReason { get; set; }
+        public short IssueReason { get; set; }
         public int CreatedByUserID { get; set; }
 
         public clsLicense()
@@ -40,7 +40,7 @@ namespace DVLD_BUSINESS
 
         private clsLicense(int LicenseID, int ApplicationID, int DriverID, int LicenseClass,
             DateTime IssueDate, DateTime ExpirationDate, string Notes, float PaidFees,
-            bool IsActive, byte IssueReason, int CreatedByUserID)
+            bool IsActive, short IssueReason, int CreatedByUserID)
         {
             this.LicenseID = LicenseID;
             this.ApplicationID = ApplicationID;
@@ -83,7 +83,7 @@ namespace DVLD_BUSINESS
             string Notes = "";
             float PaidFees = 0;
             bool IsActive = false;
-            byte IssueReason = 1;
+            short IssueReason = 1;
 
             if (clsLicenseData.GetLicenseInfoByID(LicenseID, ref ApplicationID, ref DriverID, ref LicenseClass,
                 ref IssueDate, ref ExpirationDate, ref Notes, ref PaidFees,

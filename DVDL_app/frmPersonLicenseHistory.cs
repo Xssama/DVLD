@@ -50,7 +50,7 @@ namespace DVDL_app
 
             dgvInternationalLicensesHistory.Columns["ApplicationID"].Width = 150;
 
-            dgvInternationalLicensesHistory.Columns["IssuedUsingLocalLicenseID"].HeaderText= "L.License ID";
+            dgvInternationalLicensesHistory.Columns["IssuedUsingLocalLicenseID"].HeaderText = "L.License ID";
             dgvInternationalLicensesHistory.Columns["IssuedUsingLocalLicenseID"].Width = 170;
 
             dgvInternationalLicensesHistory.Columns["IssueDate"].Width = 200;
@@ -70,6 +70,44 @@ namespace DVDL_app
             LoadDataToLocalLicensesTable();
             LoadDataToInternationalLicensesTable();
 
+        }
+
+        private void dgvInternationalLicensesHistory_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                dgvInternationalLicensesHistory.ClearSelection();
+                dgvInternationalLicensesHistory.Rows[e.RowIndex].Selected = true;
+                dgvInternationalLicensesHistory.CurrentCell = dgvInternationalLicensesHistory.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            }
+        }
+
+        private void dgvLocalLicensesHistory_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                dgvLocalLicensesHistory.ClearSelection();
+                dgvLocalLicensesHistory.Rows[e.RowIndex].Selected = true;
+                dgvLocalLicensesHistory.CurrentCell = dgvLocalLicensesHistory.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (dgvInternationalLicensesHistory.CurrentCell != null && dgvInternationalLicensesHistory.CurrentCell.RowIndex >= 0)
+            {
+                FrmInternationalLicenseInfos interLicenseInfos = new FrmInternationalLicenseInfos((int)dgvInternationalLicensesHistory.Rows[dgvInternationalLicensesHistory.CurrentCell.RowIndex].Cells[0].Value);
+                interLicenseInfos.ShowDialog();
+            }
+        }
+
+        private void showLicenseDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvLocalLicensesHistory.CurrentCell != null && dgvLocalLicensesHistory.CurrentCell.RowIndex >= 0)
+            {
+                frmShowLicenseInfos LocalLicenseInfos = frmShowLicenseInfos.LoadFormByLicenseID((int)dgvLocalLicensesHistory.Rows[dgvLocalLicensesHistory.CurrentCell.RowIndex].Cells[0].Value);
+                LocalLicenseInfos.ShowDialog();
+            }
         }
     }
 }

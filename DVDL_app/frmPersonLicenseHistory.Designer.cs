@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -42,11 +43,15 @@
             label2 = new Label();
             label1 = new Label();
             dgvLocalLicensesHistory = new ReaLTaiizor.Controls.PoisonDataGridView();
+            cmsLocalDrivingLicenses = new ContextMenuStrip(components);
+            showLicenseDetailsToolStripMenuItem = new ToolStripMenuItem();
             tpInternational = new TabPage();
             lblIntRecords = new Label();
             label4 = new Label();
             label5 = new Label();
             dgvInternationalLicensesHistory = new ReaLTaiizor.Controls.PoisonDataGridView();
+            cmsInterLicenses = new ContextMenuStrip(components);
+            toolStripMenuItem1 = new ToolStripMenuItem();
             plBody = new Panel();
             pictureBox1 = new PictureBox();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
@@ -54,8 +59,10 @@
             tabControl1.SuspendLayout();
             tpLocal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLocalLicensesHistory).BeginInit();
+            cmsLocalDrivingLicenses.SuspendLayout();
             tpInternational.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInternationalLicensesHistory).BeginInit();
+            cmsInterLicenses.SuspendLayout();
             plBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -153,6 +160,7 @@
             dgvLocalLicensesHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvLocalLicensesHistory.ColumnHeadersHeight = 29;
             dgvLocalLicensesHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvLocalLicensesHistory.ContextMenuStrip = cmsLocalDrivingLicenses;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle2.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -184,6 +192,24 @@
             dgvLocalLicensesHistory.ShowRowErrors = false;
             dgvLocalLicensesHistory.Size = new Size(1349, 219);
             dgvLocalLicensesHistory.TabIndex = 0;
+            dgvLocalLicensesHistory.CellMouseDown += dgvLocalLicensesHistory_CellMouseDown;
+            // 
+            // cmsLocalDrivingLicenses
+            // 
+            cmsLocalDrivingLicenses.ImageScalingSize = new Size(20, 20);
+            cmsLocalDrivingLicenses.Items.AddRange(new ToolStripItem[] { showLicenseDetailsToolStripMenuItem });
+            cmsLocalDrivingLicenses.Name = "cmsLocalDrivingLicenses";
+            cmsLocalDrivingLicenses.Size = new Size(292, 70);
+            // 
+            // showLicenseDetailsToolStripMenuItem
+            // 
+            showLicenseDetailsToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            showLicenseDetailsToolStripMenuItem.Image = Properties.Resources.LicenseInfos32px;
+            showLicenseDetailsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            showLicenseDetailsToolStripMenuItem.Name = "showLicenseDetailsToolStripMenuItem";
+            showLicenseDetailsToolStripMenuItem.Size = new Size(291, 38);
+            showLicenseDetailsToolStripMenuItem.Text = "Show License Details";
+            showLicenseDetailsToolStripMenuItem.Click += showLicenseDetailsToolStripMenuItem_Click;
             // 
             // tpInternational
             // 
@@ -246,6 +272,7 @@
             dgvInternationalLicensesHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvInternationalLicensesHistory.ColumnHeadersHeight = 29;
             dgvInternationalLicensesHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvInternationalLicensesHistory.ContextMenuStrip = cmsInterLicenses;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle5.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -277,6 +304,24 @@
             dgvInternationalLicensesHistory.ShowRowErrors = false;
             dgvInternationalLicensesHistory.Size = new Size(1336, 212);
             dgvInternationalLicensesHistory.TabIndex = 4;
+            dgvInternationalLicensesHistory.CellMouseDown += dgvInternationalLicensesHistory_CellMouseDown;
+            // 
+            // cmsInterLicenses
+            // 
+            cmsInterLicenses.ImageScalingSize = new Size(20, 20);
+            cmsInterLicenses.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            cmsInterLicenses.Name = "cmsLocalDrivingLicenses";
+            cmsInterLicenses.Size = new Size(292, 42);
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Font = new Font("Palatino Linotype", 12F);
+            toolStripMenuItem1.Image = Properties.Resources.LicenseInfos32px;
+            toolStripMenuItem1.ImageScaling = ToolStripItemImageScaling.None;
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(291, 38);
+            toolStripMenuItem1.Text = "Show License Details";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // plBody
             // 
@@ -329,9 +374,11 @@
             tpLocal.ResumeLayout(false);
             tpLocal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLocalLicensesHistory).EndInit();
+            cmsLocalDrivingLicenses.ResumeLayout(false);
             tpInternational.ResumeLayout(false);
             tpInternational.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInternationalLicensesHistory).EndInit();
+            cmsInterLicenses.ResumeLayout(false);
             plBody.ResumeLayout(false);
             plBody.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -356,5 +403,9 @@
         private Label label4;
         private Label label5;
         private ReaLTaiizor.Controls.PoisonDataGridView dgvInternationalLicensesHistory;
+        private ContextMenuStrip cmsLocalDrivingLicenses;
+        private ToolStripMenuItem showLicenseDetailsToolStripMenuItem;
+        private ContextMenuStrip cmsInterLicenses;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

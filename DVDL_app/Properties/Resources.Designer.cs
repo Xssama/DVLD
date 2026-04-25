@@ -313,6 +313,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DamagedLicense {
+            get {
+                object obj = ResourceManager.GetObject("DamagedLicense", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DateOfBirthIcon {
             get {
                 object obj = ResourceManager.GetObject("DateOfBirthIcon", resourceCulture);
@@ -616,6 +626,16 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap IssueDrivingLicense1 {
             get {
                 object obj = ResourceManager.GetObject("IssueDrivingLicense1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IssueRemplacement {
+            get {
+                object obj = ResourceManager.GetObject("IssueRemplacement", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

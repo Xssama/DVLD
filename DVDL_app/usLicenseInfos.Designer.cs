@@ -100,7 +100,7 @@
             // 
             lblNotes.AutoSize = true;
             lblNotes.Font = new Font("Century", 13.8F);
-            lblNotes.Location = new Point(219, 296);
+            lblNotes.Location = new Point(208, 296);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(58, 28);
             lblNotes.TabIndex = 43;
@@ -109,7 +109,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Notes;
-            pictureBox1.Location = new Point(164, 296);
+            pictureBox1.Location = new Point(153, 296);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(40, 28);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -160,7 +160,7 @@
             // 
             lblGendor.AutoSize = true;
             lblGendor.Font = new Font("Century", 13.8F);
-            lblGendor.Location = new Point(219, 170);
+            lblGendor.Location = new Point(208, 170);
             lblGendor.Name = "lblGendor";
             lblGendor.Size = new Size(58, 28);
             lblGendor.TabIndex = 37;
@@ -168,7 +168,7 @@
             // 
             // pbGendorIcon
             // 
-            pbGendorIcon.Location = new Point(164, 170);
+            pbGendorIcon.Location = new Point(153, 170);
             pbGendorIcon.Name = "pbGendorIcon";
             pbGendorIcon.Size = new Size(40, 28);
             pbGendorIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -189,7 +189,7 @@
             // 
             lblFullName.AutoSize = true;
             lblFullName.Font = new Font("Century", 13.8F);
-            lblFullName.Location = new Point(219, 57);
+            lblFullName.Location = new Point(208, 57);
             lblFullName.Name = "lblFullName";
             lblFullName.Size = new Size(58, 28);
             lblFullName.TabIndex = 34;
@@ -198,7 +198,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.PersonNameIcon;
-            pictureBox3.Location = new Point(164, 57);
+            pictureBox3.Location = new Point(153, 57);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(40, 28);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -219,7 +219,7 @@
             // 
             lblNationalNo.AutoSize = true;
             lblNationalNo.Font = new Font("Century", 13.8F);
-            lblNationalNo.Location = new Point(219, 133);
+            lblNationalNo.Location = new Point(208, 133);
             lblNationalNo.Name = "lblNationalNo";
             lblNationalNo.Size = new Size(58, 28);
             lblNationalNo.TabIndex = 31;
@@ -228,7 +228,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.NationalNoIcon;
-            pictureBox2.Location = new Point(164, 133);
+            pictureBox2.Location = new Point(153, 133);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(40, 28);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -249,7 +249,7 @@
             // 
             lblClass.AutoSize = true;
             lblClass.Font = new Font("Century", 13.8F);
-            lblClass.Location = new Point(219, 23);
+            lblClass.Location = new Point(208, 23);
             lblClass.Name = "lblClass";
             lblClass.Size = new Size(58, 28);
             lblClass.TabIndex = 56;
@@ -258,7 +258,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.licenseclass;
-            pictureBox4.Location = new Point(164, 23);
+            pictureBox4.Location = new Point(153, 23);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(40, 28);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -279,7 +279,7 @@
             // 
             lblLicenseID.AutoSize = true;
             lblLicenseID.Font = new Font("Century", 13.8F);
-            lblLicenseID.Location = new Point(219, 93);
+            lblLicenseID.Location = new Point(208, 93);
             lblLicenseID.Name = "lblLicenseID";
             lblLicenseID.Size = new Size(58, 28);
             lblLicenseID.TabIndex = 59;
@@ -288,7 +288,7 @@
             // pictureBox9
             // 
             pictureBox9.Image = Properties.Resources.drivingID;
-            pictureBox9.Location = new Point(164, 93);
+            pictureBox9.Location = new Point(153, 93);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(40, 28);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -309,7 +309,7 @@
             // 
             lblIssuedate.AutoSize = true;
             lblIssuedate.Font = new Font("Century", 13.8F);
-            lblIssuedate.Location = new Point(219, 208);
+            lblIssuedate.Location = new Point(208, 208);
             lblIssuedate.Name = "lblIssuedate";
             lblIssuedate.Size = new Size(58, 28);
             lblIssuedate.TabIndex = 62;
@@ -318,7 +318,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.DateOfBirthIcon;
-            pictureBox10.Location = new Point(164, 208);
+            pictureBox10.Location = new Point(153, 208);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(40, 28);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -338,17 +338,17 @@
             // lblIssueReason
             // 
             lblIssueReason.AutoSize = true;
-            lblIssueReason.Font = new Font("Century", 13.8F);
-            lblIssueReason.Location = new Point(219, 251);
+            lblIssueReason.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblIssueReason.Location = new Point(208, 251);
             lblIssueReason.Name = "lblIssueReason";
-            lblIssueReason.Size = new Size(58, 28);
+            lblIssueReason.Size = new Size(51, 23);
             lblIssueReason.TabIndex = 65;
             lblIssueReason.Text = "[???]";
             // 
             // pictureBox11
             // 
             pictureBox11.Image = Properties.Resources.Notes;
-            pictureBox11.Location = new Point(164, 251);
+            pictureBox11.Location = new Point(153, 251);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(40, 28);
             pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
@@ -479,11 +479,11 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label21.Location = new Point(480, 248);
+            label21.Location = new Point(492, 248);
             label21.Name = "label21";
-            label21.Size = new Size(153, 28);
+            label21.Size = new Size(141, 28);
             label21.TabIndex = 75;
-            label21.Text = "Is Detained  ?  :";
+            label21.Text = "Is Detained ? :";
             // 
             // usLicenseInfos
             // 

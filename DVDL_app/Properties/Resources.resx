@@ -148,11 +148,14 @@
   <data name="ManageInterLicensesApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManageInterLicensesApp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="licenseServices" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\licenseServices.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IssueDrivingLicense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IssueDrivingLicense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\description.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Renew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Renew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add-user_64pxpng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-user_64pxpng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,9 +183,6 @@
   </data>
   <data name="username-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\username-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="saveIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\saveIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -222,6 +222,9 @@
   </data>
   <data name="personidIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\personidIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fees" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="passedTests1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\passedTests1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,6 +274,9 @@
   <data name="ManageUsers32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManageUsers32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DamagedLicense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DamagedLicense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SechudleTests" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SechudleTests.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -306,9 +312,6 @@
   </data>
   <data name="CancelApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CancelApp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DeletePerson" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DeletePerson.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PhoneIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PhoneIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -376,14 +379,17 @@
   <data name="worldwideIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\worldwideIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="change-password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\change-password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ManageInterLicensesApp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManageInterLicensesApp2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mailsend" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mailsend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fees" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DeletePerson" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeletePerson.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-local-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-local-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -445,20 +451,20 @@
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="change-password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\change-password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add-user-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-user-Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="street" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\street.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IssueDrivingLicense" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IssueDrivingLicense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="team-management_4168988" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\team-management_4168988.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VisionTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VisionTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="licenseServices" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\licenseServices.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Applications1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Applications1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -484,10 +490,10 @@
   <data name="DefaultFemalePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DefaultFemalePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add-user-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-user-Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="saveIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saveIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Renew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Renew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IssueRemplacement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IssueRemplacement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

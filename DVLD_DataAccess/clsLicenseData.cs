@@ -9,7 +9,7 @@ namespace DVLD_DataAccess
     {
         public static bool GetLicenseInfoByID(int LicenseID, ref int ApplicationID, ref int DriverID, ref int LicenseClass,
             ref DateTime IssueDate, ref DateTime ExpirationDate, ref string Notes, ref float PaidFees,
-            ref bool IsActive, ref byte IssueReason, ref int CreatedByUserID)
+            ref bool IsActive, ref short IssueReason, ref int CreatedByUserID)
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -39,7 +39,7 @@ namespace DVLD_DataAccess
 
                     PaidFees = Convert.ToSingle(reader["PaidFees"]);
                     IsActive = (bool)reader["IsActive"];
-                    IssueReason = (byte)reader["IssueReason"];
+                    IssueReason = Convert.ToInt16(reader["IssueReason"]);
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                 }
             }
@@ -86,7 +86,7 @@ namespace DVLD_DataAccess
         }
         public static int AddNewLicense(int ApplicationID, int DriverID, int LicenseClass,
             DateTime IssueDate, DateTime ExpirationDate, string Notes, float PaidFees,
-            bool IsActive, byte IssueReason, int CreatedByUserID)
+            bool IsActive, short IssueReason, int CreatedByUserID)
         {
             int LicenseID = -1;
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -134,7 +134,7 @@ namespace DVLD_DataAccess
 
         public static bool UpdateLicense(int LicenseID, int ApplicationID, int DriverID, int LicenseClass,
             DateTime IssueDate, DateTime ExpirationDate, string Notes, float PaidFees,
-            bool IsActive, byte IssueReason, int CreatedByUserID)
+            bool IsActive, short IssueReason, int CreatedByUserID)
         {
             int RowsEffected = -1;
 
