@@ -166,7 +166,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.IssueRemplacement;
+            pictureBox4.Image = Properties.Resources.drivingID;
             pictureBox4.Location = new Point(784, 35);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(40, 28);
@@ -310,13 +310,14 @@
             // 
             // frmDetainLicense
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1115, 879);
             Controls.Add(plButtom);
             Controls.Add(gpDetainInfos);
             Controls.Add(lblFormHeader);
             Controls.Add(usFindShowLocalDrivingLicense1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmDetainLicense";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Detain License";

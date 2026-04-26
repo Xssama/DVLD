@@ -105,5 +105,11 @@ namespace DVDL_app
             frmDetainLicense DetainLicense = new frmDetainLicense();
             DetainLicense.ShowDialog();
         }
+
+        private void releaseLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReleaseDetainedLicense ReleaseLicense = new frmReleaseDetainedLicense();
+            ReleaseLicense.ShowDialog();
+        }
     }
 }

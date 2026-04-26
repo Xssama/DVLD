@@ -236,6 +236,7 @@
             releaseLicenseToolStripMenuItem.Name = "releaseLicenseToolStripMenuItem";
             releaseLicenseToolStripMenuItem.Size = new Size(329, 38);
             releaseLicenseToolStripMenuItem.Text = "Release Detain License";
+            releaseLicenseToolStripMenuItem.Click += releaseLicenseToolStripMenuItem_Click;
             // 
             // peopleToolStripMenuItem
             // 

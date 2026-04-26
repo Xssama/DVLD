@@ -74,25 +74,22 @@ namespace DVDL_app
                 tbxFees.Focus();
                 return;
             }
-            _License.IsActive = false;
-            if (_License.Save())
+            
+            _DetainedLicense.LicenseID = _License.LicenseID;
+            _DetainedLicense.IsReleased = false;
+            _DetainedLicense.FineFees = float.Parse(tbxFees.Text);
+            _DetainedLicense.CreatedByUserID = clsGlobal.CurrentUser.UserID;
+            if (_DetainedLicense.Save())
             {
-                _DetainedLicense.LicenseID = _License.LicenseID;
-                _DetainedLicense.IsReleased = false;
-                _DetainedLicense.FineFees = float.Parse(tbxFees.Text);
-                _DetainedLicense.CreatedByUserID = clsGlobal.CurrentUser.UserID;
-                if (_DetainedLicense.Save())
-                {
-                    lblDetainID.Text = _DetainedLicense.DetainID.ToString();
-                    MessageBox.Show("The License is Detained Successfully.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnDetain.Enabled = false;
-                    usFindShowLocalDrivingLicense1.gpFilter.Enabled = false;
-                    llblShowLicensesInfos.Enabled = true;
-                }
+                lblDetainID.Text = _DetainedLicense.DetainID.ToString();
+                MessageBox.Show("The License is Detained Successfully.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnDetain.Enabled = false;
+                usFindShowLocalDrivingLicense1.gpFilter.Enabled = false;
+                llblShowLicensesInfos.Enabled = true;
             }
             else
             {
-                MessageBox.Show("The License Fialled To Save!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The License Detained Failled!!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

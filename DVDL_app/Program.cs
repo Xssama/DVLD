@@ -16,7 +16,7 @@ namespace DVDL_app
             Application.Run(new frmMainScreen());
             //Application.Run(new frmRenewLocalDrivingLicense());
             //Application.Run(new frmManageLocalDrivingLicenseApplications());
-            //Application.Run(frmShowLicenseInfos.LoadFormByLicenseID(41));
+            //Application.Run(frmShowLicenseInfos.LoadFormByLicenseID(20));
 
             //Application.Run(frmShowLicenseInfos.LoadFormByLDLAppID(41));
             //Application.Run(new frmIssueInternationalLicenseApp());
