@@ -84,6 +84,37 @@ namespace DVLD_DataAccess
             }
             return isFound;
         }
+
+        public static bool isLicenseDetained(int LicenseID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"select top 1 * from DetainedLicenses DL
+                    where DL.LicenseID = @LicenseID and DL.IsReleased = 0";
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    isFound = true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log exception here
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
         public static int AddNewLicense(int ApplicationID, int DriverID, int LicenseClass,
             DateTime IssueDate, DateTime ExpirationDate, string Notes, float PaidFees,
             bool IsActive, short IssueReason, int CreatedByUserID)

@@ -93,5 +93,17 @@ namespace DVDL_app
             frmRenewLocalDrivingLicense frm = new frmRenewLocalDrivingLicense();
             frm.ShowDialog();
         }
+
+        private void replacedForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReplementLostDamagedLicense frm = new frmReplementLostDamagedLicense();
+            frm.ShowDialog();
+        }
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDetainLicense DetainLicense = new frmDetainLicense();
+            DetainLicense.ShowDialog();
+        }
     }
 }

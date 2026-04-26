@@ -65,7 +65,7 @@
             lblIsActive = new Label();
             pictureBox12 = new PictureBox();
             label19 = new Label();
-            label20 = new Label();
+            lblIsDetained = new Label();
             pictureBox13 = new PictureBox();
             label21 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbProfilePic).BeginInit();
@@ -455,15 +455,15 @@
             label19.TabIndex = 72;
             label19.Text = "Is Active ?  :";
             // 
-            // label20
+            // lblIsDetained
             // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Century", 13.8F);
-            label20.Location = new Point(694, 248);
-            label20.Name = "label20";
-            label20.Size = new Size(58, 28);
-            label20.TabIndex = 77;
-            label20.Text = "[???]";
+            lblIsDetained.AutoSize = true;
+            lblIsDetained.Font = new Font("Century", 13.8F);
+            lblIsDetained.Location = new Point(694, 248);
+            lblIsDetained.Name = "lblIsDetained";
+            lblIsDetained.Size = new Size(58, 28);
+            lblIsDetained.TabIndex = 77;
+            lblIsDetained.Text = "[???]";
             // 
             // pictureBox13
             // 
@@ -489,7 +489,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label20);
+            Controls.Add(lblIsDetained);
             Controls.Add(pictureBox13);
             Controls.Add(label21);
             Controls.Add(lblIsActive);
@@ -589,7 +589,7 @@
         private Label lblIsActive;
         private PictureBox pictureBox12;
         private Label label19;
-        private Label label20;
+        private Label lblIsDetained;
         private PictureBox pictureBox13;
         private Label label21;
     }

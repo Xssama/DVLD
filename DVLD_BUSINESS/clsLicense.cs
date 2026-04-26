@@ -76,6 +76,12 @@ namespace DVLD_BUSINESS
         {
             return clsLicenseData.isLicenseLinkedToInternationalLicense(LicenseID);
         }
+
+        public static bool isLicenseDetained(int LicenseID)
+        {
+            return clsLicenseData.isLicenseDetained(LicenseID);
+        }
+
         public static clsLicense Find(int LicenseID)
         {
             int ApplicationID = -1, DriverID = -1, LicenseClass = -1, CreatedByUserID = -1;

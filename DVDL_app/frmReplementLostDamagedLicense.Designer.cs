@@ -383,6 +383,7 @@
             Controls.Add(lblFormHeader);
             Controls.Add(usFindShowLocalDrivingLicense1);
             Name = "frmReplementLostDamagedLicense";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "License Replacement";
             Load += frmRenewLocalDrivingLicense_Load;
             groupBox1.ResumeLayout(false);

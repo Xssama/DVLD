@@ -66,6 +66,7 @@ namespace DVDL_app
             lblDateOfBirth.Text = ((DateTime)LicenseInfos["DateOfBirth"]).ToShortDateString();
             lblDriverID.Text = LicenseInfos["DriverID"].ToString();
             lblExpirationDate.Text = ((DateTime)LicenseInfos["ExpirationDate"]).ToShortDateString();
+            lblIsDetained.Text = LicenseInfos["IsDetained"].ToString();
 
             if (File.Exists(LicenseInfos["ImagePath"].ToString()))
             {
