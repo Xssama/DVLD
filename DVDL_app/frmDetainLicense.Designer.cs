@@ -345,15 +345,12 @@
         private Label lblLicenseID;
         private PictureBox pictureBox4;
         private Label label8;
-        private PictureBox pictureBox3;
-        private Label label6;
         private Label lblDetainDate;
         private PictureBox pictureBox1;
         private Label label2;
         private Label lblCreatedBy;
         private PictureBox pictureBox9;
         private Label lblAppDate7;
-        private Label lblAppFees;
         private PictureBox pictureBox5;
         private Label label9;
         private Label lblDetainID;

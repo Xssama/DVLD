@@ -74,6 +74,7 @@
             Controls.Add(plDriverInfosContainer);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmShowLicenseInfos";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "frmShowLicenseInfos";
             Load += frmShowLicenseInfos_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

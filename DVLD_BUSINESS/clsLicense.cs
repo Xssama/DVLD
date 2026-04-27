@@ -81,7 +81,10 @@ namespace DVLD_BUSINESS
         {
             return clsLicenseData.isLicenseDetained(LicenseID);
         }
-
+        public static bool IsExists(int LicenseID)
+        {
+            return clsLicenseData.IsExists(LicenseID);
+        }
         public static clsLicense Find(int LicenseID)
         {
             int ApplicationID = -1, DriverID = -1, LicenseClass = -1, CreatedByUserID = -1;

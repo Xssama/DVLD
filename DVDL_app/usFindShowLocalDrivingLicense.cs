@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using DVLD_BUSINESS;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,12 @@ namespace DVDL_app
     {
         public delegate void GetLicenseIDBackEventHnadler(object sender, int LicenseID);
         public event GetLicenseIDBackEventHnadler LicenseIDBack;
-        public usFindShowLocalDrivingLicense()
+        public usFindShowLocalDrivingLicense(int LicenseID = -1)
         {
+            if (LicenseID != -1 && clsLicense.)
+            {
+
+            }
             InitializeComponent();
         }
         private void usFindShowLocalDrivingLicense_Load(object sender, EventArgs e)

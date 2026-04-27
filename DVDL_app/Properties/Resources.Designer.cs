@@ -413,6 +413,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DetainLicense64px {
+            get {
+                object obj = ResourceManager.GetObject("DetainLicense64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap device_7492113 {
             get {
                 object obj = ResourceManager.GetObject("device_7492113", resourceCulture);
@@ -893,6 +903,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ManageList {
+            get {
+                object obj = ResourceManager.GetObject("ManageList", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap manageusers {
             get {
                 object obj = ResourceManager.GetObject("manageusers", resourceCulture);
@@ -1106,6 +1126,16 @@ namespace DVDL_app.Properties {
         internal static System.Drawing.Bitmap ReleaseLicense {
             get {
                 object obj = ResourceManager.GetObject("ReleaseLicense", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReleaseLicense1 {
+            get {
+                object obj = ResourceManager.GetObject("ReleaseLicense1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

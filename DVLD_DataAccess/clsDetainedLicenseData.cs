@@ -222,7 +222,7 @@ namespace DVLD_DataAccess
         {
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM DetainedLicenses";
+            string query = @"select * from DetainedLicenses_View";
 
             SqlCommand command = new SqlCommand(query, connection);
             try

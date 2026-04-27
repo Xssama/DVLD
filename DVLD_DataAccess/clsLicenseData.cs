@@ -54,6 +54,35 @@ namespace DVLD_DataAccess
             return isFound;
         }
 
+        public static bool IsExists(int LicenseID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = "SELECT * FROM Licenses WHERE LicenseID = @LicenseID";
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+            try
+            {
+                connection.Open();
+                object Result = command.ExecuteScalar();
+
+                if (Result != null)
+                {
+                    isFound = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log exception here
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
+
         public static bool isLicenseLinkedToInternationalLicense(int LicenseID)
         {
             bool isFound = false;
