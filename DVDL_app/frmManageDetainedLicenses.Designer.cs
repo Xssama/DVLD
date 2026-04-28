@@ -44,14 +44,16 @@
             showPersonDetailsToolStripMenuItem = new ToolStripMenuItem();
             showLicenseDetailsToolStripMenuItem = new ToolStripMenuItem();
             showPersonLicenseHistoryToolStripMenuItem = new ToolStripMenuItem();
+            releaseLicenseToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             btnDetainLicense = new PictureBox();
-            releaseLicenseToolStripMenuItem = new ToolStripMenuItem();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)btnReleaseLicense).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDetainedLicenses).BeginInit();
             contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnDetainLicense).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // btnReleaseLicense
@@ -87,11 +89,12 @@
             tbxFilter.Name = "tbxFilter";
             tbxFilter.Size = new Size(228, 31);
             tbxFilter.TabIndex = 28;
+            tbxFilter.TextChanged += tbxFilter_TextChanged;
             // 
             // cbFilters
             // 
             cbFilters.FormattingEnabled = true;
-            cbFilters.Items.AddRange(new object[] { "None" });
+            cbFilters.Items.AddRange(new object[] { "None", "DetainID", "License", "FullName", "NationalNo" });
             cbFilters.Location = new Point(147, 239);
             cbFilters.Name = "cbFilters";
             cbFilters.Size = new Size(226, 33);
@@ -192,7 +195,7 @@
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { showPersonDetailsToolStripMenuItem, showLicenseDetailsToolStripMenuItem, showPersonLicenseHistoryToolStripMenuItem, releaseLicenseToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(361, 184);
+            contextMenuStrip1.Size = new Size(361, 156);
             contextMenuStrip1.Opening += contextMenuStrip1_Opening;
             // 
             // showPersonDetailsToolStripMenuItem
@@ -225,6 +228,16 @@
             showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
             showPersonLicenseHistoryToolStripMenuItem.Click += showPersonLicenseHistoryToolStripMenuItem_Click;
             // 
+            // releaseLicenseToolStripMenuItem
+            // 
+            releaseLicenseToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            releaseLicenseToolStripMenuItem.Image = Properties.Resources.ReleaseLicense32px;
+            releaseLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            releaseLicenseToolStripMenuItem.Name = "releaseLicenseToolStripMenuItem";
+            releaseLicenseToolStripMenuItem.Size = new Size(360, 38);
+            releaseLicenseToolStripMenuItem.Text = "Release License";
+            releaseLicenseToolStripMenuItem.Click += releaseLicenseToolStripMenuItem_Click;
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.ManageList;
@@ -252,15 +265,9 @@
             btnDetainLicense.MouseDown += btnDetainLicense_MouseDown;
             btnDetainLicense.MouseUp += btnDetainLicense_MouseUp;
             // 
-            // releaseLicenseToolStripMenuItem
+            // errorProvider1
             // 
-            releaseLicenseToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
-            releaseLicenseToolStripMenuItem.Image = Properties.Resources.ReleaseLicense32px;
-            releaseLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            releaseLicenseToolStripMenuItem.Name = "releaseLicenseToolStripMenuItem";
-            releaseLicenseToolStripMenuItem.Size = new Size(360, 38);
-            releaseLicenseToolStripMenuItem.Text = "Release License";
-            releaseLicenseToolStripMenuItem.Click += releaseLicenseToolStripMenuItem_Click;
+            errorProvider1.ContainerControl = this;
             // 
             // frmManageDetainedLicenses
             // 
@@ -287,6 +294,7 @@
             contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnDetainLicense).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -308,5 +316,6 @@
         private ToolStripMenuItem showLicenseDetailsToolStripMenuItem;
         private ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
         private ToolStripMenuItem releaseLicenseToolStripMenuItem;
+        private ErrorProvider errorProvider1;
     }
 }

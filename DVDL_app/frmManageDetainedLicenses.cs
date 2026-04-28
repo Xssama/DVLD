@@ -157,13 +157,39 @@ namespace DVDL_app
         {
             if (dgvDetainedLicenses.CurrentCell != null && dgvDetainedLicenses.CurrentCell.RowIndex >= 0)
             {
-                int LicenseID =(int)dgvDetainedLicenses.Rows[dgvDetainedLicenses.CurrentCell.RowIndex].Cells[1].Value;
+                int LicenseID = (int)dgvDetainedLicenses.Rows[dgvDetainedLicenses.CurrentCell.RowIndex].Cells[1].Value;
                 frmReleaseDetainedLicense ReleaseLicense = new frmReleaseDetainedLicense(LicenseID);
                 ReleaseLicense.ShowDialog();
                 RefreshDataInTable();
             }
 
 
+        }
+
+        private void tbxFilter_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxFilter.Text == "")
+            {
+                bsDetainedLicenses.RemoveFilter();
+                return;
+            }
+            if (cbFilters.Text == "DetainID" || cbFilters.Text == "LicenseID")
+            {
+                if (!int.TryParse(tbxFilter.Text, out _))
+                {
+                    errorProvider1.SetError(tbxFilter, "Please provide a valid Number");
+                    return;
+                }
+                else
+                {
+                    errorProvider1.SetError(tbxFilter, "");
+                    bsDetainedLicenses.Filter = string.Format("{0} = {1}", cbFilters.Text, tbxFilter.Text);
+                }
+            }
+            else
+            {
+                bsDetainedLicenses.Filter = string.Format("{0} like '%{1}%'", cbFilters.Text, tbxFilter.Text);
+            }
         }
     }
 }
