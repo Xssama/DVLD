@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace DVDL_app
 {
-    public partial class frmReplementLostDamagedLicense : Form
+    public partial class frmReplacementLostDamagedLicense : Form
     {
         clsApplicationType _ApplicationType = new clsApplicationType();
         clsLicense _LocalLicense = new clsLicense();
         clsApplication _Application = new clsApplication();
         clsLicense _ReplacementLicense = new clsLicense();
-        public frmReplementLostDamagedLicense()
+        public frmReplacementLostDamagedLicense()
         {
             InitializeComponent();
         }

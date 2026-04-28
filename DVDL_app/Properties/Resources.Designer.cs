@@ -1143,6 +1143,16 @@ namespace DVDL_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ReleaseLicense32px {
+            get {
+                object obj = ResourceManager.GetObject("ReleaseLicense32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Renew {
             get {
                 object obj = ResourceManager.GetObject("Renew", resourceCulture);

@@ -96,7 +96,7 @@ namespace DVDL_app
 
         private void replacedForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmReplementLostDamagedLicense frm = new frmReplementLostDamagedLicense();
+            frmReplacementLostDamagedLicense frm = new frmReplacementLostDamagedLicense();
             frm.ShowDialog();
         }
 

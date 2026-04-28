@@ -293,7 +293,9 @@ namespace DVLD_DataAccess
         WHEN 3 THEN 'Replacement for Damaged'
         WHEN 4 THEN 'Replacement for Lost' end as IssueReasonDes,
                 Licenses.Notes, case Licenses.IsActive when 1 then 'Yes' when 0 then 'No' end as IsActiveText, DateOfBirth, 
-                Drivers.DriverID, Licenses.ExpirationDate , ImagePath  from LocalDrivingLicenseApplications
+                Drivers.DriverID, Licenses.ExpirationDate , CASE WHEN EXISTS(SELECT TOP 1 * FROM DetainedLicenses WHERE DetainedLicenses.LicenseID = Licenses.LicenseID AND DetainedLicenses.IsReleased = 0)
+				THEN 'YES' ELSE 'NO' END AS IsDetained,
+				ImagePath  from LocalDrivingLicenseApplications
 			        inner join Applications on Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
 			        inner join Licenses on Licenses.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
 			        inner join LicenseClasses on LicenseClasses.LicenseClassID = LocalDrivingLicenseApplications.LicenseClassID

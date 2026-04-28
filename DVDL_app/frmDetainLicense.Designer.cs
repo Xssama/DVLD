@@ -49,8 +49,8 @@
             lblDetainID = new Label();
             label5 = new Label();
             lblFormHeader = new ReaLTaiizor.Controls.BigLabel();
-            usFindShowLocalDrivingLicense1 = new usFindShowLocalDrivingLicense();
             errorProvider1 = new ErrorProvider(components);
+            plFindShowLicense = new Panel();
             plButtom.SuspendLayout();
             gpDetainInfos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -296,27 +296,26 @@
             lblFormHeader.TabIndex = 12;
             lblFormHeader.Text = "Detain License";
             // 
-            // usFindShowLocalDrivingLicense1
-            // 
-            usFindShowLocalDrivingLicense1.Location = new Point(10, 88);
-            usFindShowLocalDrivingLicense1.Name = "usFindShowLocalDrivingLicense1";
-            usFindShowLocalDrivingLicense1.Size = new Size(1094, 470);
-            usFindShowLocalDrivingLicense1.TabIndex = 11;
-            usFindShowLocalDrivingLicense1.Load += usFindShowLocalDrivingLicense1_Load;
-            // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
+            // 
+            // plFindShowLicense
+            // 
+            plFindShowLicense.Location = new Point(6, 73);
+            plFindShowLicense.Name = "plFindShowLicense";
+            plFindShowLicense.Size = new Size(1097, 501);
+            plFindShowLicense.TabIndex = 15;
             // 
             // frmDetainLicense
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1115, 879);
+            Controls.Add(plFindShowLicense);
             Controls.Add(plButtom);
             Controls.Add(gpDetainInfos);
             Controls.Add(lblFormHeader);
-            Controls.Add(usFindShowLocalDrivingLicense1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmDetainLicense";
             StartPosition = FormStartPosition.CenterScreen;
@@ -356,8 +355,8 @@
         private Label lblDetainID;
         private Label label5;
         private ReaLTaiizor.Controls.BigLabel lblFormHeader;
-        private usFindShowLocalDrivingLicense usFindShowLocalDrivingLicense1;
         private ReaLTaiizor.Controls.AloneTextBox tbxFees;
         private ErrorProvider errorProvider1;
+        private Panel plFindShowLicense;
     }
 }

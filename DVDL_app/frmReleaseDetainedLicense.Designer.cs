@@ -57,7 +57,7 @@
             lblDetainID = new Label();
             label5 = new Label();
             lblFormHeader = new ReaLTaiizor.Controls.BigLabel();
-            usFindShowLocalDrivingLicense1 = new usFindShowLocalDrivingLicense();
+            plLicenseInfos = new Panel();
             plButtom.SuspendLayout();
             gpDetainInfos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -77,7 +77,7 @@
             plButtom.Dock = DockStyle.Bottom;
             plButtom.Location = new Point(0, 809);
             plButtom.Name = "plButtom";
-            plButtom.Size = new Size(1152, 81);
+            plButtom.Size = new Size(1137, 81);
             plButtom.TabIndex = 18;
             // 
             // llblShowLicensesInfos
@@ -397,23 +397,22 @@
             lblFormHeader.TabIndex = 16;
             lblFormHeader.Text = "Release Detained License";
             // 
-            // usFindShowLocalDrivingLicense1
+            // plLicenseInfos
             // 
-            usFindShowLocalDrivingLicense1.Location = new Point(10, 78);
-            usFindShowLocalDrivingLicense1.Name = "usFindShowLocalDrivingLicense1";
-            usFindShowLocalDrivingLicense1.Size = new Size(1094, 470);
-            usFindShowLocalDrivingLicense1.TabIndex = 15;
-            usFindShowLocalDrivingLicense1.Load += usFindShowLocalDrivingLicense1_Load;
+            plLicenseInfos.Location = new Point(10, 65);
+            plLicenseInfos.Name = "plLicenseInfos";
+            plLicenseInfos.Size = new Size(1103, 497);
+            plLicenseInfos.TabIndex = 19;
             // 
             // frmReleaseDetainedLicense
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1152, 890);
+            ClientSize = new Size(1137, 890);
+            Controls.Add(plLicenseInfos);
             Controls.Add(plButtom);
             Controls.Add(gpDetainInfos);
             Controls.Add(lblFormHeader);
-            Controls.Add(usFindShowLocalDrivingLicense1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmReleaseDetainedLicense";
             StartPosition = FormStartPosition.CenterScreen;
@@ -455,7 +454,6 @@
         private Label lblDetainID;
         private Label label5;
         private ReaLTaiizor.Controls.BigLabel lblFormHeader;
-        private usFindShowLocalDrivingLicense usFindShowLocalDrivingLicense1;
         private Label lblFineFees;
         private Label lblTotalFees;
         private PictureBox pictureBox3;
@@ -466,5 +464,6 @@
         private Label lblAppID;
         private PictureBox pictureBox6;
         private Label label6;
+        private Panel plLicenseInfos;
     }
 }

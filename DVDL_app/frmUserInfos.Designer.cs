@@ -60,7 +60,7 @@
             Controls.Add(gbLoginInfos);
             Controls.Add(gbPersonInfos);
             Name = "frmUserInfos";
-            Text = "frmUserInfos";
+            Text = "User Informations";
             Load += frmUserInfos_Load;
             ResumeLayout(false);
         }

@@ -11,37 +11,39 @@ namespace DVDL_app
 {
     public partial class frmReleaseDetainedLicense : Form
     {
+        int _LicenseID = -1;
+        private usFindShowLocalDrivingLicense FindShowLicense;
         clsApplicationType _AppTypeInfos = clsApplicationType.Find("Release Detained Driving Licsense");
         clsLicense _License = new clsLicense();
         clsDetainedLicense _DetainedLicense = new clsDetainedLicense();
         clsApplication _ReleaseApplication = new clsApplication();
-        public frmReleaseDetainedLicense()
+
+        public frmReleaseDetainedLicense(int LicenseID = -1)
         {
             InitializeComponent();
+            if (LicenseID != -1)
+            {
+                _LicenseID = LicenseID;
+            }
+        }
+        private void frmReleaseDetainedLicense_Load(object sender, EventArgs e)
+        {
+            FindShowLicense = new usFindShowLocalDrivingLicense(_LicenseID);
+            FindShowLicense.Dock = DockStyle.Fill;
+            FindShowLicense.LicenseIDBack += GetLicenseIDBackFromFindLicenseControl;
+            plLicenseInfos.Controls.Add(FindShowLicense);
+
+            lblAppFees.Text = _AppTypeInfos.Fees.ToString();
+            lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
+
+            if (_LicenseID != -1)
+            {
+                LoadDetainInfosToControls(_LicenseID);
+            }
         }
 
-        private void usFindShowLocalDrivingLicense1_Load(object sender, EventArgs e)
+        private void LoadDetainInfosToControls(int LicenseID)
         {
-            usFindShowLocalDrivingLicense1.LicenseIDBack += GetLicenseIDBackFromFindLicenseControl;
-        }
-        private void GetLicenseIDBackFromFindLicenseControl(object sender, int LicenseID)
-        {
-            if (LicenseID == -1)
-            {
-                return;
-            }
-            if (!clsLicense.isLicenseDetained(LicenseID))
-            {
-                MessageBox.Show("The License is Not Detained!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnRelease.Enabled = false;
-
-                lblDetainDate.Text = "[???]";
-                lblFineFees.Text = "[???]";
-                lblTotalFees.Text = "[???]";
-                llblShowLicensesHistory.Enabled = false;
-                lblLicenseID.Text = "[???]";
-                return;
-            }
             _License = clsLicense.Find(LicenseID);
             if (_License != null && _License.LicenseID != -1)
             {
@@ -64,12 +66,29 @@ namespace DVDL_app
                 lblLicenseID.Text = "[???]";
             }
         }
-
-        private void frmReleaseDetainedLicense_Load(object sender, EventArgs e)
+        private void GetLicenseIDBackFromFindLicenseControl(object sender, int LicenseID)
         {
-            lblAppFees.Text = _AppTypeInfos.Fees.ToString();
-            lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
+            if (LicenseID == -1)
+            {
+                return;
+            }
+            if (!clsLicense.isLicenseDetained(LicenseID))
+            {
+                MessageBox.Show("The License is Not Detained!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnRelease.Enabled = false;
+
+                lblDetainDate.Text = "[???]";
+                lblFineFees.Text = "[???]";
+                lblTotalFees.Text = "[???]";
+                llblShowLicensesHistory.Enabled = false;
+                lblLicenseID.Text = "[???]";
+                return;
+            }
+
+            LoadDetainInfosToControls(LicenseID);
         }
+
+       
 
         private void llblShowLicensesHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -99,7 +118,7 @@ namespace DVDL_app
                     lblDetainID.Text = _DetainedLicense.DetainID.ToString();
                     MessageBox.Show("The License is Released Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnRelease.Enabled = false;
-                    usFindShowLocalDrivingLicense1.Enabled = false;
+                    FindShowLicense.gpFilter.Enabled = false;
                     llblShowLicensesInfos.Enabled = true;
                 }
                 else

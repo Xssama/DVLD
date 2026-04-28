@@ -15,17 +15,20 @@ namespace DVDL_app
     {
         public delegate void GetLicenseIDBackEventHnadler(object sender, int LicenseID);
         public event GetLicenseIDBackEventHnadler LicenseIDBack;
+        int _LicenseID = -1;
         public usFindShowLocalDrivingLicense(int LicenseID = -1)
         {
-            if (LicenseID != -1 && clsLicense.)
-            {
-
-            }
             InitializeComponent();
+            if (LicenseID != -1 && clsLicense.IsExists(LicenseID))
+            {
+                _LicenseID = LicenseID;
+                tbxLicenseID.Text = LicenseID.ToString();
+                gpFilter.Enabled = false;
+            }
         }
         private void usFindShowLocalDrivingLicense_Load(object sender, EventArgs e)
         {
-            usLicenseInfos LicenseInfos = usLicenseInfos.LoadByLocalLicenseID(-1);
+            usLicenseInfos LicenseInfos = usLicenseInfos.LoadByLocalLicenseID(_LicenseID);
             LicenseInfos.Dock = DockStyle.Fill;
             gpLicenseInfos.Controls.Add(LicenseInfos);
             
@@ -47,6 +50,10 @@ namespace DVDL_app
         {
             if (errorProvider1.GetError(tbxLicenseID) == "" && int.TryParse(tbxLicenseID.Text, out int LicenseID))
             {
+                if (gpLicenseInfos.Controls.Count > 0)
+                {
+                    gpLicenseInfos.Controls[0].Dispose();
+                }
                 gpLicenseInfos.Controls.Clear();
                 usLicenseInfos LicenseInfos = usLicenseInfos.LoadByLocalLicenseID(LicenseID);
                 LicenseInfos.Dock = DockStyle.Fill;

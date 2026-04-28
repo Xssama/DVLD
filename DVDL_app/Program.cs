@@ -13,7 +13,7 @@ namespace DVDL_app
             //Application.Run(new FrmManagePeople());
             //Application.Run(new frmManageAppointments(32, 1));
             clsGlobal.CurrentUser = clsUser.Find("Xussama");
-            Application.Run(new frmManageDetainedLicenses());
+            Application.Run(new frmMainScreen());
             //Application.Run(new frmRenewLocalDrivingLicense());
             //Application.Run(new frmManageLocalDrivingLicenseApplications());
             //Application.Run(frmShowLicenseInfos.LoadFormByLicenseID(20));

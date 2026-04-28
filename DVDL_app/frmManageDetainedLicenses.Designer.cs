@@ -44,9 +44,9 @@
             showPersonDetailsToolStripMenuItem = new ToolStripMenuItem();
             showLicenseDetailsToolStripMenuItem = new ToolStripMenuItem();
             showPersonLicenseHistoryToolStripMenuItem = new ToolStripMenuItem();
-            notSpecifiedYetToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             btnDetainLicense = new PictureBox();
+            releaseLicenseToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)btnReleaseLicense).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDetainedLicenses).BeginInit();
             contextMenuStrip1.SuspendLayout();
@@ -190,9 +190,9 @@
             // contextMenuStrip1
             // 
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { showPersonDetailsToolStripMenuItem, showLicenseDetailsToolStripMenuItem, showPersonLicenseHistoryToolStripMenuItem, notSpecifiedYetToolStripMenuItem });
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { showPersonDetailsToolStripMenuItem, showLicenseDetailsToolStripMenuItem, showPersonLicenseHistoryToolStripMenuItem, releaseLicenseToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(361, 156);
+            contextMenuStrip1.Size = new Size(361, 184);
             contextMenuStrip1.Opening += contextMenuStrip1_Opening;
             // 
             // showPersonDetailsToolStripMenuItem
@@ -225,14 +225,6 @@
             showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
             showPersonLicenseHistoryToolStripMenuItem.Click += showPersonLicenseHistoryToolStripMenuItem_Click;
             // 
-            // notSpecifiedYetToolStripMenuItem
-            // 
-            notSpecifiedYetToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
-            notSpecifiedYetToolStripMenuItem.Name = "notSpecifiedYetToolStripMenuItem";
-            notSpecifiedYetToolStripMenuItem.Size = new Size(360, 38);
-            notSpecifiedYetToolStripMenuItem.Text = "Not Specified Yet";
-            notSpecifiedYetToolStripMenuItem.Click += notSpecifiedYetToolStripMenuItem_Click;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.ManageList;
@@ -259,6 +251,16 @@
             btnDetainLicense.Click += btnDetainLicense_Click;
             btnDetainLicense.MouseDown += btnDetainLicense_MouseDown;
             btnDetainLicense.MouseUp += btnDetainLicense_MouseUp;
+            // 
+            // releaseLicenseToolStripMenuItem
+            // 
+            releaseLicenseToolStripMenuItem.Font = new Font("Palatino Linotype", 12F);
+            releaseLicenseToolStripMenuItem.Image = Properties.Resources.ReleaseLicense32px;
+            releaseLicenseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            releaseLicenseToolStripMenuItem.Name = "releaseLicenseToolStripMenuItem";
+            releaseLicenseToolStripMenuItem.Size = new Size(360, 38);
+            releaseLicenseToolStripMenuItem.Text = "Release License";
+            releaseLicenseToolStripMenuItem.Click += releaseLicenseToolStripMenuItem_Click;
             // 
             // frmManageDetainedLicenses
             // 
@@ -305,6 +307,6 @@
         private ToolStripMenuItem showPersonDetailsToolStripMenuItem;
         private ToolStripMenuItem showLicenseDetailsToolStripMenuItem;
         private ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
-        private ToolStripMenuItem notSpecifiedYetToolStripMenuItem;
+        private ToolStripMenuItem releaseLicenseToolStripMenuItem;
     }
 }

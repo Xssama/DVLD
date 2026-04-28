@@ -1,6 +1,6 @@
 ﻿namespace DVDL_app
 {
-    partial class frmReplementLostDamagedLicense
+    partial class frmReplacementLostDamagedLicense
     {
         /// <summary>
         /// Required designer variable.

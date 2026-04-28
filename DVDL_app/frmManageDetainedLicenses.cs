@@ -141,30 +141,29 @@ namespace DVDL_app
         {
             if (dgvDetainedLicenses.CurrentCell != null && dgvDetainedLicenses.CurrentCell.RowIndex >= 0)
             {
-                if ((bool)dgvDetainedLicenses.Rows[dgvDetainedLicenses.CurrentCell.RowIndex].Cells[3].Value == true)
+                if ((bool)dgvDetainedLicenses.Rows[dgvDetainedLicenses.CurrentCell.RowIndex].Cells[3].Value == false)
                 {
-                    notSpecifiedYetToolStripMenuItem.Text = "Detain License";
-                    notSpecifiedYetToolStripMenuItem.Tag = "Detain";
+                    releaseLicenseToolStripMenuItem.Enabled = true;
                 }
                 else
                 {
-                    notSpecifiedYetToolStripMenuItem.Text = "Release License";
-                    notSpecifiedYetToolStripMenuItem.Tag = "Release";
-
+                    releaseLicenseToolStripMenuItem.Enabled = false;
                 }
             }
         }
 
-        private void notSpecifiedYetToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void releaseLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (notSpecifiedYetToolStripMenuItem.Tag == "Release")
+            if (dgvDetainedLicenses.CurrentCell != null && dgvDetainedLicenses.CurrentCell.RowIndex >= 0)
             {
-
+                int LicenseID =(int)dgvDetainedLicenses.Rows[dgvDetainedLicenses.CurrentCell.RowIndex].Cells[1].Value;
+                frmReleaseDetainedLicense ReleaseLicense = new frmReleaseDetainedLicense(LicenseID);
+                ReleaseLicense.ShowDialog();
+                RefreshDataInTable();
             }
-            else if (notSpecifiedYetToolStripMenuItem.Tag == "Detain")
-            {
 
-            }
+
         }
     }
 }
