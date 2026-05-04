@@ -10,10 +10,13 @@ namespace DVDL_app
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            Application.Run(new frmLogin());
             //Application.Run(new FrmManagePeople());
             //Application.Run(new frmManageAppointments(32, 1));
-            clsGlobal.CurrentUser = clsUser.Find("Xussama");
-            Application.Run(new frmRenewLocalDrivingLicense());
+            //clsGlobal.CurrentUser = clsUser.Find("Xussama");
             //Application.Run(new frmRenewLocalDrivingLicense());
             //Application.Run(new frmManageLocalDrivingLicenseApplications());
             //Application.Run(frmShowLicenseInfos.LoadFormByLicenseID(20));
